@@ -21,7 +21,7 @@ public class SunPathScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         y += 0.01f;
-        x = Mathf.Sqrt(361f - (y + 5) * (y + 5)) - 12f;
+        x = Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f;
         GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 	}
 }
