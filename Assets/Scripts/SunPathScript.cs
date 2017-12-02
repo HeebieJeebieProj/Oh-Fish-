@@ -7,6 +7,7 @@ public class SunPathScript : MonoBehaviour {
     public float startY; //where the sun starts from
     public float endY; //where the sun should reset it's position in terms of y and stop cycle
     public float riseTimeHr; //time when sun rises in hours (0 - 23)
+    public float horizon; //to avoid reflections
 
     //For calculating intermediate position
     private float y;
@@ -33,6 +34,15 @@ public class SunPathScript : MonoBehaviour {
             startCycle = false;
             y = startY;
             GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
+        }
+
+        //to avoid reflections below horizon
+        if (GetComponent<Transform>().position.y >= horizon)
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+        } else
+        {
+            GetComponent<MeshRenderer>().enabled = false;
         }
     }
 	
@@ -70,6 +80,16 @@ public class SunPathScript : MonoBehaviour {
             y = startY;
             GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
 
+        }
+
+        //to avoid reflections below horizon
+        if (GetComponent<Transform>().position.y >= horizon)
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = false;
         }
 
     }

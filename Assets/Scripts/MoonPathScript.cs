@@ -8,6 +8,7 @@ public class MoonPathScript : MonoBehaviour
     public float startY; //where the moon starts from
     public float endY; //where the moon should reset it's position in terms of y and stop cycle
     public float riseTimeHr; //time when moon rises in hours (0 - 23)
+    public float horizon; //to avoid reflections
 
     //For calculating intermediate position
     private float y;
@@ -21,6 +22,7 @@ public class MoonPathScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         riseTimeSec = riseTimeHr * 60 * 60;
 
         //Getting value of y accroding to time of day
@@ -37,6 +39,17 @@ public class MoonPathScript : MonoBehaviour
             y = startY;
             GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
         }
+
+        //to avoid reflections below horizon
+        if (GetComponent<Transform>().position.y >= horizon)
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -75,6 +88,16 @@ public class MoonPathScript : MonoBehaviour
             y = startY;
             GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
 
+        }
+
+        //to avoid reflections below horizon
+        if (GetComponent<Transform>().position.y >= horizon)
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = false;
         }
 
     }
