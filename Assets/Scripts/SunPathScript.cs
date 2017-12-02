@@ -10,8 +10,8 @@ public class SunPathScript : MonoBehaviour {
     public float horizon; //to avoid reflections
 
     //For calculating intermediate position
-    private float y;
-    private float x;
+    public static float y;
+    public static float x;
     private float frac;
 
     //For reset
