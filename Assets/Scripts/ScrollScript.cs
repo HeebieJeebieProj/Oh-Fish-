@@ -11,10 +11,13 @@ public class ScrollScript : MonoBehaviour
     public Sprite mountain;
 
     private GameObject clone; //To keep the clone of present object
+    private bool spawnedEnd;
 
     // Use this for initialization
     void Start()
     {
+
+        spawnedEnd = false;
 
         if (MountainSpawnController.shouldSpawn)
         {
@@ -40,9 +43,9 @@ public class ScrollScript : MonoBehaviour
         } else
         {
 
-            if (MountainSpawnController.spawnEnd)
+            if (MountainSpawnController.spawnEnd && !spawnedEnd)
             {
-
+                spawnedEnd = true;
                 clone = Instantiate(gameObject);
                 clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
                 clone.GetComponent<ScrollScript>().speed = speed;
@@ -52,7 +55,7 @@ public class ScrollScript : MonoBehaviour
                 clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
                 clone.GetComponent<ScrollScript>().mountain = mountain;
                 clone.GetComponent<SpriteRenderer>().flipY = true;
-                MountainSpawnController.spawnEnd = false;
+                MountainSpawnController.i++;
 
             }
 
@@ -77,8 +80,9 @@ public class ScrollScript : MonoBehaviour
                 clone.GetComponent<SpriteRenderer>().sprite = mountain;
                 clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
                 clone.GetComponent<ScrollScript>().mountain = mountain;
-            } else if (MountainSpawnController.spawnEnd)
+            } else if (MountainSpawnController.spawnEnd && !spawnedEnd)
             {
+                spawnedEnd = true;
                 clone = Instantiate(gameObject);
                 clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
                 clone.GetComponent<ScrollScript>().speed = speed;
@@ -88,7 +92,7 @@ public class ScrollScript : MonoBehaviour
                 clone.GetComponent<SpriteRenderer>().flipY = true;
                 clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
                 clone.GetComponent<ScrollScript>().mountain = mountain;
-                MountainSpawnController.spawnEnd = false;
+                MountainSpawnController.i++;
             }
             
         }

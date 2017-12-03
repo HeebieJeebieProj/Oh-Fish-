@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xDiff: 21.1
-  speed: 2
+  speed: 4
   endMountainSprite: {fileID: 21300002, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
   mountain: {fileID: 21300002, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
 --- !u!212 &267795159
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xDiff: 21.1
-  speed: 2
+  speed: 4
   endMountainSprite: {fileID: 21300000, guid: fb7710c10dbb12f47a93af6f290516d3, type: 3}
   mountain: {fileID: 21300000, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
 --- !u!1 &791088031
@@ -1089,11 +1089,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeTimeDiff:
-  - 300
-  - 360
+  - 60
+  - 60
   rangeTimeTotal:
-  - 120
-  - 180
+  - 30
+  - 30
   mountain: {fileID: 740393919}
   mountainReflection: {fileID: 1460701913}
   mountainReflectionWhite: {fileID: 267795156}
@@ -1103,7 +1103,7 @@ MonoBehaviour:
     type: 3}
   mountainSpriteWhite: {fileID: 21300002, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c,
     type: 3}
-  speed: 2
+  speed: 4
   xDiff: 21.1
 --- !u!1 &1304086158
 GameObject:
@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xDiff: 21.1
-  speed: 2
+  speed: 4
   endMountainSprite: {fileID: 21300000, guid: fb7710c10dbb12f47a93af6f290516d3, type: 3}
   mountain: {fileID: 21300000, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
 --- !u!1001 &1541660430

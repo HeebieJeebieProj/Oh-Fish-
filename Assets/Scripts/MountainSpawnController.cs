@@ -16,6 +16,7 @@ public class MountainSpawnController : MonoBehaviour {
     public float speed;
     public float xDiff;
 
+    public static int i;
     public static bool shouldSpawn; //For continuous spawning
     public static bool spawnEnd; //For end spawning
 
@@ -24,6 +25,7 @@ public class MountainSpawnController : MonoBehaviour {
 
         shouldSpawn = true;
         spawnEnd = false;
+        i = 0;
         StartCoroutine(WaitForTimeTotal());
 
 	}
@@ -59,7 +61,14 @@ public class MountainSpawnController : MonoBehaviour {
             mountainClone.GetComponent<ScrollScript>().xDiff = xDiff;
             mountainClone.GetComponent<ScrollScript>().endMountainSprite = endMountainSpriteWhite;
             mountainClone.GetComponent<ScrollScript>().mountain = mountainSpriteWhite;
+
         }
+
+        if (i == 3)
+        {
+            i = 0;
+            spawnEnd = false;
+        } 
 
     }
 
