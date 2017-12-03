@@ -20,7 +20,7 @@ public class Water2DScript : MonoBehaviour
 
   void LateUpdate()
   {
-    Vector2 scroll = 0.02f * speed;
+    Vector2 scroll = - 0.02f * speed;
 
     mat.mainTextureOffset -= scroll;
   }

@@ -7,22 +7,55 @@ public class ScrollScript : MonoBehaviour
 
     public float xDiff; //Difference between 2 successive objects of same type
     public float speed; //Speed of travel
+    public Sprite endMountainSprite;
+    public Sprite mountain;
 
-    private GameObject clone;
+    private GameObject clone; //To keep the clone of present object
 
     // Use this for initialization
     void Start()
     {
 
-        //Clone when at x = 0
-        if (GetComponent<Transform>().position.x >= 0)
+        if (MountainSpawnController.shouldSpawn)
         {
-            clone = Instantiate(gameObject);
-            clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+
+            //Clone when at x = 0
+            if (GetComponent<Transform>().position.x >= 0)
+            {
+                clone = Instantiate(gameObject);
+                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone.GetComponent<ScrollScript>().speed = speed;
+                clone.GetComponent<ScrollScript>().xDiff = xDiff;
+                clone.GetComponent<SpriteRenderer>().sprite = mountain;
+                clone.GetComponent<Transform>().parent = GetComponent<Transform>().parent;
+                clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
+                clone.GetComponent<ScrollScript>().mountain = mountain;
+            }
+            else
+            {
+                //set clone to null otherwise
+                clone = null;
+            }
+
         } else
         {
-            //set clone to null otherwise
-            clone = null;
+
+            if (MountainSpawnController.spawnEnd)
+            {
+
+                clone = Instantiate(gameObject);
+                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone.GetComponent<ScrollScript>().speed = speed;
+                clone.GetComponent<ScrollScript>().xDiff = xDiff;
+                clone.GetComponent<SpriteRenderer>().sprite = endMountainSprite;
+                clone.GetComponent<Transform>().parent = GetComponent<Transform>().parent;
+                clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
+                clone.GetComponent<ScrollScript>().mountain = mountain;
+                clone.GetComponent<SpriteRenderer>().flipY = true;
+                MountainSpawnController.spawnEnd = false;
+
+            }
+
         }
 
     }
@@ -34,10 +67,30 @@ public class ScrollScript : MonoBehaviour
         //Cloning when at x = 0
         if (clone == null && GetComponent<Transform>().position.x >= 0)
         {
-            clone = Instantiate(gameObject);
-            clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
-            clone.GetComponent<ScrollScript>().speed = speed;
-            clone.GetComponent<ScrollScript>().xDiff = xDiff;
+            if (MountainSpawnController.shouldSpawn)
+            {
+                clone = Instantiate(gameObject);
+                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone.GetComponent<ScrollScript>().speed = speed;
+                clone.GetComponent<ScrollScript>().xDiff = xDiff;
+                clone.GetComponent<Transform>().parent = GetComponent<Transform>().parent;
+                clone.GetComponent<SpriteRenderer>().sprite = mountain;
+                clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
+                clone.GetComponent<ScrollScript>().mountain = mountain;
+            } else if (MountainSpawnController.spawnEnd)
+            {
+                clone = Instantiate(gameObject);
+                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone.GetComponent<ScrollScript>().speed = speed;
+                clone.GetComponent<ScrollScript>().xDiff = xDiff;
+                clone.GetComponent<SpriteRenderer>().sprite = endMountainSprite;
+                clone.GetComponent<Transform>().parent = GetComponent<Transform>().parent;
+                clone.GetComponent<SpriteRenderer>().flipY = true;
+                clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
+                clone.GetComponent<ScrollScript>().mountain = mountain;
+                MountainSpawnController.spawnEnd = false;
+            }
+            
         }
 
         //travel with speed along x

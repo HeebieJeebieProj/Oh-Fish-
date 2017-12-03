@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 267795159}
   - component: {fileID: 267795158}
   m_Layer: 0
-  m_Name: island reflection white
+  m_Name: mountain reflection white
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,6 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDiff: 21.1
   speed: 2
+  endMountainSprite: {fileID: 21300002, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
+  mountain: {fileID: 21300002, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
 --- !u!212 &267795159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -709,7 +711,7 @@ GameObject:
   - component: {fileID: 740393921}
   - component: {fileID: 740393922}
   m_Layer: 0
-  m_Name: island
+  m_Name: mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,6 +787,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDiff: 21.1
   speed: 2
+  endMountainSprite: {fileID: 21300000, guid: fb7710c10dbb12f47a93af6f290516d3, type: 3}
+  mountain: {fileID: 21300000, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
 --- !u!1 &791088031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1053,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1267696801}
+  - component: {fileID: 1267696802}
   m_Layer: 0
   m_Name: Mountain
   m_TagString: Untagged
@@ -1072,6 +1077,34 @@ Transform:
   m_Father: {fileID: 400926512}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1267696802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1267696800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e3da1547e2d5f44eaff127df0a01f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeTimeDiff:
+  - 300
+  - 360
+  rangeTimeTotal:
+  - 120
+  - 180
+  mountain: {fileID: 740393919}
+  mountainReflection: {fileID: 1460701913}
+  mountainReflectionWhite: {fileID: 267795156}
+  endMountainSprite: {fileID: 21300000, guid: fb7710c10dbb12f47a93af6f290516d3, type: 3}
+  mountainSprite: {fileID: 21300000, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
+  endMountainSpriteWhite: {fileID: 21300002, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c,
+    type: 3}
+  mountainSpriteWhite: {fileID: 21300002, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c,
+    type: 3}
+  speed: 2
+  xDiff: 21.1
 --- !u!1 &1304086158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1346,7 @@ GameObject:
   - component: {fileID: 1460701915}
   - component: {fileID: 1460701916}
   m_Layer: 0
-  m_Name: island reflection
+  m_Name: mountain reflection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1389,6 +1422,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDiff: 21.1
   speed: 2
+  endMountainSprite: {fileID: 21300000, guid: fb7710c10dbb12f47a93af6f290516d3, type: 3}
+  mountain: {fileID: 21300000, guid: 4a89a79a83e6dcb4c9ca9f8f9003221c, type: 3}
 --- !u!1001 &1541660430
 Prefab:
   m_ObjectHideFlags: 0
