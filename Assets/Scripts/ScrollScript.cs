@@ -11,13 +11,11 @@ public class ScrollScript : MonoBehaviour
     public Sprite mountain;
 
     private GameObject clone; //To keep the clone of present object
-    private bool spawnedEnd;
+    public bool spawnedEnd;
 
     // Use this for initialization
     void Start()
     {
-
-        spawnedEnd = false;
 
         if (MountainSpawnController.shouldSpawn)
         {
@@ -33,6 +31,7 @@ public class ScrollScript : MonoBehaviour
                 clone.GetComponent<Transform>().parent = GetComponent<Transform>().parent;
                 clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
                 clone.GetComponent<ScrollScript>().mountain = mountain;
+                clone.GetComponent<ScrollScript>().spawnedEnd = false;
             }
             else
             {
@@ -55,6 +54,7 @@ public class ScrollScript : MonoBehaviour
                 clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
                 clone.GetComponent<ScrollScript>().mountain = mountain;
                 clone.GetComponent<SpriteRenderer>().flipY = true;
+                clone.GetComponent<ScrollScript>().spawnedEnd = spawnedEnd;
                 MountainSpawnController.i++;
 
             }
@@ -80,6 +80,7 @@ public class ScrollScript : MonoBehaviour
                 clone.GetComponent<SpriteRenderer>().sprite = mountain;
                 clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
                 clone.GetComponent<ScrollScript>().mountain = mountain;
+                clone.GetComponent<ScrollScript>().spawnedEnd = false;
             } else if (MountainSpawnController.spawnEnd && !spawnedEnd)
             {
                 spawnedEnd = true;
@@ -92,6 +93,7 @@ public class ScrollScript : MonoBehaviour
                 clone.GetComponent<SpriteRenderer>().flipY = true;
                 clone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
                 clone.GetComponent<ScrollScript>().mountain = mountain;
+                clone.GetComponent<ScrollScript>().spawnedEnd = spawnedEnd;
                 MountainSpawnController.i++;
             }
             
