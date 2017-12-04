@@ -11,6 +11,7 @@ public class IslandSpawnScript : MonoBehaviour {
 
     private bool startSpawn;
     private GameObject island;
+    private int index;
 
 	// Use this for initialization
 	void Start () {
@@ -34,16 +35,17 @@ public class IslandSpawnScript : MonoBehaviour {
 
     IEnumerator IslandGenerator()
     {
-        
-        if (yRange[1] < yRange[0])
+
+        index = Random.Range(0, 3);
+        if (yRange[2* index + 1] < yRange[2 * index])
         {
-            float temp = yRange[1];
-            yRange[1] = yRange[0];
-            yRange[0] = temp;
+            float temp = yRange[2 * index + 1];
+            yRange[2 * index + 1] = yRange[2 * index];
+            yRange[2 * index] = temp;
         }
 
-        island = islands[Random.Range(0, 3)];
-        GameObject islandClone = Instantiate(island, new Vector3(-16f, Random.Range(yRange[0], yRange[1]), island.GetComponent<Transform>().position.z), island.GetComponent<Transform>().rotation);
+        island = Instantiate(island, new Vector3(-18f, Random.Range(yRange[2 * index], yRange[2 * index + 1]), island.GetComponent<Transform>().position.z), island.GetComponent<Transform>().rotation);
+        island.GetComponent<Transform>().parent = GetComponent<Transform>();
 
         yield return new WaitForSeconds(
             Random.Range(
