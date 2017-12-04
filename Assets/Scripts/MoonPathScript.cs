@@ -41,7 +41,7 @@ public class MoonPathScript : MonoBehaviour
         }
 
         //to avoid reflections below horizon
-        if (GetComponent<Transform>().position.y >= horizon)
+        if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
             GetComponent<MeshRenderer>().enabled = true;
         }
@@ -91,7 +91,7 @@ public class MoonPathScript : MonoBehaviour
         }
 
         //to avoid reflections below horizon
-        if (GetComponent<Transform>().position.y >= horizon)
+        if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
             GetComponent<MeshRenderer>().enabled = true;
         }

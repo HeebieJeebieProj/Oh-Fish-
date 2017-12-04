@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MountainSpawnController : MonoBehaviour {
+public class MountainSpawnScript : MonoBehaviour {
 
     public float[] rangeTimeDiff; //To accept range time between to successive islands
     public float[] rangeTimeTotal; //To accept range of time for which the island is seen
@@ -68,6 +68,7 @@ public class MountainSpawnController : MonoBehaviour {
         {
             i = 0;
             spawnEnd = false;
+            StartCoroutine(WaitForTimeDiff());
         } 
 
     }
@@ -84,8 +85,6 @@ public class MountainSpawnController : MonoBehaviour {
 
         shouldSpawn = false;
         spawnEnd = true;
-
-        StartCoroutine(WaitForTimeDiff());
 
     }
 

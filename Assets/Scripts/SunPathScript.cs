@@ -37,7 +37,7 @@ public class SunPathScript : MonoBehaviour {
         }
 
         //to avoid reflections below horizon
-        if (GetComponent<Transform>().position.y >= horizon)
+        if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
             GetComponent<MeshRenderer>().enabled = true;
         } else
@@ -83,7 +83,7 @@ public class SunPathScript : MonoBehaviour {
         }
 
         //to avoid reflections below horizon
-        if (GetComponent<Transform>().position.y >= horizon)
+        if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
             GetComponent<MeshRenderer>().enabled = true;
         }
