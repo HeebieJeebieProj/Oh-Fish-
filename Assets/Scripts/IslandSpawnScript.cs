@@ -37,6 +37,7 @@ public class IslandSpawnScript : MonoBehaviour {
     {
 
         index = Random.Range(0, 3);
+
         if (yRange[2* index + 1] < yRange[2 * index])
         {
             float temp = yRange[2 * index + 1];
@@ -44,8 +45,9 @@ public class IslandSpawnScript : MonoBehaviour {
             yRange[2 * index] = temp;
         }
 
-        island = Instantiate(island, new Vector3(-18f, Random.Range(yRange[2 * index], yRange[2 * index + 1]), island.GetComponent<Transform>().position.z), island.GetComponent<Transform>().rotation);
+        island = Instantiate(islands[index], new Vector3(-18f, Random.Range(yRange[2 * index], yRange[2 * index + 1]), islands[index].GetComponent<Transform>().position.z), islands[index].GetComponent<Transform>().rotation);
         island.GetComponent<Transform>().parent = GetComponent<Transform>();
+        island.GetComponent<IslandScrollScript>().speed = speed;
 
         yield return new WaitForSeconds(
             Random.Range(
