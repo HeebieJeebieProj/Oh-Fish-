@@ -41,26 +41,26 @@ public class MountainSpawnScript : MonoBehaviour {
             GameObject mountainClone = Instantiate(mountain, new Vector3(- xDiff, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
             mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
             mountainClone.GetComponent<SpriteRenderer>().sprite = endMountainSprite;
-            mountainClone.GetComponent<ScrollScript>().speed = speed;
-            mountainClone.GetComponent<ScrollScript>().xDiff = xDiff;
-            mountainClone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
-            mountainClone.GetComponent<ScrollScript>().mountain = mountainSprite;
+            mountainClone.GetComponent<MountainScrollScript>().speed = speed;
+            mountainClone.GetComponent<MountainScrollScript>().xDiff = xDiff;
+            mountainClone.GetComponent<MountainScrollScript>().endMountainSprite = endMountainSprite;
+            mountainClone.GetComponent<MountainScrollScript>().mountain = mountainSprite;
 
             mountainClone = Instantiate(mountainReflection, new Vector3(-xDiff, mountainReflection.GetComponent<Transform>().position.y, mountainReflection.GetComponent<Transform>().position.z), mountainReflection.GetComponent<Transform>().rotation);
             mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
             mountainClone.GetComponent<SpriteRenderer>().sprite = endMountainSprite;
-            mountainClone.GetComponent<ScrollScript>().speed = speed;
-            mountainClone.GetComponent<ScrollScript>().xDiff = xDiff;
-            mountainClone.GetComponent<ScrollScript>().endMountainSprite = endMountainSprite;
-            mountainClone.GetComponent<ScrollScript>().mountain = mountainSprite;
+            mountainClone.GetComponent<MountainScrollScript>().speed = speed;
+            mountainClone.GetComponent<MountainScrollScript>().xDiff = xDiff;
+            mountainClone.GetComponent<MountainScrollScript>().endMountainSprite = endMountainSprite;
+            mountainClone.GetComponent<MountainScrollScript>().mountain = mountainSprite;
 
             mountainClone = Instantiate(mountainReflectionWhite, new Vector3(-xDiff, mountainReflectionWhite.GetComponent<Transform>().position.y, mountainReflectionWhite.GetComponent<Transform>().position.z), mountainReflectionWhite.GetComponent<Transform>().rotation);
             mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
             mountainClone.GetComponent<SpriteRenderer>().sprite = endMountainSpriteWhite;
-            mountainClone.GetComponent<ScrollScript>().speed = speed;
-            mountainClone.GetComponent<ScrollScript>().xDiff = xDiff;
-            mountainClone.GetComponent<ScrollScript>().endMountainSprite = endMountainSpriteWhite;
-            mountainClone.GetComponent<ScrollScript>().mountain = mountainSpriteWhite;
+            mountainClone.GetComponent<MountainScrollScript>().speed = speed;
+            mountainClone.GetComponent<MountainScrollScript>().xDiff = xDiff;
+            mountainClone.GetComponent<MountainScrollScript>().endMountainSprite = endMountainSpriteWhite;
+            mountainClone.GetComponent<MountainScrollScript>().mountain = mountainSpriteWhite;
 
         }
 

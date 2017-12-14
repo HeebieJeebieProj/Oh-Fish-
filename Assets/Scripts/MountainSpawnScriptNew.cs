@@ -47,7 +47,7 @@ public class MountainSpawnScriptNew : MonoBehaviour {
         GameObject mountainClone = Instantiate(mountain, new Vector3( x, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
         mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
         mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
-        mountainClone.GetComponent<MountainScrollScriptNew>().speed = speed;
+        mountainClone.GetComponent<ScrollScript>().speed = speed;
         mountainClone.GetComponent<Transform>().Find("mountain").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
         mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
         mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection white").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i + 1];
@@ -67,7 +67,7 @@ public class MountainSpawnScriptNew : MonoBehaviour {
             mountainClone = Instantiate(mountain, new Vector3(x, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
             mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
             mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
-            mountainClone.GetComponent<MountainScrollScriptNew>().speed = speed;
+            mountainClone.GetComponent<ScrollScript>().speed = speed;
             mountainClone.GetComponent<Transform>().Find("mountain").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
             mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
             mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection white").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i + 1];
