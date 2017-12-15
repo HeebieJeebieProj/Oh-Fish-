@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4884100159113660}
   - component: {fileID: 212116110577770180}
+  - component: {fileID: 114370892951190220}
   m_Layer: 0
   m_Name: gradient
   m_TagString: Untagged
@@ -101,6 +102,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114370892951190220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383922175523624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a6572ddbe865f478270e21f84168e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 0
+  radius: 0
+  sun: {fileID: 0}
 --- !u!114 &114434304248189078
 MonoBehaviour:
   m_ObjectHideFlags: 1
