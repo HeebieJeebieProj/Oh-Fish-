@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4936572558904636}
   - component: {fileID: 114990033153980098}
+  - component: {fileID: 114434304248189078}
   m_Layer: 0
   m_Name: Cloud Background
   m_TagString: Untagged
@@ -100,6 +101,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114434304248189078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438507719654690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba03e16bfeccb8b4ea61cab0d09b62da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors: []
+  sun: {fileID: 0}
+  moon: {fileID: 0}
 --- !u!114 &114990033153980098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2689ff31ef2e1418e58796c96b6495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 3
 --- !u!212 &212116110577770180
 SpriteRenderer:
   m_ObjectHideFlags: 1

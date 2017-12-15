@@ -52,8 +52,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4128576915806102}
   - component: {fileID: 114562738950456586}
+  - component: {fileID: 114688044951153086}
   m_Layer: 0
-  m_Name: Cloud
+  m_Name: Cloud Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +113,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+--- !u!114 &114688044951153086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533468108568588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba03e16bfeccb8b4ea61cab0d09b62da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors: []
+  sun: {fileID: 0}
+  moon: {fileID: 0}
 --- !u!212 &212511484898269330
 SpriteRenderer:
   m_ObjectHideFlags: 1
