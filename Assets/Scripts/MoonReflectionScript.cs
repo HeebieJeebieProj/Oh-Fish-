@@ -39,7 +39,13 @@ public class MoonReflectionScript : MonoBehaviour
     void Update()
     {
 
-        if (MoonPathScript.y >= horizon - 1f)
+        if (MoonPathScript.y >= horizon - 1 && MoonPathScript.y <= horizon)
+        {
+            y = horizon;
+            float frac = 1 - (horizon - MoonPathScript.y);
+            GetComponent<Transform>().localScale = new Vector3(frac * 2, frac * 0.3f, 1f);
+        }
+        else if (MoonPathScript.y > horizon)
         {
             //setting y to 0.3 time distance from horizon as moon
             y = horizon + 0.3f + (MoonPathScript.y - (horizon - 1f)) * -0.3f;
@@ -48,6 +54,7 @@ public class MoonReflectionScript : MonoBehaviour
         {
             //setting y = horizon when moon hasn't risen above horizon
             y = horizon;
+            GetComponent<Transform>().localScale = new Vector3(0, 0, 1f);
 
         }
 

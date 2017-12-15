@@ -35,7 +35,13 @@ public class SunReflectionScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (SunPathScript.y >= horizon - 1f)
+        if (SunPathScript.y >= horizon - 1f && SunPathScript.y <= horizon)
+        {
+            y = horizon;
+            float frac = 1 - (horizon - SunPathScript.y);
+            GetComponent<Transform>().localScale = new Vector3(frac * 2, frac * 0.3f, 1f);
+        }
+        else if (SunPathScript.y > horizon)
         {
             //setting y to 0.3 time distance from horizon as sun
             y = horizon + 0.3f + (SunPathScript.y - (horizon - 1f)) * -0.3f;
@@ -44,7 +50,7 @@ public class SunReflectionScript : MonoBehaviour {
         {
             //setting y = horizon when sun hasn't risen above horizon
             y = horizon;
-
+            GetComponent<Transform>().localScale = new Vector3(0, 0, 1f);
         }
 
         //setting x equal to that of sun
