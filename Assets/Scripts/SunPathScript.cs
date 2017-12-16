@@ -8,6 +8,7 @@ public class SunPathScript : MonoBehaviour {
     public float endY; //where the sun should reset it's position in terms of y and stop cycle
     public float riseTimeHr; //time when sun rises in hours (0 - 23)
     public float horizon; //to avoid reflections
+    public GameObject moon;
 
     //For calculating intermediate position
     public static float y;
@@ -15,7 +16,6 @@ public class SunPathScript : MonoBehaviour {
     private float frac;
 
     //For reset
-    private bool startCycle;
     private float riseTimeSec;
 
 	// Use this for initialization
@@ -25,13 +25,11 @@ public class SunPathScript : MonoBehaviour {
         //Getting value of y accroding to time of day
         if (TimeManagerScript.timeOfDay >= riseTimeSec && TimeManagerScript.timeOfDay <= 43200)
         {
-            startCycle = true;
             frac = (TimeManagerScript.timeOfDay - riseTimeSec) / (43200 - riseTimeSec);
             y = Mathf.Lerp(startY, endY, frac);
             GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
         } else
         {
-            startCycle = false;
             y = startY;
             GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
         }
@@ -51,17 +49,6 @@ public class SunPathScript : MonoBehaviour {
 
         if (TimeManagerScript.timeOfDay >= riseTimeSec && TimeManagerScript.timeOfDay <= 43200)
         {
-            //sun should be visible
-            startCycle = true;
-        }
-        else
-        {
-            //sun not visible
-            startCycle = false;
-        }
-
-        if (startCycle)
-        {
 
             //Calculating value of y according to the time
             frac = (TimeManagerScript.timeOfDay - riseTimeSec) / (43200 - riseTimeSec);
@@ -73,7 +60,20 @@ public class SunPathScript : MonoBehaviour {
             //sun position set according to the x and y values
             GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 
-        } else
+        } else if (TimeManagerScript.timeOfDay > 43200 && TimeManagerScript.timeOfDay <= moon.GetComponent<MoonPathScript>().riseTimeHr * 60 * 60)
+        {
+
+            frac = (TimeManagerScript.timeOfDay - 43200) / (moon.GetComponent<MoonPathScript>().riseTimeHr * 60 * 60 - 43200);
+            y = Mathf.Lerp(endY, startY, frac);
+
+            //Value of x calculated using the curve (x + 12)^2 + (y + 5)^2 = 18.5^2
+            x = - Mathf.Sqrt(3721f - (y + 54) * (y + 54)) + 2f;
+
+            //sun position set according to the x and y values
+            GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
+
+        }
+        else
         {
 
             //Resetting position

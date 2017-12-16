@@ -151,7 +151,7 @@ public class CloudSpawnScript : MonoBehaviour {
 
         yield return new WaitForSeconds(Random.Range(rangeTimeDiffForeground[0], rangeTimeDiffForeground[1]));
 
-        spawnBackgroundClouds = true;
+        spawnForegroundClouds = true;
 
     }
 

@@ -20,12 +20,14 @@ public class MountainSpawnScriptNew : MonoBehaviour {
 
         shouldSpawn = true;
         StartCoroutine(WaitForTimeTotal());
-        StartCoroutine(WaitForTimeDiff());
 
     }
 
     IEnumerator WaitForTimeTotal()
     {
+
+        StartCoroutine(WaitForTimeDiff());
+
         yield return new WaitForSeconds(
             Random.Range(
                 (rangeTimeTotal[0] < rangeTimeTotal[1]) ? rangeTimeTotal[0] : rangeTimeTotal[1],
