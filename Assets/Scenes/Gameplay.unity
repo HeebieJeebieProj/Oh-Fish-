@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeTotalMin: 3
   speed: 0
-  initTimeHr: 11
+  initTimeHr: 23
   hour: 0
 --- !u!1 &416488736
 GameObject:
@@ -530,6 +530,7 @@ MonoBehaviour:
   endY: 7
   riseTimeHr: 18
   horizon: -2.81
+  sun: {fileID: 1205323328}
 --- !u!23 &526166771
 MeshRenderer:
   m_ObjectHideFlags: 0

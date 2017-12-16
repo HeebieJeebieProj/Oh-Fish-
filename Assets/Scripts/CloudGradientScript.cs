@@ -32,7 +32,6 @@ public class CloudGradientScript : MonoBehaviour {
 	void Update () {
 
         distance = Mathf.Sqrt(Mathf.Pow(sun.GetComponent<Transform>().position.x - GetComponent<Transform>().position.x, 2) + Mathf.Pow(sun.GetComponent<Transform>().position.y - GetComponent<Transform>().position.y, 2));
-        Debug.Log(distance);
         if (distance <= radius)
         {
             frac = (radius - distance) / radius;

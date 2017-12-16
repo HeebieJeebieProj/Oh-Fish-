@@ -47,11 +47,11 @@ public class SunPathScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (TimeManagerScript.timeOfDay >= riseTimeSec && TimeManagerScript.timeOfDay <= 43200)
+        if (TimeManagerScript.timeOfDay >= riseTimeSec && TimeManagerScript.timeOfDay <= 39600)
         {
 
             //Calculating value of y according to the time
-            frac = (TimeManagerScript.timeOfDay - riseTimeSec) / (43200 - riseTimeSec);
+            frac = (TimeManagerScript.timeOfDay - riseTimeSec) / (39600 - riseTimeSec);
             y = Mathf.Lerp(startY, endY, frac);
 
             //Value of x calculated using the curve (x + 12)^2 + (y + 5)^2 = 18.5^2
@@ -60,14 +60,24 @@ public class SunPathScript : MonoBehaviour {
             //sun position set according to the x and y values
             GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 
-        } else if (TimeManagerScript.timeOfDay > 43200 && TimeManagerScript.timeOfDay <= moon.GetComponent<MoonPathScript>().riseTimeHr * 60 * 60)
+        } else if (TimeManagerScript.timeOfDay > 39600 && TimeManagerScript.timeOfDay <= 46800)
         {
 
-            frac = (TimeManagerScript.timeOfDay - 43200) / (moon.GetComponent<MoonPathScript>().riseTimeHr * 60 * 60 - 43200);
+            frac = (TimeManagerScript.timeOfDay - 39600) / 7200;
+
+            x = Mathf.Lerp(Mathf.Sqrt(342.25f - (endY + 5) * (endY + 5)) - 12f, -Mathf.Sqrt(342.25f - (endY + 5) * (endY + 5)) + 6f, frac);
+            y = Mathf.Sqrt(169f - (x + 3) * (x + 3)) - 5f;
+
+            GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
+
+        } else if (TimeManagerScript.timeOfDay > 46800 && TimeManagerScript.timeOfDay <= moon.GetComponent<MoonPathScript>().riseTimeHr * 60 * 60)
+        {
+
+            frac = (TimeManagerScript.timeOfDay - 46800) / (moon.GetComponent<MoonPathScript>().riseTimeHr * 60 * 60 - 46800);
             y = Mathf.Lerp(endY, startY, frac);
 
             //Value of x calculated using the curve (x + 12)^2 + (y + 5)^2 = 18.5^2
-            x = - Mathf.Sqrt(3721f - (y + 54) * (y + 54)) + 2f;
+            x = -Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) + 6f;
 
             //sun position set according to the x and y values
             GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
