@@ -140,7 +140,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 6349561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 257.35004, y: -91.5, z: 0}
+  m_LocalPosition: {x: 0, y: -183, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 1730352762}
@@ -458,7 +458,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 17020866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gunSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 18468197}
   - component: {fileID: 18468196}
   - component: {fileID: 18468195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 41010283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -868,7 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71173593}
   - component: {fileID: 71173594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boat rails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 72374926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: canonFireSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 77840535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 203.535, y: 99.99999, z: 0}
+  m_LocalPosition: {x: 203.535, y: -100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2139387511}
@@ -1094,7 +1094,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 98587292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 133250894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fish Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1291,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 145563090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -136.7, y: 0, z: 0}
+  m_LocalPosition: {x: -190, y: -36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1290540627}
@@ -1540,7 +1540,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 164828831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: baitSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1589,7 +1589,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188197534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.45001, y: -91.5, z: 0}
+  m_LocalPosition: {x: 0, y: -183, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1960376995}
@@ -1951,9 +1951,9 @@ RectTransform:
   m_Father: {fileID: 286065395}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 494.40042, y: 317.33276}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 444.40042, y: 267.33276}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220656100
@@ -1978,7 +1978,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 21
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2289,9 +2289,9 @@ RectTransform:
   m_Father: {fileID: 286065395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 494.40042, y: 289.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 444.40042, y: 239.5}
   m_SizeDelta: {x: 88, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &247844181
@@ -2337,7 +2337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2346,10 +2346,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 21
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -2682,7 +2682,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 270380796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -2897,7 +2897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &286065395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2906,7 +2906,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286065394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -75.66669, y: -122, z: 0}
+  m_LocalPosition: {x: -39.666687, y: -66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 220656099}
@@ -2917,7 +2917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -609, y: -422}
+  m_AnchoredPosition: {x: -573, y: -366}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &288331765
@@ -3040,7 +3040,7 @@ GameObject:
   - component: {fileID: 292636669}
   - component: {fileID: 292636668}
   - component: {fileID: 292636667}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3139,7 +3139,7 @@ GameObject:
   - component: {fileID: 294089676}
   - component: {fileID: 294089675}
   - component: {fileID: 294089674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3262,7 +3262,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 305806045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mast, Hooks and Bait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3297,7 +3297,7 @@ GameObject:
   - component: {fileID: 307805738}
   - component: {fileID: 307805737}
   - component: {fileID: 307805736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3868,7 +3868,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 353700193}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -4184,7 +4184,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392319547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -67.600006, y: 0, z: 0}
+  m_LocalPosition: {x: -190, y: -36, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 238639003}
@@ -4284,7 +4284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393036750}
   - component: {fileID: 393036751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 2
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -4463,6 +4463,7 @@ Transform:
   - {fileID: 1730227379}
   - {fileID: 1926725631}
   - {fileID: 918151026}
+  - {fileID: 1866407133}
   - {fileID: 1095930385}
   m_Father: {fileID: 1850273190}
   m_RootOrder: 0
@@ -4493,7 +4494,7 @@ GameObject:
   - component: {fileID: 416488739}
   - component: {fileID: 416488738}
   - component: {fileID: 416488737}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4875,7 +4876,7 @@ GameObject:
   - component: {fileID: 489652899}
   - component: {fileID: 489652901}
   - component: {fileID: 489652900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5074,7 +5075,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 506826796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -5593,7 +5594,7 @@ GameObject:
   - component: {fileID: 569509565}
   - component: {fileID: 569509567}
   - component: {fileID: 569509566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5670,7 +5671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590004359}
   - component: {fileID: 590004360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 5
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -5789,7 +5790,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 593508362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fish Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5971,7 +5972,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 598646072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hooks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6165,7 +6166,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 607209390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fish Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7135,7 +7136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703779092}
   - component: {fileID: 703779093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 4
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -7432,7 +7433,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 741493929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 412.25006, y: -91.5, z: 0}
+  m_LocalPosition: {x: 0, y: -183, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 1874926777}
@@ -7554,7 +7555,7 @@ GameObject:
   - component: {fileID: 747825250}
   - component: {fileID: 747825249}
   - component: {fileID: 747825248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7650,7 +7651,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 751937469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 5
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -8150,7 +8151,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 791088032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8185,7 +8186,7 @@ GameObject:
   - component: {fileID: 791537231}
   - component: {fileID: 791537230}
   - component: {fileID: 791537229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8200,7 +8201,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 791537227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.18, y: 2.41, z: 13.53}
+  m_LocalPosition: {x: -18.18, y: 2.41, z: -9}
   m_LocalScale: {x: 1, y: 1.2, z: 10}
   m_Children:
   - {fileID: 17020866}
@@ -8624,8 +8625,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1411896051
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6f457c5ffc5c35549a0d886689eaaf81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8687,7 +8688,7 @@ GameObject:
   - component: {fileID: 793468995}
   - component: {fileID: 793468997}
   - component: {fileID: 793468996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8965,7 +8966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 822079296}
   - component: {fileID: 822079297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 3
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -9668,7 +9669,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 966401123}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -9698,7 +9699,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 967741155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: markerDown
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -9872,7 +9873,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 973532969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9984,7 +9985,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 976232905}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rotationPointer
   m_TagString: Untagged
   m_Icon: {fileID: 7240890024493199768, guid: 0000000000000000d000000000000000, type: 0}
@@ -10014,7 +10015,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 993239488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -10046,7 +10047,7 @@ GameObject:
   - component: {fileID: 996102367}
   - component: {fileID: 996102369}
   - component: {fileID: 996102368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10135,7 +10136,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1014667820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: baitSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -10377,7 +10378,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026251736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 567.15, y: -91.5, z: 0}
+  m_LocalPosition: {x: 0, y: -183, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 559697285}
@@ -10853,7 +10854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1058794296
 Transform:
   m_ObjectHideFlags: 0
@@ -11132,7 +11133,7 @@ Transform:
   m_Children:
   - {fileID: 51400506}
   m_Father: {fileID: 400926512}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1095930386
 MonoBehaviour:
@@ -11647,7 +11648,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1164950764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -86.51174, y: 0, z: 0}
+  m_LocalPosition: {x: -175.285, y: 5.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2051370863}
@@ -11774,7 +11775,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1189077135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 3
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -11822,7 +11823,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1203578744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: -190, y: -36, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 670549665}
@@ -12013,7 +12014,7 @@ GameObject:
   - component: {fileID: 1219261744}
   - component: {fileID: 1219261746}
   - component: {fileID: 1219261745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12221,9 +12222,9 @@ RectTransform:
   m_Father: {fileID: 286065395}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 494.40042, y: 247}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 444.40042, y: 197}
   m_SizeDelta: {x: 88, y: 56.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226377905
@@ -12251,7 +12252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12260,10 +12261,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 21
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -12663,7 +12664,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1272334110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -12811,6 +12812,88 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &1286277451
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 400926512}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -30.939999
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.01719071
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.99985224
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85e9ef7c130525b4f89d7c02f45903c1, type: 2}
+    - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: reflectLayers.m_Bits
+      value: 4294967007
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: refractLayers.m_Bits
+      value: 4294967007
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 36.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 56.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: waterMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: clipPlaneOffset
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: disablePixelLights
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: textureSize
+      value: 256
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1289102980
 GameObject:
   m_ObjectHideFlags: 0
@@ -13150,7 +13233,7 @@ GameObject:
   - component: {fileID: 1331659311}
   - component: {fileID: 1331659310}
   - component: {fileID: 1331659309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13427,7 +13510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1378213928
 Transform:
   m_ObjectHideFlags: 0
@@ -13497,7 +13580,7 @@ GameObject:
   - component: {fileID: 1390180650}
   - component: {fileID: 1390180649}
   - component: {fileID: 1390180648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13594,7 +13677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395555760}
   - component: {fileID: 1395555761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13784,8 +13867,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1411896051
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 015ffb73f2aab824fb7aede99ead5a66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13977,7 +14060,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1431054587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 722.05005, y: -91.5, z: 0}
+  m_LocalPosition: {x: 0, y: -183, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 69404943}
@@ -14174,7 +14257,7 @@ GameObject:
   - component: {fileID: 1434821469}
   - component: {fileID: 1434821471}
   - component: {fileID: 1434821470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14333,7 +14416,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1464733555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Net Hoops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14365,7 +14448,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1472862276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fish Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14469,7 +14552,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1488260130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 1
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -14644,7 +14727,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1495131497}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15084,6 +15167,10 @@ Prefab:
       propertyPath: speed.x
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013628585246, guid: 58377fe802e00d34184b3353b3619705, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58377fe802e00d34184b3353b3619705, type: 2}
   m_IsPrefabParent: 0
@@ -15176,7 +15263,7 @@ GameObject:
   - component: {fileID: 1567862875}
   - component: {fileID: 1567862877}
   - component: {fileID: 1567862876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15836,7 +15923,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1616465485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 4
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -15866,7 +15953,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1630022776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -16047,7 +16134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1656131415}
   - component: {fileID: 1656131416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 1
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -16300,7 +16387,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1659834851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 139.69998, y: 0, z: 0}
+  m_LocalPosition: {x: -190, y: -36, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 597058172}
@@ -17459,7 +17546,7 @@ GameObject:
   - component: {fileID: 1813196522}
   - component: {fileID: 1813196520}
   - component: {fileID: 1813196521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hook Hanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17474,7 +17561,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1813196518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: 2.56, z: -1.353}
+  m_LocalPosition: {x: 16, y: 2.56, z: -0.03}
   m_LocalScale: {x: 1.02, y: 0.49036202, z: 0.1}
   m_Children:
   - {fileID: 598646072}
@@ -18144,6 +18231,10 @@ Transform:
   m_Father: {fileID: 1850273190}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1866407133 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+  m_PrefabInternal: {fileID: 1286277451}
 --- !u!1 &1870074643
 GameObject:
   m_ObjectHideFlags: 0
@@ -18270,7 +18361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874092158}
   - component: {fileID: 1874092159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gun stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18504,7 +18595,7 @@ GameObject:
   - component: {fileID: 1885254408}
   - component: {fileID: 1885254407}
   - component: {fileID: 1885254406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18664,7 +18755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1898934184}
   - component: {fileID: 1898934185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hoop foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18744,7 +18835,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1924403798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mast Joints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18997,7 +19088,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1947424192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: baitSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -19027,7 +19118,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1953848935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fish Spawn Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19215,7 +19306,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1993017724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: -6488666005112524639, guid: 0000000000000000d000000000000000, type: 0}
@@ -19324,7 +19415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999488830}
   - component: {fileID: 1999488831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hoop background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19399,7 +19490,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2002116995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
@@ -19519,7 +19610,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013541818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.599976, y: 0, z: 0}
+  m_LocalPosition: {x: -190, y: -36, z: 0}
   m_LocalScale: {x: 1.0001413, y: 1.0001413, z: 1.0001413}
   m_Children:
   - {fileID: 1754335082}
@@ -19726,7 +19817,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2019635386}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: baitSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -19832,7 +19923,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2032081134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: markerUp
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -19946,7 +20037,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2037954806}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook hanger joint 2
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -20178,7 +20269,7 @@ GameObject:
   - component: {fileID: 2056652587}
   - component: {fileID: 2056652586}
   - component: {fileID: 2056652585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20301,7 +20392,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2057967258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: baitSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -20339,7 +20430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2061294946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21255,7 +21346,7 @@ GameObject:
   - component: {fileID: 2137929722}
   - component: {fileID: 2137929721}
   - component: {fileID: 2137929720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hook4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21393,7 +21484,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2139387510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -97.45, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 690144994}
@@ -21589,7 +21680,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2142700938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -203.535, y: 99.99999, z: 0}
+  m_LocalPosition: {x: -203.535, y: -100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 206038572}
