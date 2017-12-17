@@ -11,7 +11,7 @@ public class GameoverScript : MonoBehaviour {
     public static bool gameover = false;
     string check, checker;
     int baitsActive;
-    HookManagerScript hookManagerScript;
+    //HookManagerScript hookManagerScript;
     public GameObject hookSelectionView;
     public GameObject baitSelectionView;
     public GameObject startButton;
@@ -45,7 +45,7 @@ public class GameoverScript : MonoBehaviour {
         timerText.text = time.ToString();
         gameover = false;
         Gameover.SetActive(false);
-        hookManagerScript = GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>();
+        //hookManagerScript = GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>();
         checker = "";
         gameOverStarted = false;
         calculationStart = false;
@@ -54,7 +54,7 @@ public class GameoverScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        if (HookManagerScript.hasSetup)
+        /*if (HookManagerScript.hasSetup)
         {
             int active = 0;
             baitsActive = hookManagerScript.numberHooks;
@@ -103,7 +103,7 @@ public class GameoverScript : MonoBehaviour {
             BaitSelectionScript.hasStarted = false;
             gameover = true;
             replayActive = false;
-        }
+        }*/
 
         checker = "";
 
@@ -144,11 +144,11 @@ public class GameoverScript : MonoBehaviour {
         gameover = false;
         Gameover.SetActive(false);
         int[] hookBaitNumber = { 0, 0, 10, 0, 0 };
-        hookManagerScript.numberOfBaits = hookBaitNumber;
+        //hookManagerScript.numberOfBaits = hookBaitNumber;
         int[] baitOrder = { 0, 0, 11, 0, 0};
 
-        GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().baitOrder = baitOrder;
-        GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().numberHooks = 5;
+        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().baitOrder = baitOrder;
+        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().numberHooks = 5;
 
         BaitSelectionScript.hasStarted = true;
         textViews.SetActive(true);
@@ -164,11 +164,11 @@ public class GameoverScript : MonoBehaviour {
         gameover = false;
         Gameover.SetActive(false);
         int[] hookBaitNumber = { 0, 0, 10, 0, 0 };
-        hookManagerScript.numberOfBaits = hookBaitNumber;
+        //hookManagerScript.numberOfBaits = hookBaitNumber;
         int[] baitOrder = { 0, 0, 11, 0, 0 };
 
-        GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().baitOrder = baitOrder;
-        GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().numberHooks = 5;
+        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().baitOrder = baitOrder;
+        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().numberHooks = 5;
 
         BaitSelectionScript.hasStarted = true;
         textViews.SetActive(true);
