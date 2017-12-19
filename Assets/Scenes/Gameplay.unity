@@ -3426,8 +3426,9 @@ MonoBehaviour:
   baitNumber: 0
   baitSpawnPoint: {fileID: 1014667820}
   speedHorizontal: 3
-  speedVertical: 550
+  speedVertical: 570
   gravityScale: 3
+  y: -5
 --- !u!1 &312105117
 GameObject:
   m_ObjectHideFlags: 0
