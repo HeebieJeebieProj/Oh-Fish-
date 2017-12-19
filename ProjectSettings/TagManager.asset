@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - fish
   layers:
   - Default
   - TransparentFX
@@ -38,12 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: background
     uniqueID: 1705991651
     locked: 0
   - name: foreground
     uniqueID: 2883071245
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

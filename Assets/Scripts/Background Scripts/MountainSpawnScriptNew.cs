@@ -51,8 +51,7 @@ public class MountainSpawnScriptNew : MonoBehaviour {
         mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
         mountainClone.GetComponent<ScrollScript>().speed = speed;
         mountainClone.GetComponent<Transform>().Find("mountain").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
-        mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
-        mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection white").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i + 1];
+        mountainClone.GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
 
         while (shouldSpawn)
         {
@@ -71,8 +70,7 @@ public class MountainSpawnScriptNew : MonoBehaviour {
             mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
             mountainClone.GetComponent<ScrollScript>().speed = speed;
             mountainClone.GetComponent<Transform>().Find("mountain").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
-            mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
-            mountainClone.GetComponent<Transform>().Find("Reflection").GetComponent<Transform>().Find("reflection white").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i + 1];
+            mountainClone.GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
 
         }
         

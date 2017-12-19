@@ -72,11 +72,12 @@ public class MoonPathScript : MonoBehaviour
 
             if (TimeManagerScript.timeOfDay >= 82800 && TimeManagerScript.timeOfDay <= 86400)
             {
-                frac = (TimeManagerScript.timeOfDay - 82800) / 7200; 
+                frac = (TimeManagerScript.timeOfDay - 82800) / 3600; 
             } else if (TimeManagerScript.timeOfDay >= 0 && TimeManagerScript.timeOfDay <= 3600)
             {
                 frac = (TimeManagerScript.timeOfDay + 3600) / 7200;
             }
+            Debug.Log(frac + " " + TimeManagerScript.timeOfDay);
 
             x = Mathf.Lerp(Mathf.Sqrt(342.25f - (endY + 5) * (endY + 5)) - 12f, -Mathf.Sqrt(342.25f - (endY + 5) * (endY + 5)) + 6f, frac);
             y = Mathf.Sqrt(169f - (x + 3) * (x + 3)) - 5f;
