@@ -99,7 +99,6 @@ public class HookManagerScript : MonoBehaviour {
                         Transform[] spawnPoint = new Transform[2];
                         spawnPoint[0] = spawnPoints[6];
                         spawnPoint[1] = spawnPoints[7];
-                        Debug.Log(spawnPoint[0].position.x + " " + spawnPoint[1].position.x);
 
                         hooks[0].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
@@ -111,7 +110,6 @@ public class HookManagerScript : MonoBehaviour {
 
                         spawnPoint[0] = spawnPoints[8];
                         spawnPoint[1] = spawnPoints[9];
-                        Debug.Log(spawnPoint[0].position.x + " " + spawnPoint[1].position.x);
 
                         hooks[1].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
@@ -123,7 +121,6 @@ public class HookManagerScript : MonoBehaviour {
 
                         spawnPoint[0] = spawnPoints[10];
                         spawnPoint[1] = spawnPoints[11];
-                        Debug.Log(spawnPoint[0].position.x + " " + spawnPoint[1].position.x);
 
                         hooks[2].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 

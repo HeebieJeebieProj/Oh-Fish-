@@ -57,6 +57,8 @@ public class FishSpawnScript : MonoBehaviour {
             }
         }
 
+        baitSpawnPoint = GetComponent<Transform>().Find("baitSpawnPoint").GetComponent<Transform>();
+
 	}
 
     IEnumerator StartWait()
@@ -87,6 +89,7 @@ public class FishSpawnScript : MonoBehaviour {
         {
 
             float x = Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.x);
+            Debug.Log(spawnPoints[0].position.x + " " + spawnPoints[1].position.x);
 
             if (x < baitSpawnPoint.position.x)
             {
