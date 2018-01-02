@@ -5,9 +5,9 @@ using UnityEngine;
 public class FishSpawnScript : MonoBehaviour {
 
     public GameObject fish;
-    public Transform[] spawnPoints;
     public int baitNumber;
     public Transform baitSpawnPoint;
+    public float radius;
     public float speedHorizontal;
     public float speedVertical;
     public float gravityScale;
@@ -88,8 +88,7 @@ public class FishSpawnScript : MonoBehaviour {
         if (FishCountScript.numberOfActive <= 4)
         {
 
-            float x = Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.x);
-            Debug.Log(spawnPoints[0].position.x + " " + spawnPoints[1].position.x);
+            float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
 
             if (x < baitSpawnPoint.position.x)
             {
@@ -137,7 +136,7 @@ public class FishSpawnScript : MonoBehaviour {
         {
 
 
-            float x = Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.x);
+            float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
 
             if (x < baitSpawnPoint.position.x)
             {
@@ -184,7 +183,7 @@ public class FishSpawnScript : MonoBehaviour {
         if (FishCountScript.numberOfActive <= 4)
         {
 
-            float x = Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.x);
+            float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
 
             if (x < baitSpawnPoint.position.x)
             {
@@ -231,7 +230,7 @@ public class FishSpawnScript : MonoBehaviour {
         if (FishCountScript.numberOfActive <= 4)
         {
 
-            float x = Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.x);
+            float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
 
             if (x < baitSpawnPoint.position.x)
             {

@@ -6,7 +6,7 @@ public class HookManagerScript : MonoBehaviour {
 
     public int numberOfHooksActive;
     public Transform[] hookPositions;
-    public Transform[] spawnPoints;
+    public float[] radius;
     public GameObject[] hooks;
 
     private bool setup;
@@ -51,11 +51,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        Transform[] spawnPoint = new Transform[2];
-                        spawnPoint[0] = spawnPoints[0];
-                        spawnPoint[1] = spawnPoints[1];
-
-                        hooks[0].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
+                        hooks[0].GetComponent<FishSpawnScript>().radius = radius[0];
+                        
 
                     } break;
 
@@ -68,22 +65,17 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        Transform[] spawnPoint = new Transform[2];
-                        spawnPoint[0] = spawnPoints[2];
-                        spawnPoint[1] = spawnPoints[3];
+                        hooks[0].GetComponent<FishSpawnScript>().radius = radius[1];
 
-                        hooks[0].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[1].GetComponent<Transform>().position = new Vector3(
                             hookPositions[2].position.x,
                             hooks[0].GetComponent<Transform>().position.y,
                             hooks[0].GetComponent<Transform>().position.z
                         );
-                        
-                        spawnPoint[0] = spawnPoints[4];
-                        spawnPoint[1] = spawnPoints[5];
 
-                        hooks[1].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
+                        hooks[1].GetComponent<FishSpawnScript>().radius = radius[1];
+
 
                     } break;
 
@@ -96,11 +88,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        Transform[] spawnPoint = new Transform[2];
-                        spawnPoint[0] = spawnPoints[6];
-                        spawnPoint[1] = spawnPoints[7];
+                        hooks[0].GetComponent<FishSpawnScript>().radius = radius[2];
 
-                        hooks[0].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[1].GetComponent<Transform>().position = new Vector3(
                             hookPositions[4].position.x,
@@ -108,10 +97,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[8];
-                        spawnPoint[1] = spawnPoints[9];
+                        hooks[1].GetComponent<FishSpawnScript>().radius = radius[2];
 
-                        hooks[1].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[2].GetComponent<Transform>().position = new Vector3(
                             hookPositions[5].position.x,
@@ -119,10 +106,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[10];
-                        spawnPoint[1] = spawnPoints[11];
+                        hooks[2].GetComponent<FishSpawnScript>().radius = radius[2];
 
-                        hooks[2].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                     } break;
 
@@ -135,11 +120,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        Transform[] spawnPoint = new Transform[2];
-                        spawnPoint[0] = spawnPoints[12];
-                        spawnPoint[1] = spawnPoints[13];
+                        hooks[0].GetComponent<FishSpawnScript>().radius = radius[3];
 
-                        hooks[0].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[1].GetComponent<Transform>().position = new Vector3(
                             hookPositions[7].position.x,
@@ -147,10 +129,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[14];
-                        spawnPoint[1] = spawnPoints[15];
+                        hooks[1].GetComponent<FishSpawnScript>().radius = radius[3];
 
-                        hooks[1].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[2].GetComponent<Transform>().position = new Vector3(
                             hookPositions[8].position.x,
@@ -158,10 +138,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[16];
-                        spawnPoint[1] = spawnPoints[17];
+                        hooks[2].GetComponent<FishSpawnScript>().radius = radius[3];
 
-                        hooks[2].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[3].GetComponent<Transform>().position = new Vector3(
                             hookPositions[9].position.x,
@@ -169,10 +147,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[18];
-                        spawnPoint[1] = spawnPoints[19];
+                        hooks[3].GetComponent<FishSpawnScript>().radius = radius[3];
 
-                        hooks[3].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                     } break;
 
@@ -185,11 +161,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        Transform[] spawnPoint = new Transform[2];
-                        spawnPoint[0] = spawnPoints[20];
-                        spawnPoint[1] = spawnPoints[21];
+                        hooks[0].GetComponent<FishSpawnScript>().radius = radius[4];
 
-                        hooks[0].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[1].GetComponent<Transform>().position = new Vector3(
                             hookPositions[11].position.x,
@@ -197,10 +170,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[22];
-                        spawnPoint[1] = spawnPoints[23];
+                        hooks[1].GetComponent<FishSpawnScript>().radius = radius[4];
 
-                        hooks[1].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[2].GetComponent<Transform>().position = new Vector3(
                             hookPositions[12].position.x,
@@ -208,10 +179,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[24];
-                        spawnPoint[1] = spawnPoints[25];
+                        hooks[2].GetComponent<FishSpawnScript>().radius = radius[4];
 
-                        hooks[2].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[3].GetComponent<Transform>().position = new Vector3(
                             hookPositions[13].position.x,
@@ -219,10 +188,8 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[26];
-                        spawnPoint[1] = spawnPoints[27];
+                        hooks[3].GetComponent<FishSpawnScript>().radius = radius[4];
 
-                        hooks[3].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
                         hooks[4].GetComponent<Transform>().position = new Vector3(
                             hookPositions[14].position.x,
@@ -230,12 +197,11 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[0].GetComponent<Transform>().position.z
                         );
 
-                        spawnPoint[0] = spawnPoints[28];
-                        spawnPoint[1] = spawnPoints[29];
+                        hooks[4].GetComponent<FishSpawnScript>().radius = radius[4];
 
-                        hooks[4].GetComponent<FishSpawnScript>().spawnPoints = spawnPoint;
 
-                    } break;
+                    }
+                    break;
 
             }
 
