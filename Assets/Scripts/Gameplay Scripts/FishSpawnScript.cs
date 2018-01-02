@@ -92,6 +92,8 @@ public class FishSpawnScript : MonoBehaviour {
 
             if (x < baitSpawnPoint.position.x)
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish,
                     new Vector3(x, y, fish.GetComponent<Transform>().position.z),
@@ -105,6 +107,8 @@ public class FishSpawnScript : MonoBehaviour {
             }
             else
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
                 GameObject fishClone = (GameObject)Instantiate(
                    fish,
                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),
@@ -140,6 +144,8 @@ public class FishSpawnScript : MonoBehaviour {
 
             if (x < baitSpawnPoint.position.x)
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish,
                     new Vector3(x, y, fish.GetComponent<Transform>().position.z),
@@ -153,6 +159,8 @@ public class FishSpawnScript : MonoBehaviour {
             }
             else
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
                 GameObject fishClone = (GameObject)Instantiate(
                    fish,
                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),
@@ -187,6 +195,8 @@ public class FishSpawnScript : MonoBehaviour {
 
             if (x < baitSpawnPoint.position.x)
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish,
                     new Vector3(x, y, fish.GetComponent<Transform>().position.z),
@@ -200,6 +210,8 @@ public class FishSpawnScript : MonoBehaviour {
             }
             else
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
                 GameObject fishClone = (GameObject)Instantiate(
                    fish,
                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),
@@ -234,6 +246,8 @@ public class FishSpawnScript : MonoBehaviour {
 
             if (x < baitSpawnPoint.position.x)
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish,
                     new Vector3(x, y, fish.GetComponent<Transform>().position.z),
@@ -247,6 +261,8 @@ public class FishSpawnScript : MonoBehaviour {
             }
             else
             {
+                x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
                 GameObject fishClone = (GameObject)Instantiate(
                    fish,
                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),

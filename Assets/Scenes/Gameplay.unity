@@ -6732,13 +6732,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   baitNumber: 0
   baitSpawnPoint: {fileID: 2057967258}
-  speedHorizontal: 3
-  speedVertical: 570
+  radius: 0
+  speedHorizontal: 5
+  speedVertical: 580
   gravityScale: 3
   y: -5
 --- !u!1 &305806044
@@ -6911,13 +6909,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   baitNumber: 0
   baitSpawnPoint: {fileID: 1014667820}
-  speedHorizontal: 4
-  speedVertical: 570
+  radius: 0
+  speedHorizontal: 5
+  speedVertical: 580
   gravityScale: 3
   y: -5
 --- !u!1 &312105117
@@ -22473,13 +22469,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   baitNumber: 0
   baitSpawnPoint: {fileID: 164828831}
-  speedHorizontal: 4
-  speedVertical: 570
+  radius: 0
+  speedHorizontal: 5
+  speedVertical: 580
   gravityScale: 3
   y: -5
 --- !u!1 &1890772428
@@ -24176,13 +24170,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   baitNumber: 0
   baitSpawnPoint: {fileID: 1947424192}
-  speedHorizontal: 3
-  speedVertical: 570
+  radius: 0
+  speedHorizontal: 5
+  speedVertical: 580
   gravityScale: 3
   y: -5
 --- !u!1 &2057967257
@@ -25291,13 +25283,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
   baitNumber: 0
   baitSpawnPoint: {fileID: 2019635386}
-  speedHorizontal: 3
-  speedVertical: 570
+  radius: 0
+  speedHorizontal: 5
+  speedVertical: 580
   gravityScale: 3
   y: -5
 --- !u!1 &2138811829
