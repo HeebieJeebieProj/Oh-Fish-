@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MountainSpawnScriptNew : MonoBehaviour {
 
-    public float[] rangeTimeDiff; //To accept range time between to successive islands
+    //public float[] rangeTimeDiff; //To accept range time between two successive islands
     public float[] rangeTimeTotal; //To accept range of time for which the islands are seen
-    public float[] rangeTimeTotalDiff; //To accept range of time for two successive range of islands
+    //public float[] rangeTimeTotalDiff; //To accept range of time for two successive range of islands
     public GameObject mountain;
     public Sprite[] mountainSprite;
     public float speed;
@@ -19,14 +19,35 @@ public class MountainSpawnScriptNew : MonoBehaviour {
     {
 
         shouldSpawn = true;
-        StartCoroutine(WaitForTimeTotal());
+
+    }
+
+    private void Update()
+    {
+        
+        if (shouldSpawn)
+        {
+
+            shouldSpawn = false;
+            StartCoroutine(WaitForTimeTotal());
+
+        }
 
     }
 
     IEnumerator WaitForTimeTotal()
     {
 
-        StartCoroutine(WaitForTimeDiff());
+        //StartCoroutine(WaitForTimeDiff());
+
+        int i = Random.Range(0, mountainSprite.Length / 2);
+
+        GameObject mountainClone = Instantiate(mountain, new Vector3(x, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
+        mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
+        mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
+        mountainClone.GetComponent<ScrollScript>().speed = speed;
+        mountainClone.GetComponent<Transform>().Find("mountain").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
+        mountainClone.GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
 
         yield return new WaitForSeconds(
             Random.Range(
@@ -35,13 +56,11 @@ public class MountainSpawnScriptNew : MonoBehaviour {
             )
         );
 
-        shouldSpawn = false;
-
-        StartCoroutine(WaitForTimeTotalDiff());
+        shouldSpawn = true;
 
     }
 
-    IEnumerator WaitForTimeDiff()
+    /*IEnumerator WaitForTimeDiff()
     {
 
         int i = Random.Range(0, mountainSprite.Length / 2);
@@ -90,5 +109,5 @@ public class MountainSpawnScriptNew : MonoBehaviour {
 
         StartCoroutine(WaitForTimeTotal());
 
-    }
+    }*/
 }
