@@ -7985,6 +7985,8 @@ Transform:
   - {fileID: 918151026}
   - {fileID: 1866407133}
   - {fileID: 1095930385}
+  - {fileID: 791810360}
+  - {fileID: 1435193185}
   m_Father: {fileID: 1850273190}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12212,6 +12214,69 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 1
+--- !u!1 &791810359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 791810360}
+  - component: {fileID: 791810361}
+  m_Layer: 0
+  m_Name: Front Rocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &791810360
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791810359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400926512}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791810361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791810359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93e93b5074b66242bbc5a4af4cba56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontRock: {fileID: 1790657717577680, guid: 3c15a0debfa365d4ab6f02c19c3a431e, type: 2}
+  rockSprites:
+  - {fileID: 21300006, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300000, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300002, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300004, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300008, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300010, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300000, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300002, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300004, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300006, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300008, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300010, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300012, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300014, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  speed: 10
+  yRange:
+  - -2.75
+  - -2.55
+  timeDiffRange:
+  - 60
+  - 120
 --- !u!1 &793468994
 GameObject:
   m_ObjectHideFlags: 0
@@ -16550,6 +16615,10 @@ Prefab:
       propertyPath: textureSize
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
   m_IsPrefabParent: 0
@@ -18098,6 +18167,60 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1434821468}
+--- !u!1 &1435193184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1435193185}
+  - component: {fileID: 1435193186}
+  m_Layer: 0
+  m_Name: Back Rocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435193185
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1435193184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400926512}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1435193186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1435193184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6d867e371044449ac12b439d3649ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backRock: {fileID: 1526399823070102, guid: 8dcb5dbdfaaa05143a2d5ed0d774a6bb, type: 2}
+  rockSprites:
+  - {fileID: 21300000, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
+  - {fileID: 21300002, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
+  - {fileID: 21300004, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
+  - {fileID: 21300006, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
+  - {fileID: 21300008, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
+  - {fileID: 21300010, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
+  - {fileID: 21300012, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
+  speed: 1
+  y: -2.16
+  timeDiffRange:
+  - 60
+  - 180
 --- !u!1 &1437023213
 GameObject:
   m_ObjectHideFlags: 0
@@ -18727,7 +18850,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1506307967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400926512}
@@ -18748,6 +18871,22 @@ MonoBehaviour:
   - {fileID: 1880804326945292, guid: ebb879502e10bcd40b0778dec0cde694, type: 2}
   - {fileID: 1419039545233938, guid: f9116bb2e8c401e4187cf38f2f53c251, type: 2}
   - {fileID: 1759492367510050, guid: 59b2dd838fc49144aa2bb0d3ca49da06, type: 2}
+  backRock: {fileID: 1006771698328374, guid: 90b9ad446c2ce2047b3d3780e9a708b8, type: 2}
+  rockSprites:
+  - {fileID: 21300006, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300000, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300002, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300004, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300008, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300010, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}
+  - {fileID: 21300000, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300002, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300004, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300006, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300008, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300010, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300012, guid: 26ade33ec98b11449960995db97577a1, type: 3}
+  - {fileID: 21300014, guid: 26ade33ec98b11449960995db97577a1, type: 3}
   yRange:
   - -1.8
   - -1.45
@@ -18755,6 +18894,9 @@ MonoBehaviour:
   - -2.5
   - -2.3
   - -2
+  yRockRange:
+  - -2.5
+  - -2.15
   rangeTimeDiff:
   - 180
   - 240
