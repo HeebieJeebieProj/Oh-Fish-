@@ -79,7 +79,7 @@ public class IslandSpawnScript : MonoBehaviour
 
                 if (l < foreNumber)
                 {
-                    yield return new WaitForSeconds(Random.Range(10, 15));
+                    yield return new WaitForSeconds(Random.Range(11, 15));
                 }
                 else if (l >= number - afterNumber)
                 {
@@ -87,7 +87,7 @@ public class IslandSpawnScript : MonoBehaviour
                 }
                 else
                 {
-                    yield return new WaitForSeconds(Random.Range(10, 15));
+                    yield return new WaitForSeconds(Random.Range(11, 15));
                 }
 
             }

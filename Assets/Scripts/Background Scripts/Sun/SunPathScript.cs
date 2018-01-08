@@ -39,6 +39,18 @@ public class SunPathScript : MonoBehaviour {
         if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
             GetComponent<MeshRenderer>().enabled = true;
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.r,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.g,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.b,
+                1
+            );
+            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
+                1
+            );
         } else
         {
 
@@ -78,6 +90,22 @@ public class SunPathScript : MonoBehaviour {
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
                 1 - fracFlare
+            );
+
+        } else
+        {
+
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.r,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.g,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.b,
+                1
+            );
+            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
+                1
             );
 
         }
