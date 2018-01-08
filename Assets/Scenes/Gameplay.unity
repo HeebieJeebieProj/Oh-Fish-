@@ -6278,7 +6278,7 @@ RectTransform:
   m_GameObject: {fileID: 281030158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -18}
-  m_LocalScale: {x: 0.016666668, y: 0.016666668, z: 0.016666668}
+  m_LocalScale: {x: 0.016666664, y: 0.016666664, z: 0.016666664}
   m_Children:
   - {fileID: 286065395}
   - {fileID: 2061294946}
@@ -6484,7 +6484,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286065394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.666687, y: -66, z: 0}
+  m_LocalPosition: {x: -39.666626, y: -65.99997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 220656099}
@@ -8074,9 +8074,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a347032a8d67c7a49900909784f974c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTotalMin: 5
+  timeTotalMin: 1
   speed: 0
-  initTimeHr: 7
+  initTimeHr: 6
   hour: 0
 --- !u!1 &416488736
 GameObject:
@@ -8948,7 +8948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startY: -3.5
   endY: 7
-  riseTimeHr: 18
+  riseTimeHr: 20
   horizon: -2.81
   sun: {fileID: 1205323328}
 --- !u!23 &526166771
@@ -9991,7 +9991,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 648278220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.333313, y: 43, z: 0}
+  m_LocalPosition: {x: 53.333374, y: 43.00003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 844583168}
@@ -18788,7 +18788,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1495080022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -457.3333, y: 230, z: 0}
+  m_LocalPosition: {x: -457.33337, y: 230.00003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952989654}
