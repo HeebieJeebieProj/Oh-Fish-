@@ -10,6 +10,7 @@ public class MoonPathScript : MonoBehaviour
     public float riseTimeHr; //time when moon rises in hours (0 - 23)
     public float horizon; //to avoid reflections
     public GameObject sun;
+    private float timeOfDay;
 
     //For calculating intermediate position
     public static float y;
@@ -58,7 +59,7 @@ public class MoonPathScript : MonoBehaviour
         {
 
             //Calculating value of y according to the time
-            frac = (TimeManagerScript.timeOfDay - riseTimeSec) / (86400 - riseTimeSec);
+            frac = (TimeManagerScript.timeOfDay - riseTimeSec) / (82800 - riseTimeSec);
             y = Mathf.Lerp(startY, endY, frac);
 
             //Value of x calculated using the curve (x + 12)^2 + (y + 5)^2 = 18.5^2
@@ -67,12 +68,19 @@ public class MoonPathScript : MonoBehaviour
             //moon position set according to the x and y values
             GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 
-        } else if ((TimeManagerScript.timeOfDay >= 82800 && TimeManagerScript.timeOfDay <= 86400) || (TimeManagerScript.timeOfDay >= 0  && TimeManagerScript.timeOfDay <= 3600))
+            timeOfDay = TimeManagerScript.timeOfDay;
+
+        } else if ((TimeManagerScript.timeOfDay > 82800 && TimeManagerScript.timeOfDay <= 86400) || (TimeManagerScript.timeOfDay >= 0  && TimeManagerScript.timeOfDay <= 3600))
         {
 
-            if (TimeManagerScript.timeOfDay >= 82800 && TimeManagerScript.timeOfDay <= 86400)
+            /*float speed = GameObject.Find("Background").GetComponent<TimeManagerScript>().speed;
+            timeOfDay += Time.deltaTime * speed;
+
+            frac = (timeOfDay - 82800) / 7200;*/
+
+            if (TimeManagerScript.timeOfDay >= 82800 && TimeManagerScript.timeOfDay < 86400)
             {
-                frac = (TimeManagerScript.timeOfDay - 82800) / 3600; 
+                frac = (TimeManagerScript.timeOfDay - 82800) / 7200; 
             } else if (TimeManagerScript.timeOfDay >= 0 && TimeManagerScript.timeOfDay <= 3600)
             {
                 frac = (TimeManagerScript.timeOfDay + 3600) / 7200;
