@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a7d1352830b01414b83d0053378799b5
-timeCreated: 1513293929
+guid: 6cc3236098cb51f4fa3530f4714d9b49
+timeCreated: 1515445430
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,9 +11,23 @@ TextureImporter:
     21300008: Clouds_4
     21300010: Clouds_5
     21300012: Clouds_6
-    21300014: Clouds_5
+    21300014: Clouds_7
     21300016: Clouds_8
     21300018: Clouds_9
+    21300020: Clouds_10
+    21300022: Clouds_11
+    21300024: Clouds_12
+    21300026: Clouds_13
+    21300028: Clouds_14
+    21300030: Clouds_15
+    21300032: Clouds_16
+    21300034: Clouds_17
+    21300036: Clouds_18
+    21300038: Clouds_19
+    21300040: Clouds_20
+    21300042: Clouds_21
+    21300044: Clouds_22
+    21300046: Clouds_23
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -100,124 +114,336 @@ TextureImporter:
       name: Clouds_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 648
-        width: 852
-        height: 224
+        x: 192
+        y: 1611
+        width: 363
+        height: 147
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -426, y: 112}
-        - {x: -426, y: 50}
-        - {x: -420, y: 32}
-        - {x: -233, y: -112}
-        - {x: 426, y: -112}
-        - {x: 426, y: 112}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Clouds_1
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 648
-        width: 853
-        height: 222
+        x: 679
+        y: 1611
+        width: 363
+        height: 147
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -426.5, y: 111}
-        - {x: -426.5, y: 51}
-        - {x: -416.5, y: 30}
-        - {x: -194.5, y: -111}
-        - {x: 419.5, y: -111}
-        - {x: 426.5, y: -96}
-        - {x: 426.5, y: -31}
-        - {x: 334.5, y: 111}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Clouds_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 308
-        width: 651
-        height: 279
+        x: 1167
+        y: 1611
+        width: 363
+        height: 147
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 271.5, y: 139.5}
-        - {x: -225.5, y: 139.5}
-        - {x: -226.5, y: 51.5}
-        - {x: -197.5, y: 43.5}
-        - {x: -319.5, y: -41.5}
-        - {x: -325.5, y: -61.5}
-        - {x: -325.5, y: -139.5}
-        - {x: 313.5, y: -139.5}
-        - {x: 319.5, y: -131.5}
-        - {x: 325.5, y: -114.5}
-        - {x: 325.5, y: 116.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Clouds_3
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 308
-        width: 652
-        height: 276
+        x: 210
+        y: 1408
+        width: 325
+        height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -326, y: 138}
-        - {x: -326, y: -138}
-        - {x: 304, y: -138}
-        - {x: 326, y: -134}
-        - {x: 326, y: 13}
-        - {x: 280, y: 138}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Clouds_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 906
-        height: 239
+        x: 698
+        y: 1408
+        width: 325
+        height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 453, y: 119.5}
-        - {x: -453, y: 119.5}
-        - {x: -453, y: -119.5}
-        - {x: 453, y: -119.5}
-        - {x: 453, y: 119.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Clouds_5
       rect:
         serializedVersion: 2
-        x: 1143
-        y: 0
-        width: 892
-        height: 236
+        x: 1185
+        y: 1408
+        width: 326
+        height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -446, y: 118}
-        - {x: -446, y: -118}
-        - {x: 446, y: -118}
-        - {x: 446, y: 118}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_6
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1150
+        width: 413
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_7
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 1150
+        width: 414
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_8
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1150
+        width: 414
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_9
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 903
+        width: 333
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_10
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 903
+        width: 334
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_11
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 903
+        width: 334
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 639
+        width: 423
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_13
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 639
+        width: 423
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_14
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 639
+        width: 423
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 456
+        width: 504
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_16
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 456
+        width: 504
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_17
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 456
+        width: 504
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223
+        width: 527
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_19
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 223
+        width: 528
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_20
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 223
+        width: 528
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_21
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 452
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_22
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 0
+        width: 453
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clouds_23
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 0
+        width: 453
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
     outline: []

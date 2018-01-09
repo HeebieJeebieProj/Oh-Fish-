@@ -29,4 +29,11 @@ public class HashIDs : MonoBehaviour {
 
     public static int cameraStateHashSlideToGoalsFromMain = Animator.StringToHash("Slide To Goals From Main");
 
+
+    public static int cloudGradientLeftStartHash = Animator.StringToHash("start left");
+    public static int cloudGradientRightStartHash = Animator.StringToHash("start right");
+    public static int cloudGradientLeftEndHash = Animator.StringToHash("end left");
+    public static int cloudGradientRightEndHash = Animator.StringToHash("end right");
+    public static int cloudGradientEndHash = Animator.StringToHash("end");
+
 }

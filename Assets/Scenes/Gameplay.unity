@@ -650,34 +650,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 38561424}
---- !u!1 &51400505
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 51400506}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &51400506
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 51400505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.01, y: 2.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1095930385}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &69404942
 GameObject:
   m_ObjectHideFlags: 0
@@ -14947,7 +14919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1095930385
 Transform:
   m_ObjectHideFlags: 0
@@ -14957,8 +14929,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 51400506}
+  m_Children: []
   m_Father: {fileID: 400926512}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14980,22 +14951,48 @@ MonoBehaviour:
   - 2
   - 4
   cloudBackgroundSprites:
-  - {fileID: 21300008, guid: a7d1352830b01414b83d0053378799b5, type: 3}
-  - {fileID: 21300010, guid: a7d1352830b01414b83d0053378799b5, type: 3}
+  - {fileID: 21300002, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300008, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300014, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300020, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300026, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300032, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300038, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300044, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
   cloudForegroundSprites:
-  - {fileID: 21300000, guid: a7d1352830b01414b83d0053378799b5, type: 3}
-  - {fileID: 21300002, guid: a7d1352830b01414b83d0053378799b5, type: 3}
-  - {fileID: 21300004, guid: a7d1352830b01414b83d0053378799b5, type: 3}
-  - {fileID: 21300006, guid: a7d1352830b01414b83d0053378799b5, type: 3}
+  - {fileID: 21300000, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300002, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300004, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300006, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300008, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300010, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300012, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300014, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300016, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300018, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300020, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300022, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300024, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300026, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300028, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300030, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300032, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300034, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300036, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300038, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300040, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300042, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300044, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
+  - {fileID: 21300046, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
   rangeCloudForegroundScale:
   - 0.6
   - 0.8
   rangeCloudBackgroundScale:
-  - 0.3
-  - 0.5
-  cloudForeground: {fileID: 1533468108568588, guid: fe81f3600b2fb614e8b4d1a4bfabbb1a,
+  - 0.4
+  - 0.6
+  cloudForeground: {fileID: 1947134943870872, guid: fe81f3600b2fb614e8b4d1a4bfabbb1a,
     type: 2}
-  cloudBackground: {fileID: 1438507719654690, guid: 81fdbf2d247bf9f40aaf72b2d1abf0e6,
+  cloudBackground: {fileID: 1163450409006578, guid: 81fdbf2d247bf9f40aaf72b2d1abf0e6,
     type: 2}
   colorsForeground:
   - {r: 0.011764706, g: 0, b: 0.29411766, a: 1}
@@ -15010,10 +15007,10 @@ MonoBehaviour:
   sun: {fileID: 1205323328}
   moon: {fileID: 526166768}
   rangeYBackgroundClouds:
-  - -2.43
-  - -0.74
+  - -1.75
+  - -0.53
   rangeYForegroundClouds:
-  - -0.35
+  - 0.69
   - 2.94
   rangeTimeDiffBackground:
   - 50
@@ -15021,8 +15018,6 @@ MonoBehaviour:
   rangeTimeDiffForeground:
   - 40
   - 60
-  foregroundCloud: {fileID: 1495131496}
-  backgroundCloud: {fileID: 1095930384}
   alpha: 0
   radius: 8
 --- !u!1 &1105686263
@@ -15279,6 +15274,34 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1129868860}
+--- !u!1 &1136883013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1136883014}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136883014
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136883013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.60697854, y: 2.71, z: -9.95498}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154730474
 GameObject:
   m_ObjectHideFlags: 0

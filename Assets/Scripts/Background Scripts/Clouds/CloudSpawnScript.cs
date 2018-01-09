@@ -25,9 +25,6 @@ public class CloudSpawnScript : MonoBehaviour {
     public float[] rangeTimeDiffBackground;
     public float[] rangeTimeDiffForeground;
 
-    public GameObject foregroundCloud;
-    public GameObject backgroundCloud;
-
     private bool spawnForegroundClouds;
     private bool spawnBackgroundClouds;
 
@@ -68,37 +65,22 @@ public class CloudSpawnScript : MonoBehaviour {
             cloudBackground.GetComponent<Transform>().rotation
         );
         cloudClone.GetComponent<ScrollScript>().speed = Random.Range(rangeSpeedBackground[0], rangeSpeedBackground[1]);
-        cloudClone.GetComponent<Transform>().parent = backgroundCloud.GetComponent<Transform>();
+        cloudClone.GetComponent<Transform>().parent = GetComponent<Transform>();
 
         cloudClone.GetComponent<CloudColorScript>().colors = colorsBackground;
         cloudClone.GetComponent<CloudColorScript>().sun = sun;
         cloudClone.GetComponent<CloudColorScript>().moon = moon;
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<CloudGradientScript>().alpha = alpha;
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<CloudGradientScript>().radius = radius;
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<CloudGradientScript>().sun = sun;
 
         float scale = Random.Range(rangeCloudBackgroundScale[0], rangeCloudBackgroundScale[1]);
         cloudClone.GetComponent<Transform>().localScale = new Vector3(scale, scale, 1f);
 
-        int sprite = Random.Range(0, cloudBackgroundSprites.Length / 2);
-        cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().sprite = cloudBackgroundSprites[sprite * 2];
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<SpriteRenderer>().sprite = cloudBackgroundSprites[sprite * 2 + 1];
+        int sprite = Random.Range(0, cloudBackgroundSprites.Length);
+        cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().sprite = cloudBackgroundSprites[sprite];
 
-        int[] flipped = new int[2];
-        for (int i = 0; i < 2; i++)
-        {
-            flipped[0] = (int) Random.Range(0, 2);
-            flipped[1] = (int)Random.Range(0, 2);
-        }
-        if (flipped[0] == 1)
+        int flipped = (int)Random.Range(0, 2);
+        if (flipped == 1)
         {
             cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().flipX = true;
-            cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (flipped[1] == 1)
-        {
-            cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().flipY = true;
-            cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<SpriteRenderer>().flipY = true;
         }
 
         yield return new WaitForSeconds(Random.Range(rangeTimeDiffBackground[0], rangeTimeDiffBackground[1]));
@@ -116,38 +98,33 @@ public class CloudSpawnScript : MonoBehaviour {
             cloudForeground.GetComponent<Transform>().rotation
         );
         cloudClone.GetComponent<ScrollScript>().speed = Random.Range(rangeSpeedForeground[0], rangeSpeedForeground[1]);
-        cloudClone.GetComponent<Transform>().parent = foregroundCloud.GetComponent<Transform>();
+        cloudClone.GetComponent<Transform>().parent = GetComponent<Transform>();
 
         cloudClone.GetComponent<CloudColorScript>().colors = colorsForeground;
         cloudClone.GetComponent<CloudColorScript>().sun = sun;
         cloudClone.GetComponent<CloudColorScript>().moon = moon;
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<CloudGradientScript>().alpha = alpha;
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<CloudGradientScript>().radius = radius;
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<CloudGradientScript>().sun = sun;
+        cloudClone.GetComponent<CloudGradientScript>().alpha = alpha;
+        cloudClone.GetComponent<CloudGradientScript>().radius = radius;
+        cloudClone.GetComponent<CloudGradientScript>().sun = sun;
+        cloudClone.GetComponent<CloudGradientScript>().flipped = false;
 
         float scale = Random.Range(rangeCloudForegroundScale[0], rangeCloudForegroundScale[1]);
         cloudClone.GetComponent<Transform>().localScale = new Vector3(scale, scale, 1f);
 
-        int sprite = Random.Range(0, cloudForegroundSprites.Length / 2);
-        cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 2];
-        cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 2 + 1];
+        int sprite = Random.Range(0, cloudForegroundSprites.Length / 3);
+        cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 3 + 1];
+        cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 3];
+        cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 3 + 2];
 
-        int[] flipped = new int[2];
-        for (int i = 0; i < 2; i++)
-        {
-            flipped[0] = (int)Random.Range(0, 2);
-            flipped[1] = (int)Random.Range(0, 2);
-        }
-        if (flipped[0] == 1)
+        /*int flipped = (int)Random.Range(0, 2);
+        if (flipped == 1)
         {
             cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().flipX = true;
-            cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (flipped[1] == 1)
-        {
-            cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().flipY = true;
-            cloudClone.GetComponent<Transform>().Find("gradient").GetComponent<SpriteRenderer>().flipY = true;
-        }
+            cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().flipX = true;
+            cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().flipX = true;
+            cloudClone.GetComponent<CloudGradientScript>().flipped = true;
+
+        }*/
 
         yield return new WaitForSeconds(Random.Range(rangeTimeDiffForeground[0], rangeTimeDiffForeground[1]));
 
