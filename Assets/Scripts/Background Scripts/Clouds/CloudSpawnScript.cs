@@ -16,6 +16,7 @@ public class CloudSpawnScript : MonoBehaviour {
     public GameObject cloudBackground;
     public Color[] colorsForeground;
     public Color[] colorsBackground;
+    public Color[] colorsForegroundGradients;
     public GameObject sun;
     public GameObject moon;
 
@@ -115,6 +116,12 @@ public class CloudSpawnScript : MonoBehaviour {
         cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 3 + 1];
         cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 3];
         cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().sprite = cloudForegroundSprites[sprite * 3 + 2];
+        cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().colors = colorsForegroundGradients;
+        cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().colors = colorsForegroundGradients;
+        cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().sun = sun;
+        cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().sun = sun;
+        cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().moon = moon;
+        cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().moon = moon;
 
         /*int flipped = (int)Random.Range(0, 2);
         if (flipped == 1)
