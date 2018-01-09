@@ -15004,6 +15004,11 @@ MonoBehaviour:
   - {r: 1, g: 0.14509805, b: 0, a: 1}
   - {r: 0.44705883, g: 0.9529412, b: 1, a: 1}
   - {r: 1, g: 0.14509805, b: 0, a: 1}
+  colorsForegroundGradients:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.7058823, b: 0.7058823, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.7941176, b: 0.7941176, a: 1}
   sun: {fileID: 1205323328}
   moon: {fileID: 526166768}
   rangeYBackgroundClouds:
