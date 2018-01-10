@@ -16,6 +16,7 @@ public class MoonPathScript : MonoBehaviour
     public static float y;
     public static float x;
     private float frac;
+    private float fracFlare;
 
     //For reset
     private float riseTimeSec;
@@ -54,6 +55,29 @@ public class MoonPathScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (GetComponent<Transform>().position.y <= GetComponent<MoonPathScript>().horizon - 1f)
+        {
+
+            fracFlare = (GetComponent<MoonPathScript>().horizon - 1f - GetComponent<Transform>().position.y) / (GetComponent<MoonPathScript>().horizon - 1f - GetComponent<MoonPathScript>().startY);
+            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
+                Mathf.Clamp(1 - fracFlare, 0, 0.25f)
+            );
+
+        } else
+        {
+
+            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
+                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
+                0.25f
+            );
+
+        }
 
         if (TimeManagerScript.timeOfDay >= riseTimeSec && TimeManagerScript.timeOfDay <= 82800)
         {

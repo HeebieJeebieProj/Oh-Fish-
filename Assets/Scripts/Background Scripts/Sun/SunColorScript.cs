@@ -19,10 +19,10 @@ public class SunColorScript : MonoBehaviour
     void Start()
     {
 
-        if (GetComponent<Transform>().position.y <= GetComponent<SunPathScript>().horizon)
+        if (GetComponent<Transform>().position.y <= GetComponent<SunPathScript>().horizon - 1f)
         {
 
-            frac = (GetComponent<SunPathScript>().horizon - GetComponent<Transform>().position.y) / (GetComponent<SunPathScript>().horizon - GetComponent<SunPathScript>().startY);
+            frac = (GetComponent<SunPathScript>().horizon - 1f - GetComponent<Transform>().position.y) / (GetComponent<SunPathScript>().horizon - 1f - GetComponent<SunPathScript>().startY);
             color = Color.Lerp(colorSun[0], colorSun[1], 1 - frac);
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
@@ -44,10 +44,10 @@ public class SunColorScript : MonoBehaviour
             directionalLight.color = color;
 
         }
-        else if (GetComponent<Transform>().position.y <= 0 && GetComponent<Transform>().position.y > GetComponent<SunPathScript>().horizon)
+        else if (GetComponent<Transform>().position.y <= 0 && GetComponent<Transform>().position.y > GetComponent<SunPathScript>().horizon - 1f)
         {
 
-            frac = GetComponent<Transform>().position.y / - GetComponent<SunPathScript>().horizon;
+            frac = GetComponent<Transform>().position.y / - (GetComponent<SunPathScript>().horizon - 1f);
             color = Color.Lerp(colorSun[1], colorSun[2], frac);
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
