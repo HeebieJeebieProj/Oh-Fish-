@@ -15883,6 +15883,7 @@ GameObject:
   - component: {fileID: 1205323329}
   - component: {fileID: 1205323333}
   - component: {fileID: 1205323330}
+  - component: {fileID: 1205323334}
   m_Layer: 10
   m_Name: sun
   m_TagString: Untagged
@@ -15975,6 +15976,38 @@ MonoBehaviour:
   riseTimeHr: 6
   horizon: -2.4
   moon: {fileID: 526166768}
+--- !u!114 &1205323334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205323328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a93004161084324e8a76dddd65a0e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 565536023}
+  colorSun:
+  - {r: 1, g: 0.9724138, b: 0, a: 1}
+  - {r: 1, g: 0.43448275, b: 0, a: 1}
+  - {r: 1, g: 0.9724138, b: 0, a: 1}
+  - {r: 1, g: 0.9862069, b: 0.5, a: 1}
+  colorFlareSmall:
+  - {r: 1, g: 0.8482759, b: 0, a: 1}
+  - {r: 1, g: 0.31034485, b: 0, a: 1}
+  - {r: 0.9862069, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.99046654, b: 0.6544118, a: 1}
+  colorFlareBig:
+  - {r: 1, g: 0.93103445, b: 0, a: 1}
+  - {r: 1, g: 0.6, b: 0, a: 1}
+  - {r: 1, g: 0.93103445, b: 0, a: 1}
+  - {r: 0.97794116, g: 0.9690147, b: 0.6543577, a: 1}
+  colorFlare:
+  - {r: 1, g: 0.93103445, b: 0, a: 1}
+  - {r: 1, g: 0.18620689, b: 0, a: 1}
+  - {r: 1, g: 0.8482759, b: 0, a: 1}
+  - {r: 1, g: 0.9973631, b: 0.9044118, a: 1}
 --- !u!1 &1219261743
 GameObject:
   m_ObjectHideFlags: 0

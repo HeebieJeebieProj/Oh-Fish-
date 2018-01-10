@@ -68,6 +68,9 @@ public class SunFlareScript : MonoBehaviour {
                 1 - fracFlare
             );
 
+            intensity = Mathf.Lerp(0, 0.05f, 1 - fracFlare);
+            directionalLight.intensity = intensity;
+
         }
         else if (GetComponent<Transform>().position.y <= 0 && GetComponent<Transform>().position.y > GetComponent<SunPathScript>().horizon - 1f)
         {
