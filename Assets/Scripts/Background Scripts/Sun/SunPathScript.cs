@@ -39,76 +39,14 @@ public class SunPathScript : MonoBehaviour {
         if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
             GetComponent<MeshRenderer>().enabled = true;
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.b,
-                1
-            );
-            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
-                1
-            );
         } else
         {
-
             GetComponent<MeshRenderer>().enabled = false;
-            fracFlare = (horizon - 1f - GetComponent<Transform>().position.y) / (horizon - 1f - startY);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.b,
-                1 - fracFlare
-            );
-            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
-                1 - fracFlare
-            );
-
         }
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (GetComponent<Transform>().position.y <= horizon - 1f)
-        {
-
-            fracFlare = (horizon - 1f - GetComponent<Transform>().position.y) / (horizon - 1f - startY);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.b,
-                1 - fracFlare
-            );
-            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
-                1 - fracFlare
-            );
-
-        } else
-        {
-
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.b,
-                1
-            );
-            GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.r,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.g,
-                GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.b,
-                1
-            );
-
-        }
 
         if (TimeManagerScript.timeOfDay >= riseTimeSec && TimeManagerScript.timeOfDay <= 39600)
         {
