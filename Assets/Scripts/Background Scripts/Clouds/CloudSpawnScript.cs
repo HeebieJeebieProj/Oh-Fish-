@@ -107,6 +107,7 @@ public class CloudSpawnScript : MonoBehaviour {
         cloudClone.GetComponent<CloudGradientScript>().alpha = alpha;
         cloudClone.GetComponent<CloudGradientScript>().radius = radius;
         cloudClone.GetComponent<CloudGradientScript>().sun = sun;
+        cloudClone.GetComponent<CloudGradientScript>().moon = moon;
         cloudClone.GetComponent<CloudGradientScript>().flipped = false;
 
         float scale = Random.Range(rangeCloudForegroundScale[0], rangeCloudForegroundScale[1]);
@@ -123,7 +124,7 @@ public class CloudSpawnScript : MonoBehaviour {
         cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().moon = moon;
         cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().moon = moon;
 
-        /*int flipped = (int)Random.Range(0, 2);
+        int flipped = (int)Random.Range(0, 2);
         if (flipped == 1)
         {
             cloudClone.GetComponent<Transform>().Find("cloud").GetComponent<SpriteRenderer>().flipX = true;
@@ -131,7 +132,7 @@ public class CloudSpawnScript : MonoBehaviour {
             cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().flipX = true;
             cloudClone.GetComponent<CloudGradientScript>().flipped = true;
 
-        }*/
+        }
 
         yield return new WaitForSeconds(Random.Range(rangeTimeDiffForeground[0], rangeTimeDiffForeground[1]));
 

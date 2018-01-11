@@ -27,18 +27,18 @@ public class SunColorScript : MonoBehaviour
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             color = Color.Lerp(colorFlareSmall[0], colorFlareSmall[1], 1 - frac);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                color.r,
-                color.g,
-                color.b,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
-            );
-            color = Color.Lerp(colorFlareBig[0], colorFlareBig[1], 1 - frac);
             GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
                 color.r,
                 color.g,
                 color.b,
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.a
+            );
+            color = Color.Lerp(colorFlareBig[0], colorFlareBig[1], 1 - frac);
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
             );
             color = Color.Lerp(colorFlare[0], colorFlare[1], 1 - frac);
             directionalLight.color = color;
@@ -52,18 +52,18 @@ public class SunColorScript : MonoBehaviour
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             color = Color.Lerp(colorFlareSmall[1], colorFlareSmall[2], frac);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                color.r,
-                color.g,
-                color.b,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
-            );
-            color = Color.Lerp(colorFlareBig[1], colorFlareBig[2], frac);
             GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
                 color.r,
                 color.g,
                 color.b,
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.a
+            );
+            color = Color.Lerp(colorFlareBig[1], colorFlareBig[2], frac);
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
             );
             color = Color.Lerp(colorFlare[1], colorFlare[2], frac);
             directionalLight.color = color;
@@ -77,18 +77,18 @@ public class SunColorScript : MonoBehaviour
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             color = Color.Lerp(colorFlareSmall[2], colorFlareSmall[3], frac);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                color.r,
-                color.g,
-                color.b,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
-            );
-            color = Color.Lerp(colorFlareBig[2], colorFlareBig[3], frac);
             GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
                 color.r,
                 color.g,
                 color.b,
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.a
+            );
+            color = Color.Lerp(colorFlareBig[2], colorFlareBig[3], frac);
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
             );
             color = Color.Lerp(colorFlare[2], colorFlare[3], frac);
             directionalLight.color = color;
@@ -109,18 +109,18 @@ public class SunColorScript : MonoBehaviour
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             color = Color.Lerp(colorFlareSmall[0], colorFlareSmall[1], 1 - frac);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                color.r,
-                color.g,
-                color.b,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
-            );
-            color = Color.Lerp(colorFlareBig[0], colorFlareBig[1], 1 - frac);
             GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
                 color.r,
                 color.g,
                 color.b,
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.a
+            );
+            color = Color.Lerp(colorFlareBig[0], colorFlareBig[1], 1 - frac);
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
             );
             color = Color.Lerp(colorFlare[0], colorFlare[1], 1 - frac);
             directionalLight.color = color;
@@ -134,18 +134,18 @@ public class SunColorScript : MonoBehaviour
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             color = Color.Lerp(colorFlareSmall[1], colorFlareSmall[2], frac);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                color.r,
-                color.g,
-                color.b,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
-            );
-            color = Color.Lerp(colorFlareBig[1], colorFlareBig[2], frac);
             GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
                 color.r,
                 color.g,
                 color.b,
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.a
+            );
+            color = Color.Lerp(colorFlareBig[1], colorFlareBig[2], frac);
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
             );
             color = Color.Lerp(colorFlare[1], colorFlare[2], frac);
             directionalLight.color = color;
@@ -159,18 +159,18 @@ public class SunColorScript : MonoBehaviour
             GetComponent<Renderer>().material.color = color;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             color = Color.Lerp(colorFlareSmall[2], colorFlareSmall[3], frac);
-            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
-                color.r,
-                color.g,
-                color.b,
-                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
-            );
-            color = Color.Lerp(colorFlareBig[2], colorFlareBig[3], frac);
             GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color = new Color(
                 color.r,
                 color.g,
                 color.b,
                 GetComponent<Transform>().Find("flare2").GetComponent<SpriteRenderer>().color.a
+            );
+            color = Color.Lerp(colorFlareBig[2], colorFlareBig[3], frac);
+            GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color = new Color(
+                color.r,
+                color.g,
+                color.b,
+                GetComponent<Transform>().Find("flare1").GetComponent<SpriteRenderer>().color.a
             );
             color = Color.Lerp(colorFlare[2], colorFlare[3], frac);
             directionalLight.color = color;
