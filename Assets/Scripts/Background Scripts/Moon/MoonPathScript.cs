@@ -43,11 +43,11 @@ public class MoonPathScript : MonoBehaviour
         //to avoid reflections below horizon
         if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
-            GetComponent<MeshRenderer>().enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
         }
 
     }
@@ -138,11 +138,11 @@ public class MoonPathScript : MonoBehaviour
         //to avoid reflections below horizon
         if (GetComponent<Transform>().position.y >= horizon - 1f)
         {
-            GetComponent<MeshRenderer>().enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
         }
 
     }

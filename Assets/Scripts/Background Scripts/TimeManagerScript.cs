@@ -16,6 +16,7 @@ public class TimeManagerScript : MonoBehaviour {
 
     public static float timeOfDay; //public accessible float storing exact time of the day in seconds
     public static int day; //public accessible day count
+    public static int dayCount;
 
     public float hour; //To show hour in inspector
 
@@ -24,6 +25,7 @@ public class TimeManagerScript : MonoBehaviour {
         speed = 86400 / (timeTotalMin * 60);
         timeOfDay = initTimeHr * 60 * 60;
         day = 0;
+        dayCount = 0;
         hour = initTimeHr;
         ParticleSystem.MainModule main = stars.GetComponent<ParticleSystem>().main;
         main.duration = timeTotalMin * 60 * (24 - starInitHr + starDeactivateHr) / 24;
@@ -49,6 +51,7 @@ public class TimeManagerScript : MonoBehaviour {
         if (timeOfDay > 84600)
         {
             timeOfDay = 0;
+            dayCount++;
         }
 
         if (timeOfDay >= starInitHr * 60 * 60 || (timeOfDay >= 0 && timeOfDay <= starDeactivateHr * 60 * 60))
