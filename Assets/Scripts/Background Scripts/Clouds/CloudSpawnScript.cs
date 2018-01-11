@@ -17,6 +17,7 @@ public class CloudSpawnScript : MonoBehaviour {
     public Color[] colorsForeground;
     public Color[] colorsBackground;
     public Color[] colorsForegroundGradients;
+    public float[] time;
     public GameObject sun;
     public GameObject moon;
 
@@ -69,6 +70,7 @@ public class CloudSpawnScript : MonoBehaviour {
         cloudClone.GetComponent<Transform>().parent = GetComponent<Transform>();
 
         cloudClone.GetComponent<CloudColorScript>().colors = colorsBackground;
+        cloudClone.GetComponent<CloudColorScript>().time = time;
         cloudClone.GetComponent<CloudColorScript>().sun = sun;
         cloudClone.GetComponent<CloudColorScript>().moon = moon;
 
@@ -102,6 +104,7 @@ public class CloudSpawnScript : MonoBehaviour {
         cloudClone.GetComponent<Transform>().parent = GetComponent<Transform>();
 
         cloudClone.GetComponent<CloudColorScript>().colors = colorsForeground;
+        cloudClone.GetComponent<CloudColorScript>().time = time;
         cloudClone.GetComponent<CloudColorScript>().sun = sun;
         cloudClone.GetComponent<CloudColorScript>().moon = moon;
         cloudClone.GetComponent<CloudGradientScript>().alpha = alpha;
@@ -120,9 +123,11 @@ public class CloudSpawnScript : MonoBehaviour {
         cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().colors = colorsForegroundGradients;
         cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().colors = colorsForegroundGradients;
         cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().sun = sun;
+        cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().time = time;
         cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().sun = sun;
         cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().moon = moon;
         cloudClone.GetComponent<Transform>().Find("gradient right").GetComponent<CloudColorScript>().moon = moon;
+        cloudClone.GetComponent<Transform>().Find("gradient left").GetComponent<CloudColorScript>().time = time;
 
         int flipped = (int)Random.Range(0, 2);
         if (flipped == 1)
