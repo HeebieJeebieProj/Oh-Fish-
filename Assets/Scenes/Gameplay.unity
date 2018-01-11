@@ -12360,7 +12360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &791810360
 Transform:
   m_ObjectHideFlags: 0
@@ -15078,20 +15078,33 @@ MonoBehaviour:
   cloudBackground: {fileID: 1163450409006578, guid: 81fdbf2d247bf9f40aaf72b2d1abf0e6,
     type: 2}
   colorsForeground:
-  - {r: 0.011764706, g: 0, b: 0.29411766, a: 1}
+  - {r: 0.27043253, g: 0.25810987, b: 0.5661765, a: 1}
   - {r: 1, g: 0.6, b: 0, a: 1}
   - {r: 0, g: 0.91764706, b: 1, a: 1}
-  - {r: 1, g: 0.3529412, b: 0, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.6, b: 0, a: 1}
+  - {r: 0.32276815, g: 0.30925605, b: 0.64705884, a: 1}
   colorsBackground:
   - {r: 0.18039216, g: 0.1764706, b: 0.36078432, a: 1}
   - {r: 1, g: 0.14509805, b: 0, a: 1}
   - {r: 0.44705883, g: 0.9529412, b: 1, a: 1}
+  - {r: 0.44705883, g: 0.9529412, b: 1, a: 1}
   - {r: 1, g: 0.14509805, b: 0, a: 1}
+  - {r: 0.18039216, g: 0.1764706, b: 0.36078432, a: 1}
   colorsForegroundGradients:
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.78676474, g: 0.78676474, b: 0.78676474, a: 1}
   - {r: 1, g: 0.7058823, b: 0.7058823, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0.7941176, b: 0.7941176, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.6985294, b: 0.6985294, a: 1}
+  - {r: 0.7882353, g: 0.7882353, b: 0.7882353, a: 1}
+  time:
+  - 5
+  - 7
+  - 9
+  - 18
+  - 20
+  - 22
   sun: {fileID: 1205323328}
   moon: {fileID: 526166768}
   rangeYBackgroundClouds:
@@ -17964,7 +17977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1399489925
 Transform:
   m_ObjectHideFlags: 0
@@ -18538,7 +18551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1435193185
 Transform:
   m_ObjectHideFlags: 0
@@ -19198,7 +19211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1506307968
 Transform:
   m_ObjectHideFlags: 0
@@ -19224,9 +19237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islands:
-  - {fileID: 1880804326945292, guid: ebb879502e10bcd40b0778dec0cde694, type: 2}
-  - {fileID: 1419039545233938, guid: f9116bb2e8c401e4187cf38f2f53c251, type: 2}
-  - {fileID: 1759492367510050, guid: 59b2dd838fc49144aa2bb0d3ca49da06, type: 2}
+  - {fileID: 1842529188829374, guid: ebb879502e10bcd40b0778dec0cde694, type: 2}
+  - {fileID: 1552684982072246, guid: f9116bb2e8c401e4187cf38f2f53c251, type: 2}
+  - {fileID: 1386417772506730, guid: 59b2dd838fc49144aa2bb0d3ca49da06, type: 2}
   backRock: {fileID: 1006771698328374, guid: 90b9ad446c2ce2047b3d3780e9a708b8, type: 2}
   rockSprites:
   - {fileID: 21300006, guid: a8946f84d990d934d80ca25eef89f05d, type: 3}

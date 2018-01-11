@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4485557580412926}
   - component: {fileID: 212162195435436158}
   - component: {fileID: 114956407970428806}
+  - component: {fileID: 114065697656400546}
   m_Layer: 0
   m_Name: Back Rock
   m_TagString: Untagged
@@ -41,6 +42,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114065697656400546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526399823070102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879515a85a8642a4da3adea795b098b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 0.33088237, g: 0.33088237, b: 0.33088237, a: 1}
+  - {r: 1, g: 0.5588235, b: 0.5588235, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.5568628, b: 0.5568628, a: 1}
+  - {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
+  time:
+  - 5
+  - 7
+  - 9
+  - 18
+  - 20
+  - 22
 --- !u!114 &114956407970428806
 MonoBehaviour:
   m_ObjectHideFlags: 1

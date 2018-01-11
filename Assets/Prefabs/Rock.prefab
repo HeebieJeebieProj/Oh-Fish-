@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4188759343402162}
   - component: {fileID: 212270024716087918}
   - component: {fileID: 114411564921757010}
+  - component: {fileID: 114600965467495480}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -53,6 +54,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+--- !u!114 &114600965467495480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006771698328374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879515a85a8642a4da3adea795b098b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 0.33088237, g: 0.33088237, b: 0.33088237, a: 1}
+  - {r: 1, g: 0.5588235, b: 0.5588235, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.5568628, b: 0.5568628, a: 1}
+  - {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
+  time:
+  - 5
+  - 7
+  - 9
+  - 18
+  - 20
+  - 22
 --- !u!212 &212270024716087918
 SpriteRenderer:
   m_ObjectHideFlags: 1
