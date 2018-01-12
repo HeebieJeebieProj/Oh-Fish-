@@ -11,7 +11,7 @@ public class ScrollScript : MonoBehaviour {
 
         GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x + 0.001f * speed, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
 
-        if (GetComponent<Transform>().position.x >= 12f)
+        if (GetComponent<Transform>().position.x >= 12f + Camera.main.GetComponent<Transform>().position.x)
         {
             Destroy(gameObject);
         }
