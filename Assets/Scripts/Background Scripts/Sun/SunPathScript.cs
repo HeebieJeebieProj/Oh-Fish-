@@ -28,11 +28,11 @@ public class SunPathScript : MonoBehaviour {
         {
             frac = (TimeManagerScript.timeOfDay - riseTimeSec) / (43200 - riseTimeSec);
             y = Mathf.Lerp(startY, endY, frac);
-            GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f + Camera.main.GetComponent<Transform>().position.x, startY, GetComponent<Transform>().position.z);
+            GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
         } else
         {
             y = startY;
-            GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f + Camera.main.GetComponent<Transform>().position.x, startY, GetComponent<Transform>().position.z);
+            GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
         }
 
         //to avoid reflections below horizon
@@ -59,7 +59,7 @@ public class SunPathScript : MonoBehaviour {
             x = Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f;
 
             //sun position set according to the x and y values
-            GetComponent<Transform>().position = new Vector3(x + Camera.main.GetComponent<Transform>().position.x, y, GetComponent<Transform>().position.z);
+            GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 
         } else if (TimeManagerScript.timeOfDay > 39600 && TimeManagerScript.timeOfDay <= 46800)
         {
@@ -69,7 +69,7 @@ public class SunPathScript : MonoBehaviour {
             x = Mathf.Lerp(Mathf.Sqrt(342.25f - (endY + 5) * (endY + 5)) - 12f, -Mathf.Sqrt(342.25f - (endY + 5) * (endY + 5)) + 6f, frac);
             y = Mathf.Sqrt(169f - (x + 3) * (x + 3)) - 5f;
 
-            GetComponent<Transform>().position = new Vector3(x + Camera.main.GetComponent<Transform>().position.x, y, GetComponent<Transform>().position.z);
+            GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 
         } else if (TimeManagerScript.timeOfDay > 46800 && TimeManagerScript.timeOfDay <= moon.GetComponent<MoonPathScript>().riseTimeHr * 60 * 60)
         {
@@ -81,7 +81,7 @@ public class SunPathScript : MonoBehaviour {
             x = -Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) + 6f;
 
             //sun position set according to the x and y values
-            GetComponent<Transform>().position = new Vector3(x + Camera.main.GetComponent<Transform>().position.x, y, GetComponent<Transform>().position.z);
+            GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 
         }
         else
@@ -89,7 +89,7 @@ public class SunPathScript : MonoBehaviour {
 
             //Resetting position
             y = startY;
-            GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f + Camera.main.GetComponent<Transform>().position.x, startY, GetComponent<Transform>().position.z);
+            GetComponent<Transform>().position = new Vector3(Mathf.Sqrt(342.25f - (y + 5) * (y + 5)) - 12f, startY, GetComponent<Transform>().position.z);
 
         }
 

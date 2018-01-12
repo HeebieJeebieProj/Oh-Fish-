@@ -29,7 +29,7 @@ public class SunReflectionScript : MonoBehaviour {
         x = SunPathScript.x;
 
         //setting final position
-        GetComponent<Transform>().position = new Vector3(x + Camera.main.GetComponent<Transform>().position.x, y, GetComponent<Transform>().position.z);
+        GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 	}
 	
 	// Update is called once per frame
@@ -57,7 +57,7 @@ public class SunReflectionScript : MonoBehaviour {
         x = SunPathScript.x;
 
         //setting final position
-        GetComponent<Transform>().position = new Vector3(x + Camera.main.GetComponent<Transform>().position.x, y, GetComponent<Transform>().position.z);
+        GetComponent<Transform>().position = new Vector3(x, y, GetComponent<Transform>().position.z);
 
     }
 }

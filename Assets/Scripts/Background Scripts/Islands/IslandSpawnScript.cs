@@ -70,7 +70,7 @@ public class IslandSpawnScript : MonoBehaviour
                 backRock.GetComponent<SpriteRenderer>().sortingOrder = l + 2;
                 GameObject instanciatedBackRock = Instantiate(
                     backRock,
-                    new Vector3(-13f + Camera.main.GetComponent<Transform>().position.x, yRockRange[1] + increment, backRock.GetComponent<Transform>().position.z),
+                    new Vector3(-13f, yRockRange[1] + increment, backRock.GetComponent<Transform>().position.z),
                     backRock.GetComponent<Transform>().rotation
                 );
 
@@ -139,7 +139,7 @@ public class IslandSpawnScript : MonoBehaviour
                 yRange[2 * index] = temp;
             }
 
-            island = Instantiate(islands[index], new Vector3(-18f + Camera.main.GetComponent<Transform>().position.x, Random.Range(yRange[2 * index], yRange[2 * index + 1]), islands[index].GetComponent<Transform>().position.z), islands[index].GetComponent<Transform>().rotation);
+            island = Instantiate(islands[index], new Vector3(-18f, Random.Range(yRange[2 * index], yRange[2 * index + 1]), islands[index].GetComponent<Transform>().position.z), islands[index].GetComponent<Transform>().rotation);
             island.GetComponent<Transform>().parent = GetComponent<Transform>();
             island.GetComponent<IslandScrollScript>().speed = speed;
 

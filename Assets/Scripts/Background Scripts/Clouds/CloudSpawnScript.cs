@@ -63,7 +63,7 @@ public class CloudSpawnScript : MonoBehaviour {
 
         GameObject cloudClone = Instantiate(
             cloudBackground,
-            new Vector3(-13f + Camera.main.GetComponent<Transform>().position.x, Random.Range(rangeYBackgroundClouds[0], rangeYBackgroundClouds[1]), cloudBackground.GetComponent<Transform>().position.z),
+            new Vector3(-13f, Random.Range(rangeYBackgroundClouds[0], rangeYBackgroundClouds[1]), cloudBackground.GetComponent<Transform>().position.z),
             cloudBackground.GetComponent<Transform>().rotation
         );
         cloudClone.GetComponent<ScrollScript>().speed = Random.Range(rangeSpeedBackground[0], rangeSpeedBackground[1]);
@@ -97,7 +97,7 @@ public class CloudSpawnScript : MonoBehaviour {
 
         GameObject cloudClone = Instantiate(
             cloudForeground,
-            new Vector3(-13f + Camera.main.GetComponent<Transform>().position.x, Random.Range(rangeYForegroundClouds[0], rangeYForegroundClouds[1]), cloudForeground.GetComponent<Transform>().position.z),
+            new Vector3(-13f, Random.Range(rangeYForegroundClouds[0], rangeYForegroundClouds[1]), cloudForeground.GetComponent<Transform>().position.z),
             cloudForeground.GetComponent<Transform>().rotation
         );
         cloudClone.GetComponent<ScrollScript>().speed = Random.Range(rangeSpeedForeground[0], rangeSpeedForeground[1]);
