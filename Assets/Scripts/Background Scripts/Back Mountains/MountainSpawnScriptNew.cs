@@ -42,7 +42,7 @@ public class MountainSpawnScriptNew : MonoBehaviour {
 
         int i = Random.Range(0, mountainSprite.Length / 2);
 
-        GameObject mountainClone = Instantiate(mountain, new Vector3(x, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
+        GameObject mountainClone = Instantiate(mountain, new Vector3(x + Camera.main.GetComponent<Transform>().position.x, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
         mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
         mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
         mountainClone.GetComponent<ScrollScript>().speed = speed;

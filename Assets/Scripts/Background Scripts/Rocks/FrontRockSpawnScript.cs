@@ -41,7 +41,7 @@ public class FrontRockSpawnScript : MonoBehaviour {
 
         GameObject frontRockClone = Instantiate(
             frontRock,
-            new Vector3(-12f, Random.Range(yRange[0], yRange[1]), frontRock.GetComponent<Transform>().position.z),
+            new Vector3(-12f + Camera.main.GetComponent<Transform>().position.x, Random.Range(yRange[0], yRange[1]), frontRock.GetComponent<Transform>().position.z),
             frontRock.GetComponent<Transform>().rotation
         );
         frontRockClone.GetComponent<SpriteRenderer>().sprite = rockSprites[index];
