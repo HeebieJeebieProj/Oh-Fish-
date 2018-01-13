@@ -6250,7 +6250,7 @@ RectTransform:
   m_GameObject: {fileID: 281030158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -18}
-  m_LocalScale: {x: 0.016666668, y: 0.016666668, z: 0.016666668}
+  m_LocalScale: {x: 0.016666664, y: 0.016666664, z: 0.016666664}
   m_Children:
   - {fileID: 286065395}
   - {fileID: 2061294946}
@@ -6456,7 +6456,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286065394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.666687, y: -66, z: 0}
+  m_LocalPosition: {x: -92.99994, y: -65.99997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 220656099}
@@ -10072,7 +10072,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 648278220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.333313, y: 43, z: 0}
+  m_LocalPosition: {x: 0.000061035156, y: 43.00003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 844583168}
@@ -15033,7 +15033,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1095930384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400926512}
@@ -15051,11 +15051,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeSpeedForeground:
+  - 10
+  - 15
+  rangeSpeedBackground:
   - 6
   - 8
-  rangeSpeedBackground:
-  - 2
-  - 4
   cloudBackgroundSprites:
   - {fileID: 21300002, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
   - {fileID: 21300008, guid: 6cc3236098cb51f4fa3530f4714d9b49, type: 3}
@@ -15101,26 +15101,26 @@ MonoBehaviour:
   cloudBackground: {fileID: 1163450409006578, guid: 81fdbf2d247bf9f40aaf72b2d1abf0e6,
     type: 2}
   colorsForeground:
-  - {r: 0.27043253, g: 0.25810987, b: 0.5661765, a: 1}
-  - {r: 1, g: 0.6, b: 0, a: 1}
-  - {r: 0, g: 0.91764706, b: 1, a: 1}
-  - {r: 0, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0.6, b: 0, a: 1}
-  - {r: 0.32276815, g: 0.30925605, b: 0.64705884, a: 1}
+  - {r: 0.007843138, g: 0.35686275, b: 0.35686275, a: 0.88235295}
+  - {r: 0.31764707, g: 0.3647059, b: 0.5764706, a: 1}
+  - {r: 0, g: 0.91764736, b: 1, a: 0.78431374}
+  - {r: 0, g: 0.91764706, b: 1, a: 0.78431374}
+  - {r: 0.31764707, g: 0.3647059, b: 0.5764706, a: 1}
+  - {r: 0.007843138, g: 0.35686275, b: 0.35686275, a: 0.88235295}
   colorsBackground:
-  - {r: 0.18039216, g: 0.1764706, b: 0.36078432, a: 1}
-  - {r: 1, g: 0.14509805, b: 0, a: 1}
-  - {r: 0.44705883, g: 0.9529412, b: 1, a: 1}
-  - {r: 0.44705883, g: 0.9529412, b: 1, a: 1}
-  - {r: 1, g: 0.14509805, b: 0, a: 1}
-  - {r: 0.18039216, g: 0.1764706, b: 0.36078432, a: 1}
+  - {r: 0.07058824, g: 0.29803923, b: 0.29803923, a: 0.6862745}
+  - {r: 0.23137255, g: 0.5254902, b: 0.70980394, a: 0.6862745}
+  - {r: 1, g: 1, b: 1, a: 0.6862745}
+  - {r: 1, g: 1, b: 1, a: 0.6862745}
+  - {r: 0.43137255, g: 0.45882353, b: 0.627451, a: 1}
+  - {r: 0.07058824, g: 0.29803923, b: 0.29803923, a: 0.6862745}
   colorsForegroundGradients:
-  - {r: 0.78676474, g: 0.78676474, b: 0.78676474, a: 1}
+  - {r: 0.95686275, g: 0.95686275, b: 0.95686275, a: 1}
   - {r: 1, g: 0.7058823, b: 0.7058823, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 0.78431374}
+  - {r: 1, g: 1, b: 1, a: 0.78431374}
   - {r: 1, g: 0.6985294, b: 0.6985294, a: 1}
-  - {r: 0.7882353, g: 0.7882353, b: 0.7882353, a: 1}
+  - {r: 0.9558824, g: 0.9558824, b: 0.9558824, a: 1}
   time:
   - 5
   - 7
@@ -18985,7 +18985,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1495080022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -457.3333, y: 230, z: 0}
+  m_LocalPosition: {x: -404.00006, y: 230.00003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952989654}
