@@ -14,6 +14,8 @@ public class GoalsScreenScript : MonoBehaviour {
     public Button shop;
     public Button startTrip;
 
+    public GameObject baitSelection;
+
 	// Use this for initialization
 	void Start () {
         startTrip.onClick.AddListener(StartTripButtonClicked);
@@ -31,7 +33,10 @@ public class GoalsScreenScript : MonoBehaviour {
 
     void StartTripButtonClicked()
     {
-
+        GetComponent<Animator>().SetBool(HashIDs.startFadeHash, true);
+        Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraSlideToGameplay);
+        baitSelection.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     void MenuButtonClicked()
