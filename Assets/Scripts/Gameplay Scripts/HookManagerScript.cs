@@ -5,17 +5,24 @@ using UnityEngine;
 public class HookManagerScript : MonoBehaviour {
 
     public int numberOfHooksActive;
+    public int[] baitOrder;
+    public GameObject[] fishes;
+    public float[] gravity;
+    public float[] speedVertical;
+    public float[] speedHorizontal;
     public Transform[] hookPositions;
     public float[] radius;
     public GameObject[] hooks;
 
     private bool setup;
     private int i;
+    private GameObject[] fish;
 
 	// Use this for initialization
 	void Start () {
 
         setup = true;
+        fish = new GameObject[numberOfHooksActive * 2];
 
 	}
 	
@@ -32,6 +39,12 @@ public class HookManagerScript : MonoBehaviour {
                 if (i <= numberOfHooksActive - 1)
                 {
                     hooks[i].SetActive(true);
+                    fish[i * 2] = fishes[(baitOrder[i] - 1) * 2];
+                    fish[i * 2 + 1] = fishes[(baitOrder[i] - 1) * 2 + 1];
+                    hooks[i].GetComponent<FishSpawnScript>().fish = new GameObject[] { fish[i * 2], fish[i * 2 + 1] };
+                    hooks[i].GetComponent<FishSpawnScript>().gravityScale = gravity[baitOrder[i] - 1];
+                    hooks[i].GetComponent<FishSpawnScript>().speedHorizontal = speedHorizontal[baitOrder[i] - 1];
+                    hooks[i].GetComponent<FishSpawnScript>().speedVertical = speedVertical[baitOrder[i] - 1];
                 }
                 else
                 {
@@ -52,7 +65,6 @@ public class HookManagerScript : MonoBehaviour {
                         );
 
                         hooks[0].GetComponent<FishSpawnScript>().radius = radius[0];
-                        
 
                     } break;
 

@@ -6823,7 +6823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
+  fish: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 2057967258}
   radius: 0
@@ -7000,7 +7000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
+  fish: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 1014667820}
   radius: 0
@@ -9637,7 +9637,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5f2a82130438d41995fa9e7a6373d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfHooksActive: 2
+  numberOfHooksActive: 3
+  baitOrder: 020000000100000003000000
+  fishes:
+  - {fileID: 1093144934683612, guid: b1c4f165fb646d84497d17689cd833e5, type: 2}
+  - {fileID: 1517740068956720, guid: 3704b84a8eb22f64dbd11853636dd8c4, type: 2}
+  - {fileID: 1093144934683612, guid: 780c1f7fb3ee01a47b6f285ace7cefff, type: 2}
+  - {fileID: 1517740068956720, guid: cc47b18f7760e86458b46446d083e2e5, type: 2}
+  - {fileID: 1093144934683612, guid: 56bf922a96cb836458c828db3f07007b, type: 2}
+  - {fileID: 1517740068956720, guid: 2ccd2d9fc03ddcf479a6bc589533a888, type: 2}
+  - {fileID: 1093144934683612, guid: 684b6e0bccd9e7f488b82e939fcd61e8, type: 2}
+  - {fileID: 1517740068956720, guid: f6d94ec9d3c18bc428243b3ef52dbf38, type: 2}
+  - {fileID: 1093144934683612, guid: 1b984a647dbb8454ab3c8adddc70d80b, type: 2}
+  - {fileID: 1517740068956720, guid: d2295a416f379ab42806d85d49dda32b, type: 2}
+  gravity:
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  speedVertical:
+  - 580
+  - 580
+  - 580
+  - 580
+  - 580
+  speedHorizontal:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
   hookPositions:
   - {fileID: 1258482784}
   - {fileID: 1198207841}
@@ -23044,7 +23074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
+  fish: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 164828831}
   radius: 0
@@ -24703,7 +24733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
+  fish: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 1947424192}
   radius: 0
@@ -25830,7 +25860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: {fileID: 1672267471425954, guid: c1112a4db2bbe4649869ceb6bad023ea, type: 2}
+  fish: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 2019635386}
   radius: 0

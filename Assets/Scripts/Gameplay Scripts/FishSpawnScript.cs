@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FishSpawnScript : MonoBehaviour {
 
-    public GameObject fish;
+    public GameObject[] fish;
     public int baitNumber;
     public Transform baitSpawnPoint;
     public float radius;
@@ -95,30 +95,30 @@ public class FishSpawnScript : MonoBehaviour {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                    fish,
-                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                    fish.GetComponent<Transform>().rotation
+                    fish[0],
+                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
+                    fish[0].GetComponent<Transform>().rotation
                 );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                   fish,
-                   new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                   fish.GetComponent<Transform>().rotation
+                   fish[1],
+                   new Vector3(x, y, fish[1].GetComponent<Transform>().position.z),
+                   fish[1].GetComponent<Transform>().rotation
                );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform) * -1f, 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             FishCountScript.IncreaseCount();
 
@@ -147,30 +147,30 @@ public class FishSpawnScript : MonoBehaviour {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                    fish,
-                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                    fish.GetComponent<Transform>().rotation
+                    fish[0],
+                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
+                    fish[0].GetComponent<Transform>().rotation
                 );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                   fish,
-                   new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                   fish.GetComponent<Transform>().rotation
+                   fish[1],
+                   new Vector3(x, y, fish[1].GetComponent<Transform>().position.z),
+                   fish[1].GetComponent<Transform>().rotation
                );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform) * -1f, 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             FishCountScript.IncreaseCount();
 
@@ -198,30 +198,30 @@ public class FishSpawnScript : MonoBehaviour {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                    fish,
-                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                    fish.GetComponent<Transform>().rotation
+                    fish[0],
+                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
+                    fish[0].GetComponent<Transform>().rotation
                 );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                   fish,
-                   new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                   fish.GetComponent<Transform>().rotation
+                   fish[1],
+                   new Vector3(x, y, fish[1].GetComponent<Transform>().position.z),
+                   fish[1].GetComponent<Transform>().rotation
                );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform) * -1f, 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             FishCountScript.IncreaseCount();
 
@@ -249,30 +249,30 @@ public class FishSpawnScript : MonoBehaviour {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                    fish,
-                    new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                    fish.GetComponent<Transform>().rotation
+                    fish[0],
+                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
+                    fish[0].GetComponent<Transform>().rotation
                 );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
                 GameObject fishClone = (GameObject)Instantiate(
-                   fish,
-                   new Vector3(x, y, fish.GetComponent<Transform>().position.z),
-                   fish.GetComponent<Transform>().rotation
+                   fish[1],
+                   new Vector3(x, y, fish[1].GetComponent<Transform>().position.z),
+                   fish[1].GetComponent<Transform>().rotation
                );
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform) * -1f, 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             FishCountScript.IncreaseCount();
 
