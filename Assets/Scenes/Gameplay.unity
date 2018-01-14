@@ -6447,7 +6447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &286065395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22384,7 +22384,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &1850273190
@@ -25040,6 +25040,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2073655670}
+  - component: {fileID: 2073655671}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -25062,6 +25063,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2073655671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2073655669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df15785fba018bb4c9f9b1393a65391e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xx: 900
+  yy: 506
 --- !u!1 &2074443299
 GameObject:
   m_ObjectHideFlags: 0
