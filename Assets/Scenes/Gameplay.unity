@@ -6456,7 +6456,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286065394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.666687, y: -66, z: 0}
+  m_LocalPosition: {x: -39.666626, y: -66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 220656099}
@@ -6831,7 +6831,7 @@ MonoBehaviour:
   speedVertical: 580
   gravityScale: 3
   y: -5
-  shadow: {fileID: 0}
+  shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
 --- !u!1 &305806044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7009,7 +7009,7 @@ MonoBehaviour:
   speedVertical: 580
   gravityScale: 3
   y: -5
-  shadow: {fileID: 0}
+  shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
 --- !u!1 &312105117
 GameObject:
   m_ObjectHideFlags: 0
@@ -9659,17 +9659,17 @@ MonoBehaviour:
   - 3
   - 3
   speedVertical:
-  - 580
-  - 580
-  - 580
-  - 580
-  - 580
+  - 585
+  - 585
+  - 585
+  - 585
+  - 585
   speedHorizontal:
-  - 5
-  - 5
-  - 5
-  - 5
-  - 5
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
   hookPositions:
   - {fileID: 1258482784}
   - {fileID: 1198207841}
@@ -10104,7 +10104,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 648278220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.333313, y: 43, z: 0}
+  m_LocalPosition: {x: 53.333374, y: 43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 844583168}
@@ -18992,7 +18992,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1495080022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -457.3333, y: 230, z: 0}
+  m_LocalPosition: {x: -457.33337, y: 230, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952989654}
@@ -23035,7 +23035,7 @@ MonoBehaviour:
   speedVertical: 580
   gravityScale: 3
   y: -5
-  shadow: {fileID: 0}
+  shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
 --- !u!1 &1890772428
 GameObject:
   m_ObjectHideFlags: 0
@@ -24695,7 +24695,7 @@ MonoBehaviour:
   speedVertical: 580
   gravityScale: 3
   y: -5
-  shadow: {fileID: 0}
+  shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
 --- !u!1 &2057967257
 GameObject:
   m_ObjectHideFlags: 0
@@ -25739,7 +25739,7 @@ MonoBehaviour:
   speedVertical: 580
   gravityScale: 3
   y: -5
-  shadow: {fileID: 0}
+  shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
 --- !u!1 &2138811829
 GameObject:
   m_ObjectHideFlags: 0
