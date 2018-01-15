@@ -9,8 +9,7 @@ public class ResolutionScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Screen.SetResolution(xx, yy, true);
-        Camera.main.aspect = 16f / 9f;
+        Application.targetFrameRate = 60;
 	}
 
 }

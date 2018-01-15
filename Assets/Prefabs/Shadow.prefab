@@ -9,82 +9,71 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1526399823070102}
+  m_RootGameObject: {fileID: 1764659051674702}
   m_IsPrefabParent: 1
---- !u!1 &1526399823070102
+--- !u!1 &1764659051674702
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4485557580412926}
-  - component: {fileID: 212162195435436158}
-  - component: {fileID: 114956407970428806}
-  - component: {fileID: 114065697656400546}
+  - component: {fileID: 4371040257980826}
+  - component: {fileID: 212789429531913688}
+  - component: {fileID: 111726790295274614}
+  - component: {fileID: 114361687944708446}
   m_Layer: 0
-  m_Name: Back Rock
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4485557580412926
+--- !u!4 &4371040257980826
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526399823070102}
+  m_GameObject: {fileID: 1764659051674702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.23, y: -2.16, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -29.61, y: -4.64, z: 0}
+  m_LocalScale: {x: 0.16, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114065697656400546
+--- !u!111 &111726790295274614
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1764659051674702}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c0386a6d60f2a0448a7ad5d421e7103c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c0386a6d60f2a0448a7ad5d421e7103c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &114361687944708446
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526399823070102}
+  m_GameObject: {fileID: 1764659051674702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 879515a85a8642a4da3adea795b098b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4693e66c1af6d4641aac2e8b5dfb5921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - {r: 0.33088237, g: 0.33088237, b: 0.33088237, a: 1}
-  - {r: 1, g: 0.5588235, b: 0.5588235, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0.5568628, b: 0.5568628, a: 1}
-  - {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
-  time:
-  - 5
-  - 7
-  - 9
-  - 18
-  - 20
-  - 22
---- !u!114 &114956407970428806
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526399823070102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2689ff31ef2e1418e58796c96b6495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
---- !u!212 &212162195435436158
+--- !u!212 &212789429531913688
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526399823070102}
+  m_GameObject: {fileID: 1764659051674702}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -113,12 +102,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 018b6434770cff3409078125faf4d0f1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5adaf91efb809144aabbf430b7c6aea1, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.8, y: 1.5}
+  m_Size: {x: 12.43, y: 12.43}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

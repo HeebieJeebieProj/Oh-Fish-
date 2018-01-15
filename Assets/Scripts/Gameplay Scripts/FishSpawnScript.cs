@@ -12,6 +12,7 @@ public class FishSpawnScript : MonoBehaviour {
     public float speedVertical;
     public float gravityScale;
     public float y;
+    public GameObject shadow;
 
     private bool spawnOne;
     private bool spawnTwo;
@@ -94,6 +95,9 @@ public class FishSpawnScript : MonoBehaviour {
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish[0],
                     new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
@@ -108,6 +112,9 @@ public class FishSpawnScript : MonoBehaviour {
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
 
                 GameObject fishClone = (GameObject)Instantiate(
                    fish[1],
@@ -146,6 +153,9 @@ public class FishSpawnScript : MonoBehaviour {
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish[0],
                     new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
@@ -160,6 +170,9 @@ public class FishSpawnScript : MonoBehaviour {
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
 
                 GameObject fishClone = (GameObject)Instantiate(
                    fish[1],
@@ -197,6 +210,9 @@ public class FishSpawnScript : MonoBehaviour {
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish[0],
                     new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
@@ -211,6 +227,9 @@ public class FishSpawnScript : MonoBehaviour {
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
 
                 GameObject fishClone = (GameObject)Instantiate(
                    fish[1],
@@ -248,6 +267,9 @@ public class FishSpawnScript : MonoBehaviour {
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
+
                 GameObject fishClone = (GameObject)Instantiate(
                     fish[0],
                     new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
@@ -262,6 +284,9 @@ public class FishSpawnScript : MonoBehaviour {
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
+
+                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
 
                 GameObject fishClone = (GameObject)Instantiate(
                    fish[1],

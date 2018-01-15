@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class MobileUtilsScript : MonoBehaviour
 {
 
-    private int FramesPerSec;
+    public static int FramesPerSec;
     private float frequency = 1.0f;
     private string fps;
 
     void Start()
     {
+        FramesPerSec = 60;
         StartCoroutine(FPS());
     }
 
@@ -32,6 +33,8 @@ public class MobileUtilsScript : MonoBehaviour
             int frameCount = Time.frameCount - lastFrameCount;
 
             // Display it
+
+            FramesPerSec = Mathf.RoundToInt(frameCount / timeSpan);
 
             fps = string.Format("FPS: {0}", Mathf.RoundToInt(frameCount / timeSpan));
         }
