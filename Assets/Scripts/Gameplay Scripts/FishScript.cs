@@ -90,7 +90,7 @@ public class FishScript : MonoBehaviour {
         if (collision.collider.tag == "bullet")
         {
             collided = true;
-            if (transform.position.y <= -1.5f)
+            /*if (transform.position.y <= -1.5f)
             {
                 if (inverted)
                 {
@@ -102,7 +102,7 @@ public class FishScript : MonoBehaviour {
                     if (transform.rotation.z >= 0f) text.GetComponent<LogTextAccessorScript>().showText("Early Catch");
                     else text.GetComponent<LogTextAccessorScript>().showText("Critical Catch");
                 }
-            }
+            }*/
         }
     }
 

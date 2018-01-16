@@ -32,23 +32,23 @@ public class CountScript : MonoBehaviour {
         {
             count++;
             fish = collision.GetComponent<Collider2D>().gameObject;
-            if (fish.name == "Fish1L(Clone)" || fish.name == "Fish1R(Clone)")
+            if (fish.name == "Fish 1 Left(Clone)" || fish.name == "Fish 1 Right(Clone)")
             {
                 countFish[0]++;
             }
-            else if (fish.name == "Fish2L(Clone)" || fish.name == "Fish2R(Clone)")
+            else if (fish.name == "Fish 2 Left(Clone)" || fish.name == "Fish 2 Right(Clone)")
             {
                 countFish[1]++;
             }
-            else if (fish.name == "Fish3L(Clone)" || fish.name == "Fish3R(Clone)")
+            else if (fish.name == "Fish 3 Left(Clone)" || fish.name == "Fish 3 Right(Clone)")
             {
                 countFish[2]++;
             }
-            else if (fish.name == "Fish4L(Clone)" || fish.name == "Fish4R(Clone)")
+            else if (fish.name == "Fish 4 Left(Clone)" || fish.name == "Fish 4 Right(Clone)")
             {
                 countFish[3]++;
             }
-            else if (fish.name == "Fish5L(Clone)" || fish.name == "Fish5R(Clone)")
+            else if (fish.name == "Fish 5 Left(Clone)" || fish.name == "Fish 5 Right(Clone)")
             {
                 countFish[4]++;
             }
@@ -164,10 +164,10 @@ public class CountScript : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        /*if (collision.GetComponent<Collider2D>().tag == "fish" && collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait)
+        if (collision.GetComponent<Collider2D>().tag == "fish" && collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait)
         {
             collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait.GetComponent<BaitScript>().initialCount++;
             collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = false;
-        }*/
+        }
     }
 }

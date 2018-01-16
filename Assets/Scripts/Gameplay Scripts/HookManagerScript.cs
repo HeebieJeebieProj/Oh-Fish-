@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class HookManagerScript : MonoBehaviour {
 
@@ -10,6 +9,8 @@ public class HookManagerScript : MonoBehaviour {
     public float[] gravity;
     public float[] speedVertical;
     public float[] speedHorizontal;
+    public GameObject[] baits;
+    public int[] baitInitCount;
     public Transform[] hookPositions;
     public float[] radius;
     public GameObject[] hooks;
@@ -45,6 +46,14 @@ public class HookManagerScript : MonoBehaviour {
                     hooks[i].GetComponent<FishSpawnScript>().gravityScale = gravity[baitOrder[i] - 1];
                     hooks[i].GetComponent<FishSpawnScript>().speedHorizontal = speedHorizontal[baitOrder[i] - 1];
                     hooks[i].GetComponent<FishSpawnScript>().speedVertical = speedVertical[baitOrder[i] - 1];
+                    GameObject bait = Instantiate(
+                        baits[baitOrder[i] - 1], 
+                        hooks[i].GetComponent<Transform>().Find("baitSpawnPoint").GetComponent<Transform>().position,
+                        baits[baitOrder[i] - 1].GetComponent<Transform>().rotation
+                    );
+                    bait.GetComponent<Transform>().parent = hooks[i].GetComponent<Transform>();
+                    bait.GetComponent<BaitScript>().initialCount = baitInitCount[baitOrder[i] - 1];
+                    bait.GetComponent<BaitScript>().baitNumber = hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>();
                 }
                 else
                 {
