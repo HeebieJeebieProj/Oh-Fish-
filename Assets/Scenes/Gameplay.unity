@@ -5423,7 +5423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &215219826
 Transform:
   m_ObjectHideFlags: 0
@@ -5454,10 +5454,17 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 864488630}
   - {fileID: 1821995816}
-  crab: []
-  speedVertical: 580
-  speedHorizontal: 2
-  shadow: {fileID: 0}
+  crab:
+  - {fileID: 1857763526075504, guid: d1db07851e29a2342a07778d3e355023, type: 2}
+  - {fileID: 1894448657625384, guid: b0b661805e65ecb48b36f7df6bc599e8, type: 2}
+  - {fileID: 1940455200146560, guid: 9681e14cf68f7a94a85332e44e482c65, type: 2}
+  - {fileID: 1703151553413516, guid: 99d0bcf7106740343ab69e828042d25d, type: 2}
+  - {fileID: 1111944219111408, guid: d7c6978799926614796890c507609e0b, type: 2}
+  rangeTimeDiff:
+  - 20
+  - 30
+  speedVertical: 585
+  speedHorizontal: 6
 --- !u!1 &220656098
 GameObject:
   m_ObjectHideFlags: 0
@@ -8870,6 +8877,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 598646074}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 215219827}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
