@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212062442217308290}
   - component: {fileID: 50765384195411000}
   - component: {fileID: 58649146116628648}
-  - component: {fileID: 114951510144010914}
+  - component: {fileID: 114039902748892770}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: bullet
@@ -78,23 +78,24 @@ CircleCollider2D:
   m_Offset: {x: 8, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.36
---- !u!114 &114951510144010914
+--- !u!114 &114039902748892770
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130301791737636}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b0bed8f3c80bc4780a055b0e858bf8, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a1261b028b5e56419eb9a55829433f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fishDeadSprite:
-  - {fileID: 21300020, guid: 9f63112455e198144af09689b56fa93c, type: 3}
-  - {fileID: 21300022, guid: 9f63112455e198144af09689b56fa93c, type: 3}
-  - {fileID: 21300024, guid: 9f63112455e198144af09689b56fa93c, type: 3}
-  - {fileID: 21300026, guid: 9f63112455e198144af09689b56fa93c, type: 3}
-  - {fileID: 21300028, guid: 9f63112455e198144af09689b56fa93c, type: 3}
+  - {fileID: 21300020, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300022, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300024, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300026, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300028, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  comboText: {fileID: 0}
 --- !u!212 &212062442217308290
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -104,6 +105,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -119,15 +121,16 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -944590583
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7c5bce9d638ad8240b095041a6754e5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae959b600ead2e1429d68bdb1c071e6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

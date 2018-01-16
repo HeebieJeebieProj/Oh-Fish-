@@ -145,6 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e4387f9bfaa3c41ada6da8da5d356f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchedBait: 0
+  bait: {fileID: 0}
+  collided: 0
+  inverted: 0
+  text: {fileID: 0}
 --- !u!212 &212883818226083956
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -28,7 +28,6 @@ public class BulletScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         comboStall = false;
-        rightThreshold = GameObject.Find("countMarker").GetComponent<Transform>();
         collided = false;
         changeSprite = false;
         moveWith = false;
@@ -40,14 +39,14 @@ public class BulletScript : MonoBehaviour {
 
         if (comboStall && collided)
         {
-            if (transform.position.x > rightThreshold.position.x && ComboScript.comboActive)
+            if (transform.position.x > 8f && ComboScript.comboActive)
             {
                 comboStall = false;
                 ComboScript.comboNumber++;
                 comboText.GetComponent<ComboScript>().showText(ComboScript.comboNumber.ToString());
             }
         }
-        if (ComboScript.comboActive && !collided && (transform.position.x > rightThreshold.position.x || transform.position.y >= 5.1f || transform.position.y <=-5.1f))
+        if (ComboScript.comboActive && !collided && (transform.position.x > 8f || transform.position.y >= 5.1f || transform.position.y <=-5.1f))
         {
             ComboScript.comboActive = false;
             ComboScript.comboNumber = 0;
@@ -66,6 +65,13 @@ public class BulletScript : MonoBehaviour {
         if ((transform.position.x >= 8f || transform.position.y <= -5f || transform.position.y >= 5f) && !GetComponent<Collider2D>().enabled)
         {
             GetComponent<Collider2D>().enabled = true;
+        }
+
+        if (transform.position.x >= 9f || transform.position.y >= 6f || transform.position.y <= -6f || transform.position.x <= -9f)
+        {
+
+            Destroy(gameObject);
+
         }
     }
 
@@ -130,24 +136,23 @@ public class BulletScript : MonoBehaviour {
             if (changeSprite)
             {
                 SpriteRenderer spriteRenderer = fishGameObject.GetComponent<SpriteRenderer>();
-                ContactPoint2D contact = fishCollision.contacts[0];
-                if (fishGameObject.name == "Fish1L(Clone)" || fishGameObject.name == "Fish1R(Clone)")
+                if (fishGameObject.name == "Fish 1 Left(Clone)" || fishGameObject.name == "Fish 1 Right(Clone)")
                 {
                     spriteRenderer.sprite = fishDeadSprite[0];
                 }
-                else if (fishGameObject.name == "Fish2L(Clone)" || fishGameObject.name == "Fish2R(Clone)")
+                else if (fishGameObject.name == "Fish 2 Left(Clone)" || fishGameObject.name == "Fish 2 Right(Clone)")
                 {
                     spriteRenderer.sprite = fishDeadSprite[1];
                 }
-                else if (fishGameObject.name == "Fish3L(Clone)" || fishGameObject.name == "Fish3R(Clone)")
+                else if (fishGameObject.name == "Fish 3 Left(Clone)" || fishGameObject.name == "Fish 3 Right(Clone)")
                 {
                     spriteRenderer.sprite = fishDeadSprite[2];
                 }
-                else if (fishGameObject.name == "Fish4L(Clone)" || fishGameObject.name == "Fish4R(Clone)")
+                else if (fishGameObject.name == "Fish 4 Left(Clone)" || fishGameObject.name == "Fish 4 Right(Clone)")
                 { 
                     spriteRenderer.sprite = fishDeadSprite[3];
                 }
-                else if (fishGameObject.name == "Fish5L(Clone)" || fishGameObject.name == "Fish5R(Clone)")
+                else if (fishGameObject.name == "Fish 5 Left(Clone)" || fishGameObject.name == "Fish 5 Right(Clone)")
                 {
                     spriteRenderer.sprite = fishDeadSprite[4];
                 }
