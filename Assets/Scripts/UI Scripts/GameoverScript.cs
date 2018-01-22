@@ -11,7 +11,7 @@ public class GameoverScript : MonoBehaviour {
     public static bool gameover = false;
     string check, checker;
     int baitsActive;
-    //HookManagerScript hookManagerScript;
+    HookManagerScript hookManagerScript;
     public GameObject hookSelectionView;
     public GameObject baitSelectionView;
     public GameObject startButton;
@@ -45,7 +45,7 @@ public class GameoverScript : MonoBehaviour {
         timerText.text = time.ToString();
         gameover = false;
         Gameover.SetActive(false);
-        //hookManagerScript = GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>();
+        hookManagerScript = GameObject.Find("Hooks").GetComponent<HookManagerScript>();
         checker = "";
         gameOverStarted = false;
         calculationStart = false;
@@ -54,10 +54,10 @@ public class GameoverScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        /*if (HookManagerScript.hasSetup)
+        if (hookManagerScript.isActiveAndEnabled)
         {
             int active = 0;
-            baitsActive = hookManagerScript.numberHooks;
+            baitsActive = hookManagerScript.numberOfHooksActive;
             for ( int m = 0; m < 5; m++)
             {
                 if (hookManagerScript.hooks[m].activeSelf)
@@ -90,20 +90,20 @@ public class GameoverScript : MonoBehaviour {
 
         }
 
-        for (int i = 0; i < baitsActive && HookManagerScript.hasSetup; i++)
+        for (int i = 0; i < baitsActive && hookManagerScript.isActiveAndEnabled; i++)
         {
-            if (hookManagerScript.hooks[i].activeSelf && hookManagerScript.baitInstantiated[i].GetComponent<BaitScript>().initialCount <= 0)
+            if (hookManagerScript.hooks[i].activeSelf && hookManagerScript.hooks[i].GetComponent<FishSpawnScript>().baitScript.initialCount <= 0)
             {
                 checker = checker + "1";
             }
         }
 
-        if (checker == check && BaitSelectionScript.hasStarted && HookManagerScript.hasSetup)
+        if (checker == check && /*BaitSelectionScript.hasStarted &&*/ hookManagerScript.isActiveAndEnabled)
         {
-            BaitSelectionScript.hasStarted = false;
+            //BaitSelectionScript.hasStarted = false;
             gameover = true;
             replayActive = false;
-        }*/
+        }
 
         checker = "";
 
@@ -111,9 +111,11 @@ public class GameoverScript : MonoBehaviour {
         {
             gameOverStarted = true;
             textViews.SetActive(false);
-            Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomOutHash, true);
+            hookManagerScript.enabled = false;
+            GameObject.Find("Crab GameObject").SetActive(false);
+            //Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomOutHash, true);
             Gameover.SetActive(true);
-            Camera.main.GetComponent<BlurOptimized>().enabled = true;
+            //Camera.main.GetComponent<BlurOptimized>().enabled = true;
             timerText.text = time.ToString();
             variableTime = time;
             StartCoroutine(timer());

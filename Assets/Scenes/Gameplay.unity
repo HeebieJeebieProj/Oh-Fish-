@@ -6256,6 +6256,7 @@ GameObject:
   - component: {fileID: 281030160}
   - component: {fileID: 281030163}
   - component: {fileID: 281030164}
+  - component: {fileID: 281030165}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6379,6 +6380,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1226377906}
+--- !u!114 &281030165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 281030158}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc303288e4ce5cd4393a96509c027f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gameover: {fileID: 778934961}
+  overlay: {fileID: 0}
+  endTrip: {fileID: 326229310}
+  hookSelectionView: {fileID: 1233195406}
+  baitSelectionView: {fileID: 1284111668}
+  startButton: {fileID: 525097639}
+  BaitSelection: {fileID: 2061294945}
+  textViews: {fileID: 286065394}
+  timerText: {fileID: 1129868862}
+  videoButton: {fileID: 1659281363}
+  coinButton: {fileID: 1419582506}
+  Calculation: {fileID: 1154730474}
+  time: 5
 --- !u!1 &281929207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6883,6 +6908,7 @@ MonoBehaviour:
   gravityScale: 3
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
+  baitScript: {fileID: 0}
 --- !u!1 &305806044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7061,6 +7087,7 @@ MonoBehaviour:
   gravityScale: 3
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
+  baitScript: {fileID: 0}
 --- !u!1 &312105117
 GameObject:
   m_ObjectHideFlags: 0
@@ -11663,7 +11690,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 778934962}
-  - component: {fileID: 778934963}
   m_Layer: 5
   m_Name: Game over
   m_TagString: Untagged
@@ -11697,30 +11723,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.0000038146973}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &778934963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 778934961}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc303288e4ce5cd4393a96509c027f24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Gameover: {fileID: 0}
-  overlay: {fileID: 0}
-  endTrip: {fileID: 0}
-  hookSelectionView: {fileID: 0}
-  baitSelectionView: {fileID: 0}
-  startButton: {fileID: 0}
-  BaitSelection: {fileID: 0}
-  textViews: {fileID: 0}
-  timerText: {fileID: 0}
-  videoButton: {fileID: 0}
-  coinButton: {fileID: 0}
-  Calculation: {fileID: 0}
-  time: 5
 --- !u!1 &785534500
 GameObject:
   m_ObjectHideFlags: 0
@@ -23099,6 +23101,7 @@ MonoBehaviour:
   gravityScale: 3
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
+  baitScript: {fileID: 0}
 --- !u!1 &1890772428
 GameObject:
   m_ObjectHideFlags: 0
@@ -24759,6 +24762,7 @@ MonoBehaviour:
   gravityScale: 3
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
+  baitScript: {fileID: 0}
 --- !u!1 &2057967257
 GameObject:
   m_ObjectHideFlags: 0
@@ -25865,6 +25869,7 @@ MonoBehaviour:
   gravityScale: 3
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
+  baitScript: {fileID: 0}
 --- !u!1 &2138811829
 GameObject:
   m_ObjectHideFlags: 0
