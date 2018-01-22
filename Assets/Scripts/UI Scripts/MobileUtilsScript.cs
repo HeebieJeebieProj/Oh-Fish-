@@ -10,6 +10,8 @@ public class MobileUtilsScript : MonoBehaviour
     private float frequency = 1.0f;
     private string fps;
 
+    public Text text;
+
     void Start()
     {
         FramesPerSec = 60;
@@ -18,7 +20,7 @@ public class MobileUtilsScript : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<Text>().text = fps;
+        text.text = fps;
     }
 
     private IEnumerator FPS()
