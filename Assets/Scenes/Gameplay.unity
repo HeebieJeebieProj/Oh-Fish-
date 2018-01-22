@@ -6386,7 +6386,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 281030158}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc303288e4ce5cd4393a96509c027f24, type: 3}
   m_Name: 
@@ -9775,6 +9775,8 @@ MonoBehaviour:
   - {fileID: 294089672}
   - {fileID: 2137929718}
   - {fileID: 2056652583}
+  setup: 0
+  hasSetup: 0
 --- !u!1 &602474158
 GameObject:
   m_ObjectHideFlags: 0

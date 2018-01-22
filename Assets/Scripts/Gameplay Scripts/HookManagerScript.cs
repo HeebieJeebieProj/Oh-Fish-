@@ -15,20 +15,28 @@ public class HookManagerScript : MonoBehaviour {
     public float[] radius;
     public GameObject[] hooks;
 
-    private bool setup;
+    public bool setup;
+    public bool hasSetup;
     private int i;
     private GameObject[] fish;
 
 	// Use this for initialization
 	void Start () {
 
-        setup = true;
+        setup = false;
+        hasSetup = false;
         fish = new GameObject[numberOfHooksActive * 2];
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (BaitSelectionScript.hasStarted && !hasSetup)
+        {
+            setup = true;
+            BaitSelectionScript.hasStarted = false;
+        }
 		
         if (setup)
         {
@@ -227,7 +235,9 @@ public class HookManagerScript : MonoBehaviour {
 
             }
 
+            hasSetup = true;
+
         }
 
-	}
+    }
 }

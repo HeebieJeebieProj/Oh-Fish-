@@ -157,16 +157,21 @@ public class BaitSelectionScript : MonoBehaviour {
     {
         Camera.main.GetComponent<BlurOptimized>().enabled = false;
         Camera.main.GetComponent<Animator>().SetBool(zoomInHash, true);
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = hookBaitNumber;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().enabled = true;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitInitCount = hookBaitNumber;
         int[] baitOrder = new int[5];
+        int hooksActive = 0;
         for (int k = 0; k < 5; k++)
         {
-
-            baitOrder[k] = previousSelection[k] + 1;
+            if (previousSelection[k] != -1)
+            {
+                hooksActive++;
+                baitOrder[k] = previousSelection[k] + 1;
+            }
         }
 
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = numberOfHooksActive;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = hooksActive;
 
         hasStarted = true;
         gameObject.SetActive(false);

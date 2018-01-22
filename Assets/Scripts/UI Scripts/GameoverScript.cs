@@ -46,7 +46,7 @@ public class GameoverScript : MonoBehaviour {
         gameover = false;
         Gameover.SetActive(false);
         hookManagerScript = GameObject.Find("Hooks").GetComponent<HookManagerScript>();
-        checker = "";
+        checker = "-1";
         gameOverStarted = false;
         calculationStart = false;
 	}
@@ -54,7 +54,7 @@ public class GameoverScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        if (hookManagerScript.isActiveAndEnabled)
+        if (hookManagerScript.isActiveAndEnabled && hookManagerScript.hasSetup)
         {
             int active = 0;
             baitsActive = hookManagerScript.numberOfHooksActive;
@@ -90,7 +90,7 @@ public class GameoverScript : MonoBehaviour {
 
         }
 
-        for (int i = 0; i < baitsActive && hookManagerScript.isActiveAndEnabled; i++)
+        for (int i = 0; i < baitsActive && hookManagerScript.isActiveAndEnabled && hookManagerScript.hasSetup; i++)
         {
             if (hookManagerScript.hooks[i].activeSelf && hookManagerScript.hooks[i].GetComponent<FishSpawnScript>().baitScript.initialCount <= 0)
             {
@@ -98,7 +98,9 @@ public class GameoverScript : MonoBehaviour {
             }
         }
 
-        if (checker == check && /*BaitSelectionScript.hasStarted &&*/ hookManagerScript.isActiveAndEnabled)
+        Debug.Log(check + " " + checker);
+
+        if (checker == check && hookManagerScript.isActiveAndEnabled && hookManagerScript.hasSetup)
         {
             //BaitSelectionScript.hasStarted = false;
             gameover = true;
@@ -115,7 +117,7 @@ public class GameoverScript : MonoBehaviour {
             GameObject.Find("Crab GameObject").SetActive(false);
             //Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomOutHash, true);
             Gameover.SetActive(true);
-            //Camera.main.GetComponent<BlurOptimized>().enabled = true;
+            Camera.main.GetComponent<BlurOptimized>().enabled = true;
             timerText.text = time.ToString();
             variableTime = time;
             StartCoroutine(timer());

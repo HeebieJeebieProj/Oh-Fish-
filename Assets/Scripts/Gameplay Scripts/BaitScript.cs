@@ -18,6 +18,7 @@ public class BaitScript : MonoBehaviour {
         {
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
+            baitNumber.enabled = false;
         } else
         {
             GetComponent<Collider2D>().enabled = true;
