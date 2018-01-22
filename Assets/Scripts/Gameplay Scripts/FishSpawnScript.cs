@@ -13,6 +13,7 @@ public class FishSpawnScript : MonoBehaviour {
     public float gravityScale;
     public float y;
     public GameObject shadow;
+    public BaitScript baitScript;
 
     private bool spawnOne;
     private bool spawnTwo;
@@ -34,7 +35,7 @@ public class FishSpawnScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        if (FishCountScript.numberOfActive <= 4)
+        if (FishCountScript.numberOfActive <= 4 && baitScript.initialCount > 0)
         {
             if (spawnOne)
             {
@@ -86,7 +87,7 @@ public class FishSpawnScript : MonoBehaviour {
 
         //int index;
 
-        if (FishCountScript.numberOfActive <= 4)
+        if (FishCountScript.numberOfActive <= 4 && baitScript.initialCount > 0)
         {
 
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
@@ -143,7 +144,7 @@ public class FishSpawnScript : MonoBehaviour {
 
         //int index;
 
-        if (FishCountScript.numberOfActive <= 4)
+        if (FishCountScript.numberOfActive <= 4 && baitScript.initialCount > 0)
         {
 
 
@@ -201,7 +202,7 @@ public class FishSpawnScript : MonoBehaviour {
 
         //int index;
 
-        if (FishCountScript.numberOfActive <= 4)
+        if (FishCountScript.numberOfActive <= 4 && baitScript.initialCount > 0)
         {
 
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
@@ -258,7 +259,7 @@ public class FishSpawnScript : MonoBehaviour {
 
         //int index;
 
-        if (FishCountScript.numberOfActive <= 4)
+        if (FishCountScript.numberOfActive <= 4 && baitScript.initialCount > 0)
         {
 
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
