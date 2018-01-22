@@ -1217,7 +1217,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300006, guid: 9f63112455e198144af09689b56fa93c, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1557,7 +1557,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300004, guid: 9f63112455e198144af09689b56fa93c, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7333,7 +7333,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 3699e503fb60b5e45a74be79e69db840, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2647b0cea76139f42b052a39db26d19b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8774,7 +8774,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 3699e503fb60b5e45a74be79e69db840, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2647b0cea76139f42b052a39db26d19b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13759,7 +13759,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 3699e503fb60b5e45a74be79e69db840, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2647b0cea76139f42b052a39db26d19b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14202,7 +14202,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300008, guid: 9f63112455e198144af09689b56fa93c, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14654,7 +14654,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9f63112455e198144af09689b56fa93c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16756,7 +16756,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 9f63112455e198144af09689b56fa93c, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19747,7 +19747,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 3699e503fb60b5e45a74be79e69db840, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2647b0cea76139f42b052a39db26d19b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20467,7 +20467,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 3699e503fb60b5e45a74be79e69db840, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2647b0cea76139f42b052a39db26d19b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24803,6 +24803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061294946}
   - component: {fileID: 2061294947}
+  - component: {fileID: 2061294948}
   m_Layer: 5
   m_Name: Bait Selection
   m_TagString: Untagged
@@ -24850,6 +24851,43 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2061294948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2061294945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4315ac853dd88408db2128f3f9dac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollRectHook: {fileID: 1233195406}
+  scrollRectBait: {fileID: 1284111668}
+  startButton: {fileID: 525097639}
+  baitOptions:
+  - {fileID: 188197534}
+  - {fileID: 6349561}
+  - {fileID: 741493929}
+  - {fileID: 1026251736}
+  - {fileID: 1431054587}
+  batchSizes: 0a00000005000000070000000800000005000000
+  selectedBait: -1
+  hookOptions:
+  - {fileID: 145563090}
+  - {fileID: 392319547}
+  - {fileID: 1203578744}
+  - {fileID: 2013541818}
+  - {fileID: 1659834851}
+  hookBaitNumber: 0000000000000000000000000000000000000000
+  selectedHook: -1
+  previousSelection: ffffffffffffffffffffffffffffffffffffffff
+  textViews: {fileID: 286065394}
+  numberOfBaitsActive: 5
+  numberOfHooksActive: 3
+  colorPressed: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 0.522}
+  colorDisabled: {r: 1, g: 1, b: 1, a: 0.272}
+  colorNormal: {r: 0.42647058, g: 0.42647058, b: 0.42647058, a: 0.434}
 --- !u!1 &2068042358
 GameObject:
   m_ObjectHideFlags: 0
