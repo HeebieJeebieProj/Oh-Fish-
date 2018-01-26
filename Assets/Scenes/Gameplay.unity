@@ -6608,6 +6608,7 @@ MonoBehaviour:
   - {fileID: 566989733}
   menu: {fileID: 952989655}
   shop: {fileID: 385735278}
+  main: {fileID: 341897227}
   startTrip: {fileID: 1499374220}
   baitSelection: {fileID: 2061294945}
 --- !u!95 &288331768
@@ -12492,7 +12493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &791810360
 Transform:
   m_ObjectHideFlags: 0
@@ -15134,7 +15135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1095930385
 Transform:
   m_ObjectHideFlags: 0
@@ -15592,6 +15593,11 @@ MonoBehaviour:
   hookSelectionView: {fileID: 1233195406}
   baitSelectionView: {fileID: 1284111668}
   startButton: {fileID: 525097639}
+  clouds: {fileID: 1095930384}
+  backMountain: {fileID: 1399489924}
+  islands: {fileID: 1506307967}
+  frontRocks: {fileID: 791810359}
+  backRocks: {fileID: 1435193184}
 --- !u!114 &1154730477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18093,7 +18099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1399489925
 Transform:
   m_ObjectHideFlags: 0
@@ -18667,7 +18673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1435193185
 Transform:
   m_ObjectHideFlags: 0
@@ -19321,7 +19327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1506307968
 Transform:
   m_ObjectHideFlags: 0
@@ -22419,9 +22425,10 @@ GameObject:
   - component: {fileID: 1850273189}
   - component: {fileID: 1850273188}
   - component: {fileID: 1850273187}
-  - component: {fileID: 1850273191}
   - component: {fileID: 1850273192}
   - component: {fileID: 1850273193}
+  - component: {fileID: 1850273191}
+  - component: {fileID: 1850273194}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -22503,14 +22510,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1850273186}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fc6bde01469c7b4badee5362f191d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   downsample: 2
-  blurSize: 4
-  blurIterations: 2
+  blurSize: 4.58
+  blurIterations: 1
   blurType: 0
   blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
 --- !u!95 &1850273192
@@ -22547,6 +22554,29 @@ MonoBehaviour:
   blurIterations: 1
   blurType: 0
   fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
+--- !u!114 &1850273194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850273186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f13e65edebba2148a7d320dff4d17e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blurOptimized: {fileID: 1850273191}
+  blurSize:
+  - 0
+  - 2.5
+  - 4.79
+  - 5.62
+  - 5.62
+  - 4.79
+  - 5.62
+  downSample: 00000000020000000200000002000000020000000200000002000000
+  screen: 2
+  speed: 1
 --- !u!1 &1854483436
 GameObject:
   m_ObjectHideFlags: 0
@@ -25236,7 +25266,7 @@ GameObject:
   - component: {fileID: 2078714892}
   - component: {fileID: 2078714893}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Right Marker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

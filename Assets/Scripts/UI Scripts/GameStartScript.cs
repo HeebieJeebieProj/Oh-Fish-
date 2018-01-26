@@ -27,6 +27,7 @@ public class GameStartScript : MonoBehaviour {
         GetComponent<Animator>().SetBool(HashIDs.startFadeHash, true);
         Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraSlideToGoalsFromMain);
         Camera.main.GetComponent<Animator>().Play(HashIDs.cameraStateHashSlideToGoalsFromMain, HashIDs.cameraLayerHash);
+        Camera.main.GetComponent<BlurAnimationScript>().changeBlur(2);
         goalsScreen.SetActive(true);
     }
 }

@@ -12,6 +12,7 @@ public class GoalsScreenScript : MonoBehaviour {
 
     public Button menu;
     public Button shop;
+    public Button main;
     public Button startTrip;
 
     public GameObject baitSelection;
@@ -21,6 +22,7 @@ public class GoalsScreenScript : MonoBehaviour {
         startTrip.onClick.AddListener(StartTripButtonClicked);
         menu.onClick.AddListener(MenuButtonClicked);
         shop.onClick.AddListener(ShopButtonClicked);
+        main.onClick.AddListener(MainButtonClicked);
 	}
 	
 	// Update is called once per frame
@@ -35,6 +37,7 @@ public class GoalsScreenScript : MonoBehaviour {
     {
         GetComponent<Animator>().SetBool(HashIDs.startFadeHash, true);
         Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraSlideToGameplay);
+        Camera.main.GetComponent<BlurAnimationScript>().changeBlur(3);
         baitSelection.SetActive(true);
         gameObject.SetActive(false);
     }
@@ -47,5 +50,10 @@ public class GoalsScreenScript : MonoBehaviour {
     void ShopButtonClicked()
     {
 
+    }
+
+    void MainButtonClicked()
+    {
+        Camera.main.GetComponent<BlurAnimationScript>().changeBlur(2);
     }
 }

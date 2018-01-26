@@ -116,7 +116,7 @@ public class GameoverScript : MonoBehaviour {
             hookManagerScript.enabled = false;
             GameObject.Find("Crab GameObject").SetActive(false);
             Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraGameoverHash);
-            Camera.main.GetComponent<BlurOptimized>().enabled = true;
+            Camera.main.GetComponent<BlurAnimationScript>().changeBlur(4);
             timerText.text = time.ToString();
             variableTime = time;
             StartCoroutine(timer());
@@ -190,6 +190,7 @@ public class GameoverScript : MonoBehaviour {
         gameover = false;
         gameOverStarted = false;
         Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationHash);
+        Camera.main.GetComponent<BlurAnimationScript>().changeBlur(5);
         calculationStart = true;
     }
 

@@ -158,7 +158,6 @@ public class BaitSelectionScript : MonoBehaviour {
     void gameStarted ()
     {
         gameOverScript.enabled = false;
-        Camera.main.GetComponent<BlurOptimized>().enabled = false;
         Camera.main.GetComponent<Animator>().SetBool(zoomInHash, true);
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().enabled = true;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitInitCount = hookBaitNumber;
@@ -176,6 +175,8 @@ public class BaitSelectionScript : MonoBehaviour {
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = numberOfHooksActive;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().hooksActive = hooksActive;
+
+        Camera.main.GetComponent<BlurAnimationScript>().changeBlur(0);
 
         hasStarted = true;
         gameObject.SetActive(false);

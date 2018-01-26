@@ -22,12 +22,23 @@ public class CalculationScript : MonoBehaviour {
     public GameObject baitSelectionView;
     public GameObject startButton;
 
+    public GameObject clouds;
+    public GameObject backMountain;
+    public GameObject islands;
+    public GameObject frontRocks;
+    public GameObject backRocks;
+
 
     // Use this for initialization
     void Start () {
         home.onClick.AddListener(HomeButtonClicked);
         retry.onClick.AddListener(RetryButtonClicked);
         fishCounts = comboTextGameObject.GetComponent<CountScript>().countFish;
+        clouds.SetActive(false);
+        backMountain.SetActive(false);
+        islands.SetActive(false);
+        frontRocks.SetActive(false);
+        backRocks.SetActive(false);
 	}
 	
 	// Update is called once per frame
