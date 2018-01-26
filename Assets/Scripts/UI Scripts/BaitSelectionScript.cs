@@ -7,6 +7,7 @@ public class BaitSelectionScript : MonoBehaviour {
     public GameObject scrollRectHook;
     public GameObject scrollRectBait;
     public GameObject startButton;
+    public GameoverScript gameOverScript;
     public GameObject[] baitOptions;
     public int[] batchSizes;
     public int selectedBait = -1;
@@ -21,6 +22,7 @@ public class BaitSelectionScript : MonoBehaviour {
 
     public int numberOfBaitsActive = 5;
     public int numberOfHooksActive = 3;
+    public int hooksActive;
 
     public Color colorPressed;
     public Color colorDisabled;
@@ -155,12 +157,13 @@ public class BaitSelectionScript : MonoBehaviour {
 
     void gameStarted ()
     {
+        gameOverScript.enabled = false;
         Camera.main.GetComponent<BlurOptimized>().enabled = false;
         Camera.main.GetComponent<Animator>().SetBool(zoomInHash, true);
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().enabled = true;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitInitCount = hookBaitNumber;
         int[] baitOrder = new int[5];
-        int hooksActive = 0;
+        hooksActive = 0;
         for (int k = 0; k < 5; k++)
         {
             if (previousSelection[k] != -1)
@@ -171,7 +174,8 @@ public class BaitSelectionScript : MonoBehaviour {
         }
 
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = hooksActive;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = numberOfHooksActive;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().hooksActive = hooksActive;
 
         hasStarted = true;
         gameObject.SetActive(false);

@@ -10,12 +10,23 @@ public class CrabSpawnScript : MonoBehaviour {
     public float speedHorizontal;
     HookManagerScript hookManagerScript;
 
+    public int[] baitOrder;
     private bool spawnCrab;
 
 	// Use this for initialization
 	void Start () {
         spawnCrab = true;
         hookManagerScript = GameObject.Find("Hooks").GetComponent<HookManagerScript>();
+        baitOrder = new int[5];
+        int k = 0;
+        for (int i = 0; i < hookManagerScript.numberOfHooksActive; i++)
+        {
+            if(hookManagerScript.baitOrder[i] - 1 >= 0)
+            {
+                baitOrder[k] = hookManagerScript.baitOrder[i];
+                k++;
+            }
+        }
 	}
 
     // Update is called once per frame
@@ -33,12 +44,12 @@ public class CrabSpawnScript : MonoBehaviour {
         float time = Random.Range(rangeTimeDiff[0], rangeTimeDiff[1]);
         yield return new WaitForSeconds(time);
 
-        int index = Random.Range(0, hookManagerScript.numberOfHooksActive);
+        int index = (int) Random.Range(0, hookManagerScript.hooksActive);
 
         float x = Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.y);
 
         GameObject crabClone = Instantiate(
-            crab[hookManagerScript.baitOrder[index] - 1],    
+            crab[baitOrder[index] - 1],    
             new Vector3( x, -5f, crab[0].GetComponent<Transform>().position.z),
             crab[0].GetComponent<Transform>().rotation
         );

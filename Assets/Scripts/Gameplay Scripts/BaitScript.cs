@@ -24,6 +24,7 @@ public class BaitScript : MonoBehaviour {
             GetComponent<Collider2D>().enabled = true;
             GetComponent<SpriteRenderer>().enabled = true;
         }
+
         if (GameoverScript.gameover)
         {
             Destroy(gameObject);

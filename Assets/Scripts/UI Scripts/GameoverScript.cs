@@ -6,7 +6,7 @@ using UnityStandardAssets.ImageEffects;
 public class GameoverScript : MonoBehaviour {
 
     public GameObject Gameover;
-    public GameObject overlay;
+    //public GameObject overlay;
     public Button endTrip;
     public static bool gameover = false;
     string check, checker;
@@ -57,10 +57,10 @@ public class GameoverScript : MonoBehaviour {
         if (hookManagerScript.isActiveAndEnabled && hookManagerScript.hasSetup)
         {
             int active = 0;
-            baitsActive = hookManagerScript.numberOfHooksActive;
+            baitsActive = hookManagerScript.hooksActive;
             for ( int m = 0; m < 5; m++)
             {
-                if (hookManagerScript.hooks[m].activeSelf)
+                if (hookManagerScript.hooks[m].activeSelf && hookManagerScript.hooks[m].GetComponent<FishSpawnScript>().isActiveAndEnabled)
                 {
                     active++;
                 }
@@ -90,9 +90,9 @@ public class GameoverScript : MonoBehaviour {
 
         }
 
-        for (int i = 0; i < baitsActive && hookManagerScript.isActiveAndEnabled && hookManagerScript.hasSetup; i++)
+        for (int i = 0; i < hookManagerScript.numberOfHooksActive && hookManagerScript.isActiveAndEnabled && hookManagerScript.hasSetup; i++)
         {
-            if (hookManagerScript.hooks[i].activeSelf && hookManagerScript.hooks[i].GetComponent<FishSpawnScript>().baitScript.initialCount <= 0)
+            if (hookManagerScript.hooks[i].activeSelf && hookManagerScript.hooks[i].GetComponent<FishSpawnScript>().isActiveAndEnabled && hookManagerScript.hooks[i].GetComponent<FishSpawnScript>().baitScript.initialCount <= 0)
             {
                 checker = checker + "1";
             }
@@ -115,18 +115,18 @@ public class GameoverScript : MonoBehaviour {
             textViews.SetActive(false);
             hookManagerScript.enabled = false;
             GameObject.Find("Crab GameObject").SetActive(false);
-            //Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomOutHash, true);
-            Gameover.SetActive(true);
+            Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraGameoverHash);
             Camera.main.GetComponent<BlurOptimized>().enabled = true;
             timerText.text = time.ToString();
             variableTime = time;
             StartCoroutine(timer());
         }
+
 	}
 
     IEnumerator timer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4f);
 
         while (variableTime != 0 && !replayActive)
         {
@@ -189,8 +189,7 @@ public class GameoverScript : MonoBehaviour {
 
         gameover = false;
         gameOverStarted = false;
-        Gameover.SetActive(false);
-        Calculation.SetActive(true);
+        Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationHash);
         calculationStart = true;
     }
 

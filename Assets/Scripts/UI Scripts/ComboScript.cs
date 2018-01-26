@@ -16,7 +16,7 @@ public class ComboScript : MonoBehaviour {
 
     public void showText(string s)
     {
-        GetComponent<Text>().text = s;
-        GetComponent<Animator>().Play(HashIDs.comboTextFadeStateNameHash);
+        comboText.GetComponent<Text>().text = s;
+        //GetComponent<Animator>().Play(HashIDs.comboTextFadeStateNameHash);
     }
 }

@@ -6,6 +6,7 @@ public class HookManagerScript : MonoBehaviour {
     public int numberOfHooksActive;
     public int[] baitOrder;
     public GameObject[] fishes;
+    public GameoverScript gameOverScript;
     public float[] gravity;
     public float[] speedVertical;
     public float[] speedHorizontal;
@@ -14,17 +15,20 @@ public class HookManagerScript : MonoBehaviour {
     public Transform[] hookPositions;
     public float[] radius;
     public GameObject[] hooks;
+    public int hooksActive;
 
     public bool setup;
     public bool hasSetup;
     private int i;
     private GameObject[] fish;
+    //private int baitsInstantiated;
 
 	// Use this for initialization
 	void Start () {
 
         setup = false;
         hasSetup = false;
+        //baitsInstantiated = 0;
         fish = new GameObject[numberOfHooksActive * 2];
 
 	}
@@ -42,27 +46,40 @@ public class HookManagerScript : MonoBehaviour {
         {
 
             setup = false;
+            //baitsInstantiated = 0;
 
             for (i = 0; i < hooks.Length; i++)
             {
                 if (i <= numberOfHooksActive - 1)
                 {
-                    hooks[i].SetActive(true);
-                    fish[i * 2] = fishes[(baitOrder[i] - 1) * 2];
-                    fish[i * 2 + 1] = fishes[(baitOrder[i] - 1) * 2 + 1];
-                    hooks[i].GetComponent<FishSpawnScript>().fish = new GameObject[] { fish[i * 2], fish[i * 2 + 1] };
-                    hooks[i].GetComponent<FishSpawnScript>().gravityScale = gravity[baitOrder[i] - 1];
-                    hooks[i].GetComponent<FishSpawnScript>().speedHorizontal = speedHorizontal[baitOrder[i] - 1];
-                    hooks[i].GetComponent<FishSpawnScript>().speedVertical = speedVertical[baitOrder[i] - 1];
-                    GameObject bait = Instantiate(
-                        baits[baitOrder[i] - 1], 
-                        hooks[i].GetComponent<Transform>().Find("baitSpawnPoint").GetComponent<Transform>().position,
-                        baits[baitOrder[i] - 1].GetComponent<Transform>().rotation
-                    );
-                    bait.GetComponent<Transform>().parent = hooks[i].GetComponent<Transform>();
-                    bait.GetComponent<BaitScript>().initialCount = baitInitCount[baitOrder[i] - 1];
-                    bait.GetComponent<BaitScript>().baitNumber = hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>();
-                    hooks[i].GetComponent<FishSpawnScript>().baitScript = bait.GetComponent<BaitScript>();
+                    GameObject bait;
+                    if (baitOrder[i] - 1 >= 0)
+                    {
+                        hooks[i].SetActive(true);
+                        fish[i * 2] = fishes[(baitOrder[i] - 1) * 2];
+                        fish[i * 2 + 1] = fishes[(baitOrder[i] - 1) * 2 + 1];
+                        hooks[i].GetComponent<FishSpawnScript>().fish = new GameObject[] { fish[i * 2], fish[i * 2 + 1] };
+                        hooks[i].GetComponent<FishSpawnScript>().gravityScale = gravity[baitOrder[i] - 1];
+                        hooks[i].GetComponent<FishSpawnScript>().speedHorizontal = speedHorizontal[baitOrder[i] - 1];
+                        hooks[i].GetComponent<FishSpawnScript>().speedVertical = speedVertical[baitOrder[i] - 1];
+                        bait = Instantiate(
+                            baits[baitOrder[i] - 1],
+                            hooks[i].GetComponent<Transform>().Find("baitSpawnPoint").GetComponent<Transform>().position,
+                            baits[baitOrder[i] - 1].GetComponent<Transform>().rotation
+                        );
+                        Debug.Log("Instantiated");
+                        Debug.Log(i + " " + baitOrder[i] + " " + baitInitCount[i]);
+                        bait.GetComponent<BaitScript>().initialCount = baitInitCount[i];
+                        bait.GetComponent<Transform>().parent = hooks[i].GetComponent<Transform>();
+                        bait.GetComponent<BaitScript>().baitNumber = hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>();
+                        hooks[i].GetComponent<FishSpawnScript>().baitScript = bait.GetComponent<BaitScript>();
+                        //baitsInstantiated++;
+                    } else
+                    {
+                        hooks[i].SetActive(true);
+                        hooks[i].GetComponent<FishSpawnScript>().enabled = false;
+                        hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>().enabled = false;
+                    }
                 }
                 else
                 {
@@ -236,6 +253,8 @@ public class HookManagerScript : MonoBehaviour {
             }
 
             hasSetup = true;
+
+            gameOverScript.enabled = true;
 
         }
 

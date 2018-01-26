@@ -50,6 +50,7 @@ public class BulletScript : MonoBehaviour {
         {
             ComboScript.comboActive = false;
             ComboScript.comboNumber = 0;
+            comboText.GetComponent<ComboScript>().showText(ComboScript.comboNumber.ToString());
         }
         if (collided)
         {
