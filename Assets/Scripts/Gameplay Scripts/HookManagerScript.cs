@@ -72,7 +72,9 @@ public class HookManagerScript : MonoBehaviour {
                         bait.GetComponent<BaitScript>().initialCount = baitInitCount[i];
                         bait.GetComponent<Transform>().parent = hooks[i].GetComponent<Transform>();
                         bait.GetComponent<BaitScript>().baitNumber = hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>();
+                        hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>().enabled = true;
                         hooks[i].GetComponent<FishSpawnScript>().baitScript = bait.GetComponent<BaitScript>();
+                        hooks[i].GetComponent<FishSpawnScript>().StartCoroutine(hooks[i].GetComponent<FishSpawnScript>().StartWait());
                         //baitsInstantiated++;
                     } else
                     {

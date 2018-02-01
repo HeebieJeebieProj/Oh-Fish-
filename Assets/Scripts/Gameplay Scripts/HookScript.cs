@@ -14,8 +14,18 @@ public class HookScript : MonoBehaviour {
 
         if (GameoverScript.gameover)
         {
-            gameObject.SetActive(false);
+            StartCoroutine(WaitDestroy());
         }
 		
 	}
+
+    IEnumerator WaitDestroy()
+    {
+
+        yield return new WaitForSeconds(1);
+
+        gameObject.SetActive(false);
+
+    }
+
 }

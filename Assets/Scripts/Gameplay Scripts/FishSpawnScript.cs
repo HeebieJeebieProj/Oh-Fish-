@@ -28,7 +28,6 @@ public class FishSpawnScript : MonoBehaviour {
         spawnTwo = false;
         spawnThree = false;
         spawnFour = false;
-        StartCoroutine(StartWait());
 
 	}
 	
@@ -63,7 +62,7 @@ public class FishSpawnScript : MonoBehaviour {
 
 	}
 
-    IEnumerator StartWait()
+    public IEnumerator StartWait()
     {
 
         yield return new WaitForSeconds(15);

@@ -114,7 +114,8 @@ public class GameoverScript : MonoBehaviour {
             gameOverStarted = true;
             textViews.SetActive(false);
             hookManagerScript.enabled = false;
-            GameObject.Find("Crab GameObject").SetActive(false);
+            hookManagerScript.hasSetup = false;
+            GameObject.Find("Crab GameObject").GetComponent<CrabSpawnScript>().enabled = false;
             Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraGameoverHash);
             Camera.main.GetComponent<BlurAnimationScript>().changeBlur(4);
             timerText.text = time.ToString();
@@ -127,6 +128,9 @@ public class GameoverScript : MonoBehaviour {
     IEnumerator timer()
     {
         yield return new WaitForSeconds(4f);
+
+        variableTime = time;
+        timerText.text = variableTime.ToString();
 
         while (variableTime != 0 && !replayActive)
         {
