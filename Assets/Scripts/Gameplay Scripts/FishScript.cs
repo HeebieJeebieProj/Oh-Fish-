@@ -18,51 +18,8 @@ public class FishScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        /*if (
-            GameObject.Find("bait1(Clone)") != null &&
-            GameObject.Find("bait1(Clone)").GetComponent<BaitScript>().initialCount <= 0 &&
-            (gameObject.name == "Fish1L(Clone)" || gameObject.name == "Fish1R(Clone)") &&
-            GetComponent<Rigidbody2D>().velocity == Vector2.zero
-          )
-        {
-            Destroy(gameObject);
-        }
-        if (
-            GameObject.Find("bait2(Clone)") != null &&
-            GameObject.Find("bait2(Clone)").GetComponent<BaitScript>().initialCount <= 0 &&
-            (gameObject.name == "Fish2L(Clone)" || gameObject.name == "Fish2R(Clone)") &&
-            GetComponent<Rigidbody2D>().velocity == Vector2.zero
-          )
-        {
-            Destroy(gameObject);
-        }
-        if (
-            GameObject.Find("bait3(Clone)") != null &&
-            GameObject.Find("bait3(Clone)").GetComponent<BaitScript>().initialCount <= 0 &&
-            (gameObject.name == "Fish3L(Clone)" || gameObject.name == "Fish3R(Clone)") &&
-            GetComponent<Rigidbody2D>().velocity == Vector2.zero
-          )
-        {
-            Destroy(gameObject);
-        }
-        if (
-            GameObject.Find("bait4(Clone)") != null &&
-            GameObject.Find("bait4(Clone)").GetComponent<BaitScript>().initialCount <= 0 &&
-            (gameObject.name == "Fish4L(Clone)" || gameObject.name == "Fish4R(Clone)") &&
-            GetComponent<Rigidbody2D>().velocity == Vector2.zero
-          )
-        {
-            Destroy(gameObject);
-        }
-        if (
-            GameObject.Find("bait5(Clone)") != null &&
-            GameObject.Find("bait5(Clone)").GetComponent<BaitScript>().initialCount <= 0 &&
-            (gameObject.name == "Fish5L(Clone)" || gameObject.name == "Fish5R(Clone)") &&
-            GetComponent<Rigidbody2D>().velocity == Vector2.zero
-          )
-        {
-            Destroy(gameObject);
-        }*/
+
+        //if ()
 
         if (GameoverScript.gameover)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishSpawnScript : MonoBehaviour {
 
     public GameObject[] fish;
+    public float[] startWait;
     public int baitNumber;
     public Transform baitSpawnPoint;
     public float radius;
@@ -90,23 +91,31 @@ public class FishSpawnScript : MonoBehaviour {
         {
 
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
+            float xRange = Random.Range(1f, 2f);
+            float yRange = Random.Range( -5f, -4.6f);
 
             if (x < baitSpawnPoint.position.x)
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x - xRange, -5.5f, shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
                 GameObject fishClone = (GameObject)Instantiate(
                     fish[0],
-                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
+                    new Vector3(x - xRange, y, fish[0].GetComponent<Transform>().position.z),
                     fish[0].GetComponent<Transform>().rotation
                 );
+
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
+                        new Vector2( 2.5f, 2.5f),
+                        ForceMode2D.Force
+                    );
+
+                /*fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
-                        );
+                        );*/
                 fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             }
             else

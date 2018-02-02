@@ -10,6 +10,7 @@ public class HookManagerScript : MonoBehaviour {
     public float[] gravity;
     public float[] speedVertical;
     public float[] speedHorizontal;
+    public float[] startWaits;
     public GameObject[] baits;
     public int[] baitInitCount;
     public Transform[] hookPositions;
@@ -67,8 +68,6 @@ public class HookManagerScript : MonoBehaviour {
                             hooks[i].GetComponent<Transform>().Find("baitSpawnPoint").GetComponent<Transform>().position,
                             baits[baitOrder[i] - 1].GetComponent<Transform>().rotation
                         );
-                        Debug.Log("Instantiated");
-                        Debug.Log(i + " " + baitOrder[i] + " " + baitInitCount[i]);
                         bait.GetComponent<BaitScript>().initialCount = baitInitCount[i];
                         bait.GetComponent<Transform>().parent = hooks[i].GetComponent<Transform>();
                         bait.GetComponent<BaitScript>().baitNumber = hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>();
