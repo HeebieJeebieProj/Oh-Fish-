@@ -37,8 +37,8 @@ public class FishScript : MonoBehaviour {
 
         if (transform.position.y <= -10f || transform.position.y >= 5.6f || transform.position.x <= -8f || transform.position.x >= 9f)
         {
-            Destroy(gameObject);
             FishCountScript.DecreaseCount();
+            Destroy(gameObject);
         }
     }
 

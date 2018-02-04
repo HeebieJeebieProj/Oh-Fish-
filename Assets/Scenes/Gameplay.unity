@@ -9782,6 +9782,7 @@ GameObject:
   - component: {fileID: 598646072}
   - component: {fileID: 598646073}
   - component: {fileID: 598646074}
+  - component: {fileID: 598646075}
   m_Layer: 8
   m_Name: Hooks
   m_TagString: Untagged
@@ -9902,6 +9903,19 @@ MonoBehaviour:
   hooksActive: 0
   setup: 0
   hasSetup: 0
+--- !u!114 &598646075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598646071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc33f4a8c69c384f83a76703003c182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFishesDay: 4
+  maxFishesNight: 0
 --- !u!1 &602474158
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FishCountScript : MonoBehaviour {
 
+    public static int maxFishesDay;
+    public static int maxFishesNight;
+
     public static int numberOfActive;
 
 	// Use this for initialization
