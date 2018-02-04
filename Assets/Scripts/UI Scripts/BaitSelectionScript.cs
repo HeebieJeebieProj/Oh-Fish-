@@ -179,8 +179,8 @@ public class BaitSelectionScript : MonoBehaviour {
         Camera.main.GetComponent<BlurAnimationScript>().changeBlur(0);
 
         hasStarted = true;
-        gameObject.SetActive(false);
-        textViews.SetActive(true);
+        //gameObject.SetActive(false);
+        //textViews.SetActive(true);
     }
 
     void baitClicked (int i)

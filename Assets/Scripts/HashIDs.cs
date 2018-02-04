@@ -16,6 +16,7 @@ public class HashIDs : MonoBehaviour {
     public static int cameraGameoverHash = Animator.StringToHash("gameover");
     public static int startFadeHash = Animator.StringToHash("startFade");
     public static int calculationHash = Animator.StringToHash("calculation");
+    public static int calculationStartHash = Animator.StringToHash("calculationShow");
 
     //Ring
     public static int ringFadeOutHash = Animator.StringToHash("startFade");

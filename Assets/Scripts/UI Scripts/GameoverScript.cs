@@ -38,6 +38,7 @@ public class GameoverScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        variableTime = time;
         replayActive = false;
         endTrip.onClick.AddListener(EndTrip);
         videoButton.onClick.AddListener(ContinueTripVideo);
@@ -123,6 +124,12 @@ public class GameoverScript : MonoBehaviour {
             StartCoroutine(timer());
         }
 
+        if (variableTime <= 0 && !replayActive)
+        {
+            variableTime = time;
+            EndTrip();
+        }
+
 	}
 
     IEnumerator timer()
@@ -138,27 +145,26 @@ public class GameoverScript : MonoBehaviour {
             timerText.text = variableTime.ToString();
             yield return new WaitForSeconds(1);
         }
-
-        EndTrip();
+        
     }
 
     void ContinueTripVideo()
     {
         replayActive = true;
         gameOverStarted = false;
-        Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomOutHash, false);
-        Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomInHash, true);
-        Camera.main.GetComponent<BlurOptimized>().enabled = false;
+        Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationHash);
+        Camera.main.GetComponent<BlurAnimationScript>().changeBlur(0);
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().enabled = true;
         gameover = false;
-        Gameover.SetActive(false);
         int[] hookBaitNumber = { 0, 0, 10, 0, 0 };
-        //hookManagerScript.numberOfBaits = hookBaitNumber;
-        int[] baitOrder = { 0, 0, 11, 0, 0};
+        hookManagerScript.baitInitCount = hookBaitNumber;
+        int[] baitOrder = { 0, 0, 0, 0, 0};
 
-        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().baitOrder = baitOrder;
-        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().numberHooks = 5;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = 1;
 
         BaitSelectionScript.hasStarted = true;
+        hookManagerScript.hasSetup = false;
         textViews.SetActive(true);
     }
 
@@ -172,11 +178,11 @@ public class GameoverScript : MonoBehaviour {
         gameover = false;
         Gameover.SetActive(false);
         int[] hookBaitNumber = { 0, 0, 10, 0, 0 };
-        //hookManagerScript.numberOfBaits = hookBaitNumber;
-        int[] baitOrder = { 0, 0, 11, 0, 0 };
+        hookManagerScript.baitInitCount = hookBaitNumber;
+        int[] baitOrder = { 0, 0, 0, 0, 0 };
 
-        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().baitOrder = baitOrder;
-        //GameObject.Find("Hook Hanger").GetComponent<HookManagerScript>().numberHooks = 5;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = 1;
 
         BaitSelectionScript.hasStarted = true;
         textViews.SetActive(true);
@@ -184,16 +190,10 @@ public class GameoverScript : MonoBehaviour {
 
     void EndTrip()
     {
-        /*gameover = false;
-        Gameover.SetActive(false);
-        BaitSelection.SetActive(true);
-        hookSelectionView.SetActive(true);
-        baitSelectionView.SetActive(true);
-        startButton.SetActive(true);*/
-
         gameover = false;
         gameOverStarted = false;
         Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationHash);
+        Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationStartHash);
         Camera.main.GetComponent<BlurAnimationScript>().changeBlur(5);
         calculationStart = true;
     }
