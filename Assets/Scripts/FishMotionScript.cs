@@ -7,21 +7,27 @@ public class FishMotionScript : MonoBehaviour {
     public float initForce;
     public float gravityscale;
     public float x;
+    public float waitTime;
+    public float speedVertical;
+
+    private bool startWaitFin;
 
 	// Use this for initialization
 	void Start () {
 
         GetComponent<Rigidbody2D>().AddForce(
-                new Vector2(initForce * 100f, initForce * 100f),
+                new Vector2(initForce * 100f, 0),
                 ForceMode2D.Force
             );
-
+        StartCoroutine(StartWait());
+        StartCoroutine(Bounce());
+        startWaitFin = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-        if (GetComponent<Transform>().position.y >= -4.8f && GetComponent<Transform>().position.x <= x - 4f)
+        /*if (GetComponent<Transform>().position.y >= -4.8f && GetComponent<Transform>().position.x <= x - 4f)
         {
 
             GetComponent<Rigidbody2D>().AddForce(
@@ -48,7 +54,7 @@ public class FishMotionScript : MonoBehaviour {
                         new Vector2(initForce * 0.1f, initForce * 0.1f),
                         ForceMode2D.Force
                     );
-            }*/ else if (GetComponent<Transform>().position.x == x + 2f)
+            } else if (GetComponent<Transform>().position.x == x + 2f)
             {
 
                 GetComponent<Rigidbody2D>().gravityScale = 0f;
@@ -67,8 +73,46 @@ public class FishMotionScript : MonoBehaviour {
 
             Debug.Log(GetComponent<Rigidbody2D>().velocity.magnitude);
 
-        }
+        }*/
 
 
     }
+
+    IEnumerator StartWait()
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        startWaitFin = true;
+
+        yield return new WaitForSeconds(1);
+
+        GetComponent<Rigidbody2D>().AddForce(
+                new Vector2(0, initForce * - 50f),
+                ForceMode2D.Force
+            );
+
+        yield return new WaitForSeconds(0.5f);
+
+        GetComponent<Rigidbody2D>().AddForce(
+                new Vector2(0, 2.7f * speedVertical),
+                ForceMode2D.Force
+            );
+        
+    }
+
+    IEnumerator Bounce()
+    {
+        yield return new WaitForSeconds(1);
+
+        while(!startWaitFin)
+        {
+            GetComponent<Rigidbody2D>().AddForce(
+                new Vector2(0, initForce * - 30f),
+                ForceMode2D.Force
+            );
+
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
 }
