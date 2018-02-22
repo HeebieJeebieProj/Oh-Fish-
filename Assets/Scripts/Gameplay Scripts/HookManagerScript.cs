@@ -17,6 +17,7 @@ public class HookManagerScript : MonoBehaviour {
     public float[] radius;
     public GameObject[] hooks;
     public int hooksActive;
+    public int numberOfFishesActive;
 
     public bool setup;
     public bool hasSetup;
@@ -59,6 +60,7 @@ public class HookManagerScript : MonoBehaviour {
                         hooks[i].SetActive(true);
                         fish[i * 2] = fishes[(baitOrder[i] - 1) * 2];
                         fish[i * 2 + 1] = fishes[(baitOrder[i] - 1) * 2 + 1];
+                        hooks[i].GetComponent<FishSpawnScript>().enabled = true;
                         hooks[i].GetComponent<FishSpawnScript>().fish = new GameObject[] { fish[i * 2], fish[i * 2 + 1] };
                         hooks[i].GetComponent<FishSpawnScript>().gravityScale = gravity[baitOrder[i] - 1];
                         hooks[i].GetComponent<FishSpawnScript>().speedHorizontal = speedHorizontal[baitOrder[i] - 1];

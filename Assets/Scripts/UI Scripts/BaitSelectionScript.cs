@@ -22,6 +22,7 @@ public class BaitSelectionScript : MonoBehaviour {
 
     public int numberOfBaitsActive = 5;
     public int numberOfHooksActive = 3;
+    public int numberOfFishesActive = 5;
     public int hooksActive;
 
     public Color colorPressed;
@@ -175,6 +176,7 @@ public class BaitSelectionScript : MonoBehaviour {
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = numberOfHooksActive;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().hooksActive = hooksActive;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfFishesActive = numberOfFishesActive;
 
         Camera.main.GetComponent<BlurAnimationScript>().changeBlur(0);
 

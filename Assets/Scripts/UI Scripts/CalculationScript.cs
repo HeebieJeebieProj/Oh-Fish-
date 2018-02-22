@@ -65,12 +65,16 @@ public class CalculationScript : MonoBehaviour {
 
     void HomeButtonClicked()
     {
+        Camera.main.GetComponent<Animator>().ResetTrigger(HashIDs.calculationHash);
+        Camera.main.GetComponent<Animator>().ResetTrigger(HashIDs.calculationStartHash);
         Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraSlideToGoalsFromGameplay);
         comboTextGameObject.GetComponent<CountScript>().countFish = new int[5] { 0, 0, 0, 0, 0 };
     }
 
     void RetryButtonClicked()
     {
+        Camera.main.GetComponent<Animator>().ResetTrigger(HashIDs.calculationHash);
+        Camera.main.GetComponent<Animator>().ResetTrigger(HashIDs.calculationStartHash);
         Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraSlideToGameplay);
         comboTextGameObject.GetComponent<CountScript>().countFish = new int[5] { 0, 0, 0, 0, 0 };
     }

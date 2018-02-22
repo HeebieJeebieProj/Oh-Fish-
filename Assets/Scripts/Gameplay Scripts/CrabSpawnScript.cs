@@ -32,6 +32,15 @@ public class CrabSpawnScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        int k = 0;
+        for (int i = 0; i < hookManagerScript.numberOfHooksActive; i++)
+        {
+            if (hookManagerScript.baitOrder[i] - 1 >= 0)
+            {
+                baitOrder[k] = hookManagerScript.baitOrder[i];
+                k++;
+            }
+        }
         if (spawnCrab)
         {
             spawnCrab = false;
@@ -48,31 +57,36 @@ public class CrabSpawnScript : MonoBehaviour {
 
         float x = Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.y);
 
-        GameObject crabClone = Instantiate(
-            crab[baitOrder[index] - 1],    
-            new Vector3( x, -5f, crab[0].GetComponent<Transform>().position.z),
-            crab[0].GetComponent<Transform>().rotation
-        );
-
-        if (x <= 0)
+        if (baitOrder[index] - 1 > -1)
         {
-
-            crabClone.GetComponent<Rigidbody2D>().AddForce(
-                new Vector2(speedHorizontalMapper(), 2.7f * speedVertical),
-                ForceMode2D.Force
+            GameObject crabClone = Instantiate(
+                crab[baitOrder[index] - 1],
+                new Vector3(x, -5f, crab[0].GetComponent<Transform>().position.z),
+                crab[0].GetComponent<Transform>().rotation
             );
 
-        } else
-        {
+            if (x <= 0)
+            {
 
-            crabClone.GetComponent<Rigidbody2D>().AddForce(
-                new Vector2(speedHorizontalMapper() * -1f, 2.7f * speedVertical),
-                ForceMode2D.Force
-            );
+                crabClone.GetComponent<Rigidbody2D>().AddForce(
+                    new Vector2(speedHorizontalMapper(), 2.7f * speedVertical),
+                    ForceMode2D.Force
+                );
 
+            }
+            else
+            {
+
+                crabClone.GetComponent<Rigidbody2D>().AddForce(
+                    new Vector2(speedHorizontalMapper() * -1f, 2.7f * speedVertical),
+                    ForceMode2D.Force
+                );
+
+            }
+
+            spawnCrab = true;
         }
 
-        spawnCrab = true;
     }
 
     float speedHorizontalMapper()

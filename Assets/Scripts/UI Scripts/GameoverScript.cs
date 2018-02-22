@@ -31,6 +31,9 @@ public class GameoverScript : MonoBehaviour {
     private int variableTime;
 
     private bool gameOverStarted;
+    private bool endTripStart;
+
+    private int replayCount = 0;
 
     public static bool calculationStart;
 
@@ -50,6 +53,7 @@ public class GameoverScript : MonoBehaviour {
         checker = "-1";
         gameOverStarted = false;
         calculationStart = false;
+        endTripStart = false;
 	}
 	
 	// Update is called once per frame
@@ -105,7 +109,6 @@ public class GameoverScript : MonoBehaviour {
         {
             //BaitSelectionScript.hasStarted = false;
             gameover = true;
-            replayActive = false;
         }
 
         checker = "";
@@ -114,23 +117,40 @@ public class GameoverScript : MonoBehaviour {
         {
             gameOverStarted = true;
             textViews.SetActive(false);
+            videoButton.interactable = true;
+            coinButton.interactable = true;
             hookManagerScript.enabled = false;
             hookManagerScript.hasSetup = false;
             GameObject.Find("Crab GameObject").GetComponent<CrabSpawnScript>().enabled = false;
-            Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraGameoverHash);
+            Camera.main.GetComponent<Animator>().ResetTrigger(HashIDs.calculationHash);
+            Camera.main.GetComponent<Animator>().ResetTrigger(HashIDs.calculationStartHash);
+            Camera.main.GetComponent<Animator>().ResetTrigger(HashIDs.replayHash);
             Camera.main.GetComponent<BlurAnimationScript>().changeBlur(4);
             timerText.text = time.ToString();
             variableTime = time;
             StartCoroutine(timer());
+            Debug.Log("here1 " + Time.time);
+
+            Debug.Log(replayCount + " " + replayActive);
+
+            if (replayCount >= 2 && replayActive)
+            {
+                replayActive = false;
+                replayCount = 0;
+                Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.noReplayHash);
+                Camera.main.GetComponent<BlurAnimationScript>().changeBlur(5);
+            } else
+            {
+                Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.cameraGameoverHash);
+            }
         }
 
-        if (variableTime <= 0 && !replayActive)
+        if (endTripStart && !replayActive)
         {
-            variableTime = time;
+            endTripStart = false;
             EndTrip();
         }
-
-	}
+    }
 
     IEnumerator timer()
     {
@@ -139,32 +159,49 @@ public class GameoverScript : MonoBehaviour {
         variableTime = time;
         timerText.text = variableTime.ToString();
 
-        while (variableTime != 0 && !replayActive)
+        while (variableTime != 0 && gameover && gameOverStarted)
         {
             variableTime--;
+            if (variableTime == 0)
+            {
+                videoButton.interactable = false;
+                coinButton.interactable = false;
+            }
             timerText.text = variableTime.ToString();
             yield return new WaitForSeconds(1);
         }
-        
+
+        Debug.Log("here2 " + Time.time);
+
+        variableTime = time;
+
+        if (!replayActive)
+        {
+            endTripStart = true;
+        }
     }
 
     void ContinueTripVideo()
     {
+        gameover = false;
         replayActive = true;
+        replayCount++;
+        variableTime = time;
         gameOverStarted = false;
         Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationHash);
+        Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.replayHash);
         Camera.main.GetComponent<BlurAnimationScript>().changeBlur(0);
+        BaitSelectionScript.hasStarted = true;
+        hookManagerScript.hasSetup = false;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().enabled = true;
-        gameover = false;
-        int[] hookBaitNumber = { 0, 0, 10, 0, 0 };
+        int[] hookBaitNumber = { 10, 0, 0, 0, 0 };
         hookManagerScript.baitInitCount = hookBaitNumber;
-        int[] baitOrder = { 0, 0, 0, 0, 0};
+        int[] baitOrder = { 1, 0, 0, 0, 0};
 
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
         GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = 1;
+        GameObject.Find("Hooks").GetComponent<HookManagerScript>().hooksActive = 1;
 
-        BaitSelectionScript.hasStarted = true;
-        hookManagerScript.hasSetup = false;
         textViews.SetActive(true);
     }
 
@@ -172,12 +209,13 @@ public class GameoverScript : MonoBehaviour {
     {
         replayActive = true;
         gameOverStarted = false;
+        replayCount++;
         Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomOutHash, false);
         Camera.main.GetComponent<Animator>().SetBool(HashIDs.cameraZoomInHash, true);
         Camera.main.GetComponent<BlurOptimized>().enabled = false;
         gameover = false;
         Gameover.SetActive(false);
-        int[] hookBaitNumber = { 0, 0, 10, 0, 0 };
+        int[] hookBaitNumber = { 0, 0, 1, 0, 0 };
         hookManagerScript.baitInitCount = hookBaitNumber;
         int[] baitOrder = { 0, 0, 0, 0, 0 };
 
@@ -192,10 +230,16 @@ public class GameoverScript : MonoBehaviour {
     {
         gameover = false;
         gameOverStarted = false;
-        Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationHash);
-        Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationStartHash);
+        replayActive = false;
+        replayCount = 0;
+        if (!replayActive)
+        {
+            Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationHash);
+            Camera.main.GetComponent<Animator>().SetTrigger(HashIDs.calculationStartHash);
+        }
         Camera.main.GetComponent<BlurAnimationScript>().changeBlur(5);
         calculationStart = true;
+        //GetComponent<GameoverScript>().enabled = false;
     }
 
 }

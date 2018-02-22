@@ -17,6 +17,8 @@ public class HashIDs : MonoBehaviour {
     public static int startFadeHash = Animator.StringToHash("startFade");
     public static int calculationHash = Animator.StringToHash("calculation");
     public static int calculationStartHash = Animator.StringToHash("calculationShow");
+    public static int replayHash = Animator.StringToHash("replay");
+    public static int noReplayHash = Animator.StringToHash("noReplay");
 
     //Ring
     public static int ringFadeOutHash = Animator.StringToHash("startFade");

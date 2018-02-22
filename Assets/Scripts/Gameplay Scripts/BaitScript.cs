@@ -33,56 +33,64 @@ public class BaitScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.name == "bait1(Clone)")
-        {
-            if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 1 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 1 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
-            {
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
-                initialCount--;
-            }
-        } else if (gameObject.name == "bait2(Clone)")
-        {
-            if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 2 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 2 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
-            {
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
-                initialCount--;
-            }
-        }
-        else if (gameObject.name == "bait3(Clone)")
-        {
-            if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 3 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 3 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
-            {
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
-                initialCount--;
-            }
-        }
-        else if (gameObject.name == "bait4(Clone)")
-        {
-            if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 4 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 4 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
-            {
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
-                initialCount--;
-            }
-        }
-        else if (gameObject.name == "bait5(Clone)")
-        {
-            if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 5 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 5 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
-            {
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
-                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
-                initialCount--;
-            }
-        } 
-        else if (gameObject.name == "bait11(Clone)")
+        if (GameoverScript.replayActive)
         {
             collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
             collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
             initialCount--;
+        } else
+        {
+            if (gameObject.name == "bait1(Clone)")
+            {
+                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 1 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 1 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                {
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
+                    initialCount--;
+                }
+            }
+            else if (gameObject.name == "bait2(Clone)")
+            {
+                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 2 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 2 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                {
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
+                    initialCount--;
+                }
+            }
+            else if (gameObject.name == "bait3(Clone)")
+            {
+                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 3 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 3 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                {
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
+                    initialCount--;
+                }
+            }
+            else if (gameObject.name == "bait4(Clone)")
+            {
+                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 4 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 4 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                {
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
+                    initialCount--;
+                }
+            }
+            else if (gameObject.name == "bait5(Clone)")
+            {
+                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 5 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 5 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                {
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
+                    collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
+                    initialCount--;
+                }
+            }
+            else if (gameObject.name == "bait11(Clone)")
+            {
+                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
+                collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
+                initialCount--;
+            }
         }
-
     }
 }
