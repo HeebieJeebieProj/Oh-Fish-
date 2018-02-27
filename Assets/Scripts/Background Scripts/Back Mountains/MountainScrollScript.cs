@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MountainScrollScript : MonoBehaviour
+public class MountainScrollScript : MonoBehaviour, InterfacePooledObject
 {
 
     public float xDiff; //Difference between 2 successive objects of same type
@@ -12,10 +13,13 @@ public class MountainScrollScript : MonoBehaviour
 
     private GameObject clone; //To keep the clone of present object
     public bool spawnedEnd;
+    private ObjectPooler objectPooler;
 
     // Use this for initialization
-    void Start()
+    public void OnObjectSpawn()
     {
+
+        objectPooler = ObjectPooler.Instance;
 
         if (MountainSpawnScript.shouldSpawn)
         {
@@ -23,8 +27,7 @@ public class MountainScrollScript : MonoBehaviour
             //Clone when at x = 0
             if (GetComponent<Transform>().position.x >= 0)
             {
-                clone = Instantiate(gameObject);
-                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone = objectPooler.SpawnFromPool(StringConsants.stringMountains, new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z), gameObject.GetComponent<Transform>().rotation);
                 clone.GetComponent<MountainScrollScript>().speed = speed;
                 clone.GetComponent<MountainScrollScript>().xDiff = xDiff;
                 clone.GetComponent<SpriteRenderer>().sprite = mountain;
@@ -45,8 +48,7 @@ public class MountainScrollScript : MonoBehaviour
             if (MountainSpawnScript.spawnEnd && !spawnedEnd)
             {
                 spawnedEnd = true;
-                clone = Instantiate(gameObject);
-                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone = objectPooler.SpawnFromPool(StringConsants.stringMountains, new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z), gameObject.GetComponent<Transform>().rotation);
                 clone.GetComponent<MountainScrollScript>().speed = speed;
                 clone.GetComponent<MountainScrollScript>().xDiff = xDiff;
                 clone.GetComponent<SpriteRenderer>().sprite = endMountainSprite;
@@ -72,8 +74,7 @@ public class MountainScrollScript : MonoBehaviour
         {
             if (MountainSpawnScript.shouldSpawn)
             {
-                clone = Instantiate(gameObject);
-                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone = objectPooler.SpawnFromPool(StringConsants.stringMountains, new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z), gameObject.GetComponent<Transform>().rotation);
                 clone.GetComponent<MountainScrollScript>().speed = speed;
                 clone.GetComponent<MountainScrollScript>().xDiff = xDiff;
                 clone.GetComponent<Transform>().parent = GetComponent<Transform>().parent;
@@ -84,8 +85,7 @@ public class MountainScrollScript : MonoBehaviour
             } else if (MountainSpawnScript.spawnEnd && !spawnedEnd)
             {
                 spawnedEnd = true;
-                clone = Instantiate(gameObject);
-                clone.GetComponent<Transform>().position = new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z);
+                clone = objectPooler.SpawnFromPool(StringConsants.stringMountains, new Vector3(GetComponent<Transform>().position.x - xDiff, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z), gameObject.GetComponent<Transform>().rotation);
                 clone.GetComponent<MountainScrollScript>().speed = speed;
                 clone.GetComponent<MountainScrollScript>().xDiff = xDiff;
                 clone.GetComponent<SpriteRenderer>().sprite = endMountainSprite;
@@ -111,8 +111,9 @@ public class MountainScrollScript : MonoBehaviour
         //If beyond x = xDiff, destroy the object
         if (GetComponent<Transform>().position.x >= xDiff)
         {
-            Destroy(gameObject);
+            objectPooler.EnqueueToPool(StringConsants.stringMountains, gameObject);
         }
 
     }
+
 }

@@ -13,11 +13,13 @@ public class MountainSpawnScriptNew : MonoBehaviour {
     public float x;
     
     public static bool shouldSpawn; //For continuous spawning
+    private ObjectPooler objectPooler;
 
     // Use this for initialization
     void Start()
     {
 
+        objectPooler = ObjectPooler.Instance;
         shouldSpawn = true;
 
     }
@@ -41,13 +43,17 @@ public class MountainSpawnScriptNew : MonoBehaviour {
         //StartCoroutine(WaitForTimeDiff());
 
         int i = Random.Range(0, mountainSprite.Length / 2);
+        
+        GameObject mountainClone = objectPooler.SpawnFromPool(StringConsants.stringMountains, new Vector3(x + Camera.main.GetComponent<Transform>().position.x, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
 
-        GameObject mountainClone = Instantiate(mountain, new Vector3(x + Camera.main.GetComponent<Transform>().position.x, mountain.GetComponent<Transform>().position.y, mountain.GetComponent<Transform>().position.z), mountain.GetComponent<Transform>().rotation);
-        mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
-        mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
-        mountainClone.GetComponent<ScrollScript>().speed = speed;
-        mountainClone.GetComponent<Transform>().Find("mountain").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
-        mountainClone.GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
+        if (mountainClone != null)
+        {
+            mountainClone.GetComponent<Transform>().parent = GetComponent<Transform>();
+            mountainClone.GetComponentInChildren<SpriteRenderer>().sprite = mountainSprite[2 * i];
+            mountainClone.GetComponent<ScrollScript>().speed = speed;
+            mountainClone.GetComponent<Transform>().Find("mountain").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
+            mountainClone.GetComponent<Transform>().Find("reflection").GetComponent<SpriteRenderer>().sprite = mountainSprite[2 * i];
+        }
 
         yield return new WaitForSeconds(
             Random.Range(

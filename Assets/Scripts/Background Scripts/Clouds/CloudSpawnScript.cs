@@ -33,9 +33,12 @@ public class CloudSpawnScript : MonoBehaviour {
     public float alpha = 0;
     public float radius = 8;
 
+    private ObjectPooler objectPooler;
+
 	// Use this for initialization
 	void Start () {
 
+        objectPooler = ObjectPooler.Instance;
         spawnBackgroundClouds = true;
         spawnForegroundClouds = true;
 
@@ -61,8 +64,8 @@ public class CloudSpawnScript : MonoBehaviour {
     IEnumerator GenerateBackgroundClouds()
     {
 
-        GameObject cloudClone = Instantiate(
-            cloudBackground,
+        GameObject cloudClone = objectPooler.SpawnFromPool(
+            StringConsants.stringCloudsBackground,
             new Vector3(-13f + Camera.main.GetComponent<Transform>().position.x, Random.Range(rangeYBackgroundClouds[0], rangeYBackgroundClouds[1]), cloudBackground.GetComponent<Transform>().position.z),
             cloudBackground.GetComponent<Transform>().rotation
         );
@@ -95,8 +98,8 @@ public class CloudSpawnScript : MonoBehaviour {
     IEnumerator GenerateForegroundClouds()
     {
 
-        GameObject cloudClone = Instantiate(
-            cloudForeground,
+        GameObject cloudClone = objectPooler.SpawnFromPool(
+            StringConsants.stringCloudsForeground,
             new Vector3(-13f + Camera.main.GetComponent<Transform>().position.x, Random.Range(rangeYForegroundClouds[0], rangeYForegroundClouds[1]), cloudForeground.GetComponent<Transform>().position.z),
             cloudForeground.GetComponent<Transform>().rotation
         );

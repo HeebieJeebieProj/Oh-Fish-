@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrollScript : MonoBehaviour {
+public class ScrollScript : MonoBehaviour, InterfacePooledObject {
 
     public float speed;
 
     private float sp;
-    
-	// Update is called once per frame
-	void Update () {
+
+    private ObjectPooler objectPooler;
+
+    public void OnObjectSpawn()
+    {
+
+        objectPooler = ObjectPooler.Instance;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         sp = speed * 60 / MobileUtilsScript.FramesPerSec;
 
@@ -17,7 +26,7 @@ public class ScrollScript : MonoBehaviour {
 
         if (GetComponent<Transform>().position.x >= 12f + Camera.main.GetComponent<Transform>().position.x)
         {
-            Destroy(gameObject);
+            objectPooler.EnqueueToPool(StringConsants.StringMapper(gameObject.name), gameObject);
         }
 
     }

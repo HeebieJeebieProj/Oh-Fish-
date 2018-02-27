@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudColorScript : MonoBehaviour {
+public class CloudColorScript : MonoBehaviour, InterfacePooledObject {
 
     public Color[] colors;
     public float[] time;
@@ -13,7 +13,7 @@ public class CloudColorScript : MonoBehaviour {
     private float frac;
 
 	// Use this for initialization
-	void Start () {
+	public void OnObjectSpawn () {
 
         if (TimeManagerScript.timeOfDay > time[0] * 60 * 60 && TimeManagerScript.timeOfDay <= time[1] * 60 * 60)
         {

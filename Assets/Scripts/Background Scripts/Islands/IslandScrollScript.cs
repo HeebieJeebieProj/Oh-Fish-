@@ -1,15 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IslandScrollScript : MonoBehaviour {
+public class IslandScrollScript : MonoBehaviour, InterfacePooledObject {
 
     public float speed;
 
     private float sp;
-	
-	// Update is called once per frame
-	void Update () {
+
+    private ObjectPooler objectPooler;
+
+    public void OnObjectSpawn()
+    {
+
+        objectPooler = ObjectPooler.Instance;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         sp = speed * 60 / MobileUtilsScript.FramesPerSec;
 
@@ -17,7 +27,7 @@ public class IslandScrollScript : MonoBehaviour {
 
         if (GetComponent<Transform>().position.x >= 18f + Camera.main.GetComponent<Transform>().position.x)
         {
-            Destroy(gameObject);
+            objectPooler.EnqueueToPool(StringConsants.StringMapper(gameObject.name), gameObject);
         }
 		
 	}

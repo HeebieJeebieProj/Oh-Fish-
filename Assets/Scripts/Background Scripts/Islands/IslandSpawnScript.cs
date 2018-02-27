@@ -19,10 +19,13 @@ public class IslandSpawnScript : MonoBehaviour
     private bool alternate;
     private int previousIsland;
 
+    private ObjectPooler objectPooler;
+
     // Use this for initialization
     void Start()
     {
 
+        objectPooler = ObjectPooler.Instance;
         startSpawn = true;
         alternate = true;
         previousIsland = -1;
@@ -68,8 +71,8 @@ public class IslandSpawnScript : MonoBehaviour
                     backRock.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 1f);
                 }
                 backRock.GetComponent<SpriteRenderer>().sortingOrder = l + 2;
-                GameObject instanciatedBackRock = Instantiate(
-                    backRock,
+                GameObject instanciatedBackRock = objectPooler.SpawnFromPool(
+                    StringConsants.stringRocks,
                     new Vector3(-13f + Camera.main.GetComponent<Transform>().position.x, yRockRange[1] + increment, backRock.GetComponent<Transform>().position.z),
                     backRock.GetComponent<Transform>().rotation
                 );
@@ -139,7 +142,41 @@ public class IslandSpawnScript : MonoBehaviour
                 yRange[2 * index] = temp;
             }
 
-            island = Instantiate(islands[index], new Vector3(-18f + Camera.main.GetComponent<Transform>().position.x, Random.Range(yRange[2 * index], yRange[2 * index + 1]), islands[index].GetComponent<Transform>().position.z), islands[index].GetComponent<Transform>().rotation);
+            switch(index)
+            {
+
+                case 0:
+                    {
+                        island = objectPooler.SpawnFromPool(
+                            StringConsants.stringLightHouse,
+                            new Vector3(-18f + Camera.main.GetComponent<Transform>().position.x, Random.Range(yRange[2 * index], yRange[2 * index + 1]), islands[index].GetComponent<Transform>().position.z),
+                            islands[index].GetComponent<Transform>().rotation
+                        );
+                    }
+                    break;
+
+                case 1:
+                    {
+                        island = objectPooler.SpawnFromPool(
+                            StringConsants.stringSeaArch,
+                            new Vector3(-18f + Camera.main.GetComponent<Transform>().position.x, Random.Range(yRange[2 * index], yRange[2 * index + 1]), islands[index].GetComponent<Transform>().position.z),
+                            islands[index].GetComponent<Transform>().rotation
+                        );
+                    }
+                    break;
+
+                case 2:
+                    {
+                        island = objectPooler.SpawnFromPool(
+                            StringConsants.stringLargeIsland,
+                            new Vector3(-18f + Camera.main.GetComponent<Transform>().position.x, Random.Range(yRange[2 * index], yRange[2 * index + 1]), islands[index].GetComponent<Transform>().position.z),
+                            islands[index].GetComponent<Transform>().rotation
+                        );
+                    }
+                    break;
+
+            }
+
             island.GetComponent<Transform>().parent = GetComponent<Transform>();
             island.GetComponent<IslandScrollScript>().speed = speed;
 
