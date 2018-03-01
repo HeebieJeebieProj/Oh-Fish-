@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudGradientScript : MonoBehaviour {
+public class CloudGradientScript : MonoBehaviour, InterfacePooledObject {
 
     public float alpha;
     public float radius;
@@ -14,50 +14,8 @@ public class CloudGradientScript : MonoBehaviour {
     private float distance2;
 
 	// Use this for initialization
-	void Start () {
-        distance1 = Mathf.Sqrt(Mathf.Pow(sun.GetComponent<Transform>().position.x - GetComponent<Transform>().position.x, 2) + Mathf.Pow(sun.GetComponent<Transform>().position.y - GetComponent<Transform>().position.y, 2));
-        if (distance1 <= radius)
-        {
-            if (GetComponent<Transform>().position.x <= sun.GetComponent<Transform>().position.x)
-            {
-                if (!flipped)
-                {
-                    GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color = new Color(
-                            GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color.r,
-                            GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color.g,
-                            GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color.b,
-                            alpha
-                    );
-                }
-            } else
-            {
-                if (flipped)
-                {
-                    GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color = new Color(
-                            GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color.r,
-                            GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color.g,
-                            GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color.b,
-                            alpha
-                    );
-                }
-               
-            }
-        } else
-        {
-            GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color = new Color(
-                   GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color.r,
-                   GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color.g,
-                   GetComponent<Transform>().Find("gradient left").GetComponent<SpriteRenderer>().color.b,
-                   alpha
-            );
-            GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color = new Color(
-                   GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color.r,
-                   GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color.g,
-                   GetComponent<Transform>().Find("gradient right").GetComponent<SpriteRenderer>().color.b,
-                   alpha
-            );
-        }
-
+	public void OnObjectSpawn () {
+        
 	}
 	
 	// Update is called once per frame

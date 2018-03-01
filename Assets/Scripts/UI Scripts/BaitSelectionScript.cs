@@ -33,8 +33,11 @@ public class BaitSelectionScript : MonoBehaviour {
 
     int zoomInHash = Animator.StringToHash("startZoom");
 
+    private HookManagerScript hookManagerScript;
+
     // Use this for initialization
     void Start () {
+        hookManagerScript = GameObject.Find("Hooks").GetComponent<HookManagerScript>();
         hasStarted = false;
         buttonStartActive = false;
         startButton.GetComponent<Button>().onClick.AddListener(gameStarted);
@@ -160,8 +163,8 @@ public class BaitSelectionScript : MonoBehaviour {
     {
         gameOverScript.enabled = false;
         Camera.main.GetComponent<Animator>().SetBool(zoomInHash, true);
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().enabled = true;
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitInitCount = hookBaitNumber;
+        hookManagerScript.enabled = true;
+        hookManagerScript.baitInitCount = hookBaitNumber;
         int[] baitOrder = new int[5];
         hooksActive = 0;
         for (int k = 0; k < 5; k++)
@@ -173,10 +176,10 @@ public class BaitSelectionScript : MonoBehaviour {
             }
         }
 
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().baitOrder = baitOrder;
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfHooksActive = numberOfHooksActive;
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().hooksActive = hooksActive;
-        GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfFishesActive = numberOfFishesActive;
+        hookManagerScript.baitOrder = baitOrder;
+        hookManagerScript.numberOfHooksActive = numberOfHooksActive;
+        hookManagerScript.hooksActive = hooksActive;
+        hookManagerScript.numberOfFishesActive = numberOfFishesActive;
 
         Camera.main.GetComponent<BlurAnimationScript>().changeBlur(0);
 

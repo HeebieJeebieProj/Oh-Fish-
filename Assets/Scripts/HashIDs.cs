@@ -41,4 +41,7 @@ public class HashIDs : MonoBehaviour {
     public static int cloudGradientRightEndHash = Animator.StringToHash("end right");
     public static int cloudGradientEndHash = Animator.StringToHash("end");
 
+    //Fish
+    public static int fishLeftHash = Animator.StringToHash("Left");
+
 }

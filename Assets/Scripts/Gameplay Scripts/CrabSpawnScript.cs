@@ -13,8 +13,11 @@ public class CrabSpawnScript : MonoBehaviour {
     public int[] baitOrder;
     private bool spawnCrab;
 
+    private ObjectPooler objectPooler;
+
 	// Use this for initialization
 	void Start () {
+
         spawnCrab = true;
         hookManagerScript = GameObject.Find("Hooks").GetComponent<HookManagerScript>();
         baitOrder = new int[5];
@@ -27,6 +30,8 @@ public class CrabSpawnScript : MonoBehaviour {
                 k++;
             }
         }
+        objectPooler = ObjectPooler.Instance;
+
 	}
 
     // Update is called once per frame
@@ -59,11 +64,13 @@ public class CrabSpawnScript : MonoBehaviour {
 
         if (baitOrder[index] - 1 > -1)
         {
-            GameObject crabClone = Instantiate(
-                crab[baitOrder[index] - 1],
+            GameObject crabClone = objectPooler.SpawnFromPool(
+                StringConsants.stringCrabs,
                 new Vector3(x, -5f, crab[0].GetComponent<Transform>().position.z),
                 crab[0].GetComponent<Transform>().rotation
             );
+
+            crabClone.GetComponent<CrabScript>().crabNumber = baitOrder[index] - 1;
 
             if (x <= 0)
             {

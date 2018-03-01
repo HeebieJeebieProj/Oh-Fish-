@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrabScript : MonoBehaviour {
+public class CrabScript : MonoBehaviour, InterfacePooledObject {
+
+    public int crabNumber;
+
+    private ObjectPooler objectPooler;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	public void OnObjectSpawn () {
+
+        objectPooler = ObjectPooler.Instance;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
         if (GetComponent<Transform>().position.y <= -6f)
         {
-            Destroy(gameObject);
+            objectPooler.EnqueueToPool(StringConsants.stringCrabs, gameObject);
         }
 
 	}

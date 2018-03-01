@@ -32,23 +32,23 @@ public class CountScript : MonoBehaviour {
         {
             count++;
             fish = collision.GetComponent<Collider2D>().gameObject;
-            if (fish.name == "Fish 1 Left(Clone)" || fish.name == "Fish 1 Right(Clone)")
+            if (fish.GetComponent<FishScript>().fishNumber == 0)
             {
                 countFish[0]++;
             }
-            else if (fish.name == "Fish 2 Left(Clone)" || fish.name == "Fish 2 Right(Clone)")
+            else if (fish.GetComponent<FishScript>().fishNumber == 1)
             {
                 countFish[1]++;
             }
-            else if (fish.name == "Fish 3 Left(Clone)" || fish.name == "Fish 3 Right(Clone)")
+            else if (fish.GetComponent<FishScript>().fishNumber == 2)
             {
                 countFish[2]++;
             }
-            else if (fish.name == "Fish 4 Left(Clone)" || fish.name == "Fish 4 Right(Clone)")
+            else if (fish.GetComponent<FishScript>().fishNumber == 3)
             {
                 countFish[3]++;
             }
-            else if (fish.name == "Fish 5 Left(Clone)" || fish.name == "Fish 5 Right(Clone)")
+            else if (fish.GetComponent<FishScript>().fishNumber == 4)
             {
                 countFish[4]++;
             }
@@ -56,7 +56,7 @@ public class CountScript : MonoBehaviour {
         if (collision.GetComponent<Collider2D>().tag == "crab" && collision.GetComponent<Collider2D>().gameObject != crab)
         {
             crab = collision.GetComponent<Collider2D>().gameObject;
-            if (crab.name == "Crab1(Clone)")
+            if (crab.GetComponent<CrabScript>().crabNumber == 0)
             {
                 if (countFish[0] - 10 >= 0)
                 {
@@ -75,7 +75,7 @@ public class CountScript : MonoBehaviour {
                     }
                 }
             }
-            else if (crab.name == "Crab2(Clone)")
+            else if (crab.GetComponent<CrabScript>().crabNumber == 1)
             {
                 if (countFish[1] - 10 >= 0)
                 {
@@ -96,7 +96,7 @@ public class CountScript : MonoBehaviour {
                     }
                 }
             }
-            else if (crab.name == "Crab3(Clone)")
+            else if (crab.GetComponent<CrabScript>().crabNumber == 2)
             {
                 if (countFish[2] - 10 >= 0)
                 {
@@ -117,7 +117,7 @@ public class CountScript : MonoBehaviour {
                     }
                 }
             }
-            else if (crab.name == "Crab4(Clone)")
+            else if (crab.GetComponent<CrabScript>().crabNumber == 3)
             {
                 if (countFish[3] - 10 >= 0)
                 {
@@ -138,7 +138,7 @@ public class CountScript : MonoBehaviour {
                     }
                 }
             }
-            else if (crab.name == "Crab5(Clone)")
+            else if (crab.GetComponent<CrabScript>().crabNumber == 4)
             {
                 if (countFish[4] - 10 >= 0)
                 {

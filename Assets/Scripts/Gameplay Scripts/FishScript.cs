@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class FishScript : MonoBehaviour {
+public class FishScript : MonoBehaviour, InterfacePooledObject {
 
     public bool touchedBait = false;
     public GameObject bait;
     public bool collided = false;
     public bool inverted;
     public Text text;
+    public int fishNumber;
+
+    private ObjectPooler objectPooler;
 
     // Use this for initialization
-    void Start()
+    public void OnObjectSpawn()
     {
         touchedBait = false;
+        objectPooler = ObjectPooler.Instance;
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class FishScript : MonoBehaviour {
         if (transform.position.y <= -10f || transform.position.y >= 5.6f || transform.position.x <= -8f || transform.position.x >= 9f)
         {
             FishCountScript.DecreaseCount();
-            Destroy(gameObject);
+            objectPooler.EnqueueToPool(StringConsants.stringFishes, gameObject);
         }
     }
 

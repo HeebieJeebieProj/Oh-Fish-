@@ -6946,7 +6946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: []
+  fish: {fileID: 0}
+  fishSprite: {fileID: 0}
   startWait: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 2057967258}
@@ -6957,6 +6958,7 @@ MonoBehaviour:
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
   baitScript: {fileID: 0}
+  fishNumber: 0
 --- !u!114 &294089678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7138,7 +7140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: []
+  fish: {fileID: 0}
+  fishSprite: {fileID: 0}
   startWait: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 1014667820}
@@ -7149,6 +7152,7 @@ MonoBehaviour:
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
   baitScript: {fileID: 0}
+  fishNumber: 0
 --- !u!114 &307805740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7374,7 +7378,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326420081
 GameObject:
@@ -9834,17 +9838,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfHooksActive: 3
   baitOrder: 020000000100000003000000
-  fishes:
-  - {fileID: 1093144934683612, guid: b1c4f165fb646d84497d17689cd833e5, type: 2}
-  - {fileID: 1517740068956720, guid: 3704b84a8eb22f64dbd11853636dd8c4, type: 2}
-  - {fileID: 1093144934683612, guid: 780c1f7fb3ee01a47b6f285ace7cefff, type: 2}
-  - {fileID: 1517740068956720, guid: cc47b18f7760e86458b46446d083e2e5, type: 2}
-  - {fileID: 1093144934683612, guid: 56bf922a96cb836458c828db3f07007b, type: 2}
-  - {fileID: 1517740068956720, guid: 2ccd2d9fc03ddcf479a6bc589533a888, type: 2}
-  - {fileID: 1093144934683612, guid: 684b6e0bccd9e7f488b82e939fcd61e8, type: 2}
-  - {fileID: 1517740068956720, guid: f6d94ec9d3c18bc428243b3ef52dbf38, type: 2}
-  - {fileID: 1093144934683612, guid: 1b984a647dbb8454ab3c8adddc70d80b, type: 2}
-  - {fileID: 1517740068956720, guid: d2295a416f379ab42806d85d49dda32b, type: 2}
+  fishes: {fileID: 1093144934683612, guid: b1c4f165fb646d84497d17689cd833e5, type: 2}
+  fishSprites:
+  - {fileID: 21300010, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300012, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300014, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300016, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300018, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
   gameOverScript: {fileID: 281030165}
   gravity:
   - 3
@@ -9865,12 +9865,13 @@ MonoBehaviour:
   - 6
   - 6
   startWaits: []
+  baitMain: {fileID: 1833597356622428, guid: f85e89f956b13f0488f5227c480428b7, type: 2}
   baits:
-  - {fileID: 1833597356622428, guid: f85e89f956b13f0488f5227c480428b7, type: 2}
-  - {fileID: 1003573717523352, guid: 0b1e50946ddbdf442bbcd5b5ea431fe4, type: 2}
-  - {fileID: 1549766341067560, guid: 0158c5831e8451d4e9550cdd096f0487, type: 2}
-  - {fileID: 1336873955862972, guid: be3295989cfbc9e468eade1062acde5b, type: 2}
-  - {fileID: 1631633459800212, guid: b545f2089ec50c4459ea8b8d549ab742, type: 2}
+  - {fileID: 21300000, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300002, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300004, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300006, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
+  - {fileID: 21300008, guid: 73fde55e5bdfe9640bd8e7f84a66aaac, type: 3}
   baitInitCount: 0a00000005000000070000000900000006000000
   hookPositions:
   - {fileID: 1258482784}
@@ -9900,7 +9901,8 @@ MonoBehaviour:
   - {fileID: 294089672}
   - {fileID: 2137929718}
   - {fileID: 2056652583}
-  hooksActive: 0
+  hooksActive: 1
+  numberOfFishesActive: 3
   setup: 0
   hasSetup: 0
 --- !u!114 &598646075
@@ -21534,6 +21536,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &1723916432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1723916434}
+  - component: {fileID: 1723916433}
+  m_Layer: 0
+  m_Name: Object Pooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1723916433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723916432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e624003c23855ee4d82a5c555ac5cf30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Large Island
+    prefab: {fileID: 1386417772506730, guid: 59b2dd838fc49144aa2bb0d3ca49da06, type: 2}
+    size: 1
+  - tag: Light House
+    prefab: {fileID: 1842529188829374, guid: ebb879502e10bcd40b0778dec0cde694, type: 2}
+    size: 1
+  - tag: Sea Arch
+    prefab: {fileID: 1552684982072246, guid: f9116bb2e8c401e4187cf38f2f53c251, type: 2}
+    size: 1
+  - tag: Rocks
+    prefab: {fileID: 1006771698328374, guid: 90b9ad446c2ce2047b3d3780e9a708b8, type: 2}
+    size: 13
+  - tag: Front Rocks
+    prefab: {fileID: 1790657717577680, guid: 3c15a0debfa365d4ab6f02c19c3a431e, type: 2}
+    size: 1
+  - tag: Back Rocks
+    prefab: {fileID: 1526399823070102, guid: 8dcb5dbdfaaa05143a2d5ed0d774a6bb, type: 2}
+    size: 1
+  - tag: Clouds Background
+    prefab: {fileID: 1163450409006578, guid: 81fdbf2d247bf9f40aaf72b2d1abf0e6, type: 2}
+    size: 3
+  - tag: Clouds Foreground
+    prefab: {fileID: 1947134943870872, guid: fe81f3600b2fb614e8b4d1a4bfabbb1a, type: 2}
+    size: 3
+  - tag: Bullets
+    prefab: {fileID: 1130301791737636, guid: beb55bffede889b409cf0b43fc0a03a1, type: 2}
+    size: 15
+  - tag: Fishes
+    prefab: {fileID: 1093144934683612, guid: b1c4f165fb646d84497d17689cd833e5, type: 2}
+    size: 4
+  - tag: Crabs
+    prefab: {fileID: 1857763526075504, guid: d1db07851e29a2342a07778d3e355023, type: 2}
+    size: 2
+  - tag: Mountains
+    prefab: {fileID: 1793250997008272, guid: 7d2dc24ac7441bd4b83d491604b76449, type: 2}
+    size: 2
+  - tag: Baits
+    prefab: {fileID: 1833597356622428, guid: f85e89f956b13f0488f5227c480428b7, type: 2}
+    size: 5
+--- !u!4 &1723916434
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723916432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.8746414, y: -0.32582116, z: -10.0625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730227378
 GameObject:
   m_ObjectHideFlags: 0
@@ -23317,7 +23399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: []
+  fish: {fileID: 0}
+  fishSprite: {fileID: 0}
   startWait: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 164828831}
@@ -23328,6 +23411,7 @@ MonoBehaviour:
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
   baitScript: {fileID: 0}
+  fishNumber: 0
 --- !u!114 &1885254410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24991,7 +25075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: []
+  fish: {fileID: 0}
+  fishSprite: {fileID: 0}
   startWait: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 1947424192}
@@ -25002,6 +25087,7 @@ MonoBehaviour:
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
   baitScript: {fileID: 0}
+  fishNumber: 0
 --- !u!114 &2056652589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25136,6 +25222,7 @@ MonoBehaviour:
   textViews: {fileID: 286065394}
   numberOfBaitsActive: 5
   numberOfHooksActive: 1
+  numberOfFishesActive: 5
   hooksActive: 0
   colorPressed: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 0.522}
   colorDisabled: {r: 1, g: 1, b: 1, a: 0.272}
@@ -26164,7 +26251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81276dd819a14f4a85408a3fc3dc62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish: []
+  fish: {fileID: 0}
+  fishSprite: {fileID: 0}
   startWait: []
   baitNumber: 0
   baitSpawnPoint: {fileID: 2019635386}
@@ -26175,6 +26263,7 @@ MonoBehaviour:
   y: -5
   shadow: {fileID: 1764659051674702, guid: 287a0d02ec77de1428f018490a56ccd2, type: 2}
   baitScript: {fileID: 0}
+  fishNumber: 0
 --- !u!114 &2137929724
 MonoBehaviour:
   m_ObjectHideFlags: 0

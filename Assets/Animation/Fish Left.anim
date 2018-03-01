@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Fish Animation
+  m_Name: Fish Left
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,21 +18,21 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: {x: 0, y: 0, z: 45}
-        inSlope: {x: 0, y: 0, z: -87.39764}
-        outSlope: {x: 0, y: 0, z: -87.39764}
+        value: {x: 0, y: 0, z: -45}
+        inSlope: {x: 0, y: 0, z: 69.72092}
+        outSlope: {x: 0, y: 0, z: 69.72092}
         tangentMode: 0
       - serializedVersion: 2
         time: 0.75
         value: {x: 0, y: 0, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -5.3049755}
+        outSlope: {x: 0, y: 0, z: -5.3049755}
         tangentMode: 0
       - serializedVersion: 2
         time: 1.5
-        value: {x: 0, y: 0, z: -45}
-        inSlope: {x: 0, y: -0.2914103, z: -83.23583}
-        outSlope: {x: 0, y: -0.2914103, z: -83.23583}
+        value: {x: 0, y: 0, z: 45}
+        inSlope: {x: 0, y: 0, z: 111.7432}
+        outSlope: {x: 0, y: 0, z: 111.7432}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -112,9 +112,9 @@ AnimationClip:
       - serializedVersion: 2
         time: 1.5
         value: 0
-        inSlope: -0.2914103
-        outSlope: -0.2914103
-        tangentMode: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -127,21 +127,21 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 45
-        inSlope: -87.39764
-        outSlope: -87.39764
+        value: -45
+        inSlope: 69.72092
+        outSlope: 69.72092
         tangentMode: 0
       - serializedVersion: 2
         time: 0.75
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -5.3049755
+        outSlope: -5.3049755
         tangentMode: 0
       - serializedVersion: 2
         time: 1.5
-        value: -45
-        inSlope: -83.23583
-        outSlope: -83.23583
+        value: 45
+        inSlope: 111.7432
+        outSlope: 111.7432
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

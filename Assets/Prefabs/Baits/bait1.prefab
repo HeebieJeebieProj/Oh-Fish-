@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baitNumber: {fileID: 0}
   initialCount: 0
+  baitNum: 0
 --- !u!212 &212245255339391698
 SpriteRenderer:
   m_ObjectHideFlags: 1

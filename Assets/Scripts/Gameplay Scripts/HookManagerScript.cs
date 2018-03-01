@@ -5,13 +5,15 @@ public class HookManagerScript : MonoBehaviour {
 
     public int numberOfHooksActive;
     public int[] baitOrder;
-    public GameObject[] fishes;
+    public GameObject fishes;
+    public Sprite[] fishSprites;
     public GameoverScript gameOverScript;
     public float[] gravity;
     public float[] speedVertical;
     public float[] speedHorizontal;
     public float[] startWaits;
-    public GameObject[] baits;
+    public GameObject baitMain;
+    public Sprite[] baits;
     public int[] baitInitCount;
     public Transform[] hookPositions;
     public float[] radius;
@@ -22,7 +24,9 @@ public class HookManagerScript : MonoBehaviour {
     public bool setup;
     public bool hasSetup;
     private int i;
-    private GameObject[] fish;
+    private Sprite[] fishSprite;
+
+    private ObjectPooler objectPooler;
     //private int baitsInstantiated;
 
 	// Use this for initialization
@@ -31,7 +35,7 @@ public class HookManagerScript : MonoBehaviour {
         setup = false;
         hasSetup = false;
         //baitsInstantiated = 0;
-        fish = new GameObject[numberOfHooksActive * 2];
+        objectPooler = ObjectPooler.Instance;
 
 	}
 	
@@ -58,24 +62,28 @@ public class HookManagerScript : MonoBehaviour {
                     if (baitOrder[i] - 1 >= 0)
                     {
                         hooks[i].SetActive(true);
-                        fish[i * 2] = fishes[(baitOrder[i] - 1) * 2];
-                        fish[i * 2 + 1] = fishes[(baitOrder[i] - 1) * 2 + 1];
-                        hooks[i].GetComponent<FishSpawnScript>().enabled = true;
-                        hooks[i].GetComponent<FishSpawnScript>().fish = new GameObject[] { fish[i * 2], fish[i * 2 + 1] };
-                        hooks[i].GetComponent<FishSpawnScript>().gravityScale = gravity[baitOrder[i] - 1];
-                        hooks[i].GetComponent<FishSpawnScript>().speedHorizontal = speedHorizontal[baitOrder[i] - 1];
-                        hooks[i].GetComponent<FishSpawnScript>().speedVertical = speedVertical[baitOrder[i] - 1];
-                        bait = Instantiate(
-                            baits[baitOrder[i] - 1],
+                        FishSpawnScript fishSpawnScript = hooks[i].GetComponent<FishSpawnScript>();
+                        fishSpawnScript.enabled = true;
+                        fishSpawnScript.fishSprite = fishSprites[baitOrder[i] - 1];
+                        fishSpawnScript.fish = fishes;
+                        fishSpawnScript.fishNumber = baitOrder[i] - 1;
+                        fishSpawnScript.gravityScale = gravity[baitOrder[i] - 1];
+                        fishSpawnScript.speedHorizontal = speedHorizontal[baitOrder[i] - 1];
+                        fishSpawnScript.speedVertical = speedVertical[baitOrder[i] - 1];
+                        bait = objectPooler.SpawnFromPool(
+                            StringConsants.stringBaits,
                             hooks[i].GetComponent<Transform>().Find("baitSpawnPoint").GetComponent<Transform>().position,
-                            baits[baitOrder[i] - 1].GetComponent<Transform>().rotation
+                            baitMain.GetComponent<Transform>().rotation
                         );
+                        bait.GetComponent<SpriteRenderer>().sprite = baits[baitOrder[i] - 1];
+                        bait.GetComponent<BaitScript>().baitNum = baitOrder[i] - 1;
                         bait.GetComponent<BaitScript>().initialCount = baitInitCount[i];
                         bait.GetComponent<Transform>().parent = hooks[i].GetComponent<Transform>();
                         bait.GetComponent<BaitScript>().baitNumber = hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>();
                         hooks[i].GetComponent<Transform>().Find("Canvas").GetComponent<Transform>().Find("Text").GetComponent<Text>().enabled = true;
-                        hooks[i].GetComponent<FishSpawnScript>().baitScript = bait.GetComponent<BaitScript>();
-                        hooks[i].GetComponent<FishSpawnScript>().StartCoroutine(hooks[i].GetComponent<FishSpawnScript>().StartWait());
+                        fishSpawnScript.baitScript = bait.GetComponent<BaitScript>();
+                        bait.GetComponent<BaitScript>().enabled = true;
+                        fishSpawnScript.StartCoroutine(fishSpawnScript.StartWait());
                         //baitsInstantiated++;
                     } else
                     {

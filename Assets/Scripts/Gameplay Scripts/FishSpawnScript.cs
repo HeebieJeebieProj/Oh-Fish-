@@ -5,7 +5,8 @@ using UnityEngine;
 public class FishSpawnScript : MonoBehaviour
 {
 
-    public GameObject[] fish;
+    public GameObject fish;
+    public Sprite fishSprite;
     public float[] startWait;
     public int baitNumber;
     public Transform baitSpawnPoint;
@@ -16,12 +17,16 @@ public class FishSpawnScript : MonoBehaviour
     public float y;
     public GameObject shadow;
     public BaitScript baitScript;
+    public int fishNumber;
 
     private bool spawnOne;
     private bool spawnTwo;
     private bool spawnThree;
     private bool spawnFour;
     private float time;
+
+    private ObjectPooler objectPooler;
+    private HookManagerScript hookManagerScript;
 
     // Use this for initialization
     void Start()
@@ -31,6 +36,8 @@ public class FishSpawnScript : MonoBehaviour
         spawnTwo = false;
         spawnThree = false;
         spawnFour = false;
+        objectPooler = ObjectPooler.Instance;
+        hookManagerScript = GameObject.Find("Hooks").GetComponent<HookManagerScript>();
 
     }
 
@@ -38,22 +45,22 @@ public class FishSpawnScript : MonoBehaviour
     void Update()
     {
 
-        if (spawnOne && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (spawnOne && objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
             spawnOne = false;
             StartCoroutine(SpawnOne());
         }
-        if (spawnTwo && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (spawnTwo && objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
             spawnTwo = false;
             StartCoroutine(SpawnTwo());
         }
-        if (spawnThree && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (spawnThree && objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
             spawnThree = false;
             StartCoroutine(SpawnThree());
         }
-        if (spawnFour && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (spawnFour && objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
             spawnFour = false;
             StartCoroutine(SpawnFour());
@@ -88,7 +95,7 @@ public class FishSpawnScript : MonoBehaviour
 
         //int index;
 
-        if (FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
 
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
@@ -100,32 +107,51 @@ public class FishSpawnScript : MonoBehaviour
 
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
-                GameObject fishClone;
+                GameObject fishClone = null;
 
                 if (GameoverScript.replayActive)
                 {
-                    fishClone = (GameObject)Instantiate(
-                        GameObject.Find("Hooks").GetComponent<HookManagerScript>().fishes[Random.Range(0, GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfFishesActive) * 2],
-                        new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
-                        fish[0].GetComponent<Transform>().rotation
-                    );
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
                 } else
                 {
-                    fishClone = (GameObject)Instantiate(
-                        fish[0],
-                        new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
-                        fish[0].GetComponent<Transform>().rotation
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
                     );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
                 }
                 
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
                 /*x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
                 /*Instantiate(shadow, new Vector3(x - xRange, -5.5f, shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
@@ -152,34 +178,54 @@ public class FishSpawnScript : MonoBehaviour
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
 
-                GameObject fishClone;
+                GameObject fishClone = null;
 
                 if (GameoverScript.replayActive)
                 {
-                    fishClone = (GameObject)Instantiate(
-                        GameObject.Find("Hooks").GetComponent<HookManagerScript>().fishes[Random.Range(0, GameObject.Find("Hooks").GetComponent<HookManagerScript>().numberOfFishesActive) * 2 + 1],
-                        new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
-                        fish[0].GetComponent<Transform>().rotation
-                    );
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
                 }
                 else
                 {
-                    fishClone = (GameObject)Instantiate(
-                        fish[1],
-                        new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
-                        fish[1].GetComponent<Transform>().rotation
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
                     );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
                 }
 
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
             }
             FishCountScript.IncreaseCount();
 
@@ -198,50 +244,141 @@ public class FishSpawnScript : MonoBehaviour
 
         //int index;
 
-        if (FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
 
-
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
+            float xRange = Random.Range(1f, 2f);
+            float yRange = Random.Range(-5f, -4.6f);
 
             if (x < baitSpawnPoint.position.x)
             {
+
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
-                GameObject fishClone = (GameObject)Instantiate(
-                    fish[0],
-                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
-                    fish[0].GetComponent<Transform>().rotation
-                );
+                GameObject fishClone = null;
+
+                if (GameoverScript.replayActive)
+                {
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
+                }
+                else
+                {
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
+                    );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
+                }
+
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                /*x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
+
+                /*Instantiate(shadow, new Vector3(x - xRange, -5.5f, shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
+
+                GameObject fishClone = (GameObject)Instantiate(
+                    fish[0],
+                    new Vector3(x - xRange, y, fish[0].GetComponent<Transform>().position.z),
+                    fish[0].GetComponent<Transform>().rotation
+                );
+
+                fishClone.GetComponent<Rigidbody2D>().AddForce(
+                        new Vector2( 2.5f, 2.5f),
+                        ForceMode2D.Force
+                    );
+
+                /*fishClone.GetComponent<Rigidbody2D>().AddForce(
+                            new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
+                            ForceMode2D.Force
+                        );
+                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;*/
             }
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
-                GameObject fishClone = (GameObject)Instantiate(
-                   fish[1],
-                   new Vector3(x, y, fish[1].GetComponent<Transform>().position.z),
-                   fish[1].GetComponent<Transform>().rotation
-               );
+
+                GameObject fishClone = null;
+
+                if (GameoverScript.replayActive)
+                {
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
+                }
+                else
+                {
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
+                    );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
+                }
+
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
-            }
 
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+            }
             FishCountScript.IncreaseCount();
+
         }
 
         spawnTwo = true;
@@ -257,49 +394,141 @@ public class FishSpawnScript : MonoBehaviour
 
         //int index;
 
-        if (FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
 
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
+            float xRange = Random.Range(1f, 2f);
+            float yRange = Random.Range(-5f, -4.6f);
 
             if (x < baitSpawnPoint.position.x)
             {
+
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
-                GameObject fishClone = (GameObject)Instantiate(
-                    fish[0],
-                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
-                    fish[0].GetComponent<Transform>().rotation
-                );
+                GameObject fishClone = null;
+
+                if (GameoverScript.replayActive)
+                {
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
+                }
+                else
+                {
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
+                    );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
+                }
+
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                /*x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
+
+                /*Instantiate(shadow, new Vector3(x - xRange, -5.5f, shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
+
+                GameObject fishClone = (GameObject)Instantiate(
+                    fish[0],
+                    new Vector3(x - xRange, y, fish[0].GetComponent<Transform>().position.z),
+                    fish[0].GetComponent<Transform>().rotation
+                );
+
+                fishClone.GetComponent<Rigidbody2D>().AddForce(
+                        new Vector2( 2.5f, 2.5f),
+                        ForceMode2D.Force
+                    );
+
+                /*fishClone.GetComponent<Rigidbody2D>().AddForce(
+                            new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
+                            ForceMode2D.Force
+                        );
+                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;*/
             }
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
-                GameObject fishClone = (GameObject)Instantiate(
-                   fish[1],
-                   new Vector3(x, y, fish[1].GetComponent<Transform>().position.z),
-                   fish[1].GetComponent<Transform>().rotation
-               );
+
+                GameObject fishClone = null;
+
+                if (GameoverScript.replayActive)
+                {
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
+                }
+                else
+                {
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
+                    );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
+                }
+
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
-            }
 
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+            }
             FishCountScript.IncreaseCount();
+
         }
 
         spawnThree = true;
@@ -315,49 +544,141 @@ public class FishSpawnScript : MonoBehaviour
 
         //int index;
 
-        if (FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+        if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
         {
 
             float x = Random.Range(baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x + radius);
+            float xRange = Random.Range(1f, 2f);
+            float yRange = Random.Range(-5f, -4.6f);
 
             if (x < baitSpawnPoint.position.x)
             {
+
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
-                GameObject fishClone = (GameObject)Instantiate(
-                    fish[0],
-                    new Vector3(x, y, fish[0].GetComponent<Transform>().position.z),
-                    fish[0].GetComponent<Transform>().rotation
-                );
+                GameObject fishClone = null;
+
+                if (GameoverScript.replayActive)
+                {
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
+                }
+                else
+                {
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
+                    );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = false;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, true);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
+                }
+
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                /*x = Mathf.Clamp(x, baitSpawnPoint.position.x - radius, baitSpawnPoint.position.x - 1f);
+
+                /*Instantiate(shadow, new Vector3(x - xRange, -5.5f, shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);
+
+                GameObject fishClone = (GameObject)Instantiate(
+                    fish[0],
+                    new Vector3(x - xRange, y, fish[0].GetComponent<Transform>().position.z),
+                    fish[0].GetComponent<Transform>().rotation
+                );
+
+                fishClone.GetComponent<Rigidbody2D>().AddForce(
+                        new Vector2( 2.5f, 2.5f),
+                        ForceMode2D.Force
+                    );
+
+                /*fishClone.GetComponent<Rigidbody2D>().AddForce(
+                            new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
+                            ForceMode2D.Force
+                        );
+                fish[0].GetComponent<Rigidbody2D>().gravityScale = gravityScale;*/
             }
             else
             {
                 x = Mathf.Clamp(x, baitSpawnPoint.position.x + 1f, baitSpawnPoint.position.x + radius);
 
-                Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
-                yield return new WaitForSeconds(1);
+                /*Instantiate(shadow, new Vector3(x, Random.Range(-4.65f, -5f), shadow.GetComponent<Transform>().position.z), shadow.GetComponent<Transform>().rotation);
+                yield return new WaitForSeconds(1);*/
 
-                GameObject fishClone = (GameObject)Instantiate(
-                   fish[1],
-                   new Vector3(x, y, fish[1].GetComponent<Transform>().position.z),
-                   fish[1].GetComponent<Transform>().rotation
-               );
+
+                GameObject fishClone = null;
+
+                if (GameoverScript.replayActive)
+                {
+                    if (objectPooler.poolDictionary[StringConsants.stringFishes].Count > 0 && FishCountScript.numberOfActive < FishCountScript.maxFishesDay && baitScript.initialCount > 0)
+                    {
+
+                        fishClone = objectPooler.SpawnFromPool(
+                            StringConsants.stringFishes,
+                            new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                            fish.GetComponent<Transform>().rotation
+                        );
+
+                        int index = Random.Range(0, hookManagerScript.numberOfFishesActive);
+                        fishClone.GetComponent<SpriteRenderer>().sprite = hookManagerScript.fishSprites[index];
+                        fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                        fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                        fishClone.GetComponent<FishScript>().fishNumber = index;
+
+                    }
+                }
+                else
+                {
+
+                    fishClone = objectPooler.SpawnFromPool(
+                        StringConsants.stringFishes,
+                        new Vector3(x, y, fish.GetComponent<Transform>().position.z),
+                        fish.GetComponent<Transform>().rotation
+                    );
+
+                    fishClone.GetComponent<SpriteRenderer>().sprite = fishSprite;
+                    fishClone.GetComponent<SpriteRenderer>().flipX = true;
+                    fishClone.GetComponent<Animator>().SetBool(HashIDs.fishLeftHash, false);
+                    fishClone.GetComponent<FishScript>().fishNumber = fishNumber;
+
+                }
+
                 fishClone.GetComponent<Rigidbody2D>().AddForce(
                             new Vector2(speedHorizontalMapper(fishClone.transform), 2.7f * speedVertical),
                             ForceMode2D.Force
                         );
-                fish[1].GetComponent<Rigidbody2D>().gravityScale = gravityScale;
-            }
 
+                fishClone.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+
+            }
             FishCountScript.IncreaseCount();
+
         }
 
         spawnFour = true;

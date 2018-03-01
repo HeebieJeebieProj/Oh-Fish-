@@ -60,22 +60,24 @@ public class IslandSpawnScript : MonoBehaviour
             float increment = (yRockRange[1] - yRockRange[0]) * 0.067f;
             for (int l = 0; l < number; l++)
             {
-
-                int rockSprite = Random.Range(0, rockSprites.Length);
-                backRock.GetComponent<SpriteRenderer>().sprite = rockSprites[rockSprite];
-                if (rockSprite <= 5)
-                {
-                    backRock.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 1f);
-                } else
-                {
-                    backRock.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 1f);
-                }
-                backRock.GetComponent<SpriteRenderer>().sortingOrder = l + 2;
+                
                 GameObject instanciatedBackRock = objectPooler.SpawnFromPool(
                     StringConsants.stringRocks,
                     new Vector3(-13f + Camera.main.GetComponent<Transform>().position.x, yRockRange[1] + increment, backRock.GetComponent<Transform>().position.z),
                     backRock.GetComponent<Transform>().rotation
                 );
+
+                int rockSprite = Random.Range(0, rockSprites.Length);
+                instanciatedBackRock.GetComponent<SpriteRenderer>().sprite = rockSprites[rockSprite];
+                if (rockSprite <= 5)
+                {
+                    instanciatedBackRock.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 1f);
+                }
+                else
+                {
+                    instanciatedBackRock.GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 1f);
+                }
+                instanciatedBackRock.GetComponent<SpriteRenderer>().sortingOrder = l + 2;
 
                 instanciatedBackRock.transform.parent = GetComponent<Transform>();
                 instanciatedBackRock.GetComponent<IslandScrollScript>().speed = speed;

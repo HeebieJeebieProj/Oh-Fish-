@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class BaitScript : MonoBehaviour {
+public class BaitScript : MonoBehaviour, InterfacePooledObject {
 
     public Text baitNumber;
     public int initialCount;
+    public int baitNum;
+
+    private ObjectPooler objectPooler;
 
 	// Use this for initialization
-	void Start () {
-        baitNumber.text = initialCount.ToString();
+	public void OnObjectSpawn () {
+
+        objectPooler = ObjectPooler.Instance;
+
 	}
 	
 	// Update is called once per frame
@@ -27,7 +32,7 @@ public class BaitScript : MonoBehaviour {
 
         if (GameoverScript.gameover)
         {
-            Destroy(gameObject);
+            objectPooler.EnqueueToPool(StringConsants.stringBaits, gameObject);
         }
 	}
 
@@ -40,52 +45,53 @@ public class BaitScript : MonoBehaviour {
             initialCount--;
         } else
         {
-            if (gameObject.name == "bait1(Clone)")
+            FishScript fishScript = collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>();
+            if (baitNum == 0)
             {
-                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 1 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 1 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                if (fishScript.fishNumber == 0 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
                     initialCount--;
                 }
             }
-            else if (gameObject.name == "bait2(Clone)")
+            else if (baitNum == 1)
             {
-                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 2 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 2 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                if (fishScript.fishNumber == 1 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
                     initialCount--;
                 }
             }
-            else if (gameObject.name == "bait3(Clone)")
+            else if (baitNum == 2)
             {
-                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 3 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 3 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                if (fishScript.fishNumber == 2 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
                     initialCount--;
                 }
             }
-            else if (gameObject.name == "bait4(Clone)")
+            else if (baitNum == 3)
             {
-                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 4 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 4 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                if (fishScript.fishNumber == 3 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
                     initialCount--;
                 }
             }
-            else if (gameObject.name == "bait5(Clone)")
+            else if (baitNum == 4)
             {
-                if ((collision.GetComponent<Collider2D>().gameObject.name == "Fish 5 Left(Clone)" || collision.GetComponent<Collider2D>().gameObject.name == "Fish 5 Right(Clone)") && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait && !collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().collided)
+                if (fishScript.fishNumber == 4 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
                     initialCount--;
                 }
             }
-            else if (gameObject.name == "bait11(Clone)")
+            else if (baitNum == 5)
             {
                 collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                 collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;

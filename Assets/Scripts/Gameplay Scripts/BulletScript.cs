@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class BulletScript : MonoBehaviour {
+public class BulletScript : MonoBehaviour, InterfacePooledObject {
 
     Transform rightThreshold;
 
@@ -25,13 +25,18 @@ public class BulletScript : MonoBehaviour {
 
     bool changeSprite;
 
+    private ObjectPooler objectPooler;
+
     // Use this for initialization
-    void Start () {
+    public void OnObjectSpawn () {
+
         comboStall = false;
         collided = false;
         changeSprite = false;
         moveWith = false;
         moveWithCrab = false;
+        objectPooler = ObjectPooler.Instance;
+
     }
 	
 	// Update is called once per frame
@@ -68,10 +73,10 @@ public class BulletScript : MonoBehaviour {
             GetComponent<Collider2D>().enabled = true;
         }
 
-        if (transform.position.x >= 9f || transform.position.y >= 6f || transform.position.y <= -6f || transform.position.x <= -9f)
+        if (transform.position.x >= 10f || transform.position.y >= 6f || transform.position.y <= -6f || transform.position.x <= -10f)
         {
 
-            Destroy(gameObject);
+            objectPooler.EnqueueToPool(StringConsants.stringBullets, gameObject);
 
         }
     }

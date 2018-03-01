@@ -28,6 +28,8 @@ public class StringConsants : MonoBehaviour {
 
     public static string stringMountains = "Mountains";
 
+    public static string stringBaits = "Baits";
+
     public static string StringMapper(string name)
     {
 

@@ -26,17 +26,22 @@ public class GunScript : MonoBehaviour {
 
     float rotateAngle;
 
+    private ObjectPooler objectPooler;
+
     // Use this for initialization
     void Start () {
+
         restoreRotation = 0;
         originalRotation = transform.rotation;
         reverse = 7f;
+        objectPooler = ObjectPooler.Instance;
+
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) //&& !GameoverScript.gameover && BaitSelectionScript.hasStarted)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameoverScript.gameover && BaitSelectionScript.hasStarted)
         {
             touch = Input.GetTouch(0);
             touchPos = Camera.main.ScreenToWorldPoint(touch.position);
@@ -60,7 +65,7 @@ public class GunScript : MonoBehaviour {
 
                     transform.Rotate(Vector3.forward, angle);
 
-                    GameObject bullet = (GameObject)Instantiate(Bullet, bulletSpawnPoint.position, bulletRotation);
+                    GameObject bullet = objectPooler.SpawnFromPool(StringConsants.stringBullets, bulletSpawnPoint.position, bulletRotation);
                     bullet.GetComponent<Rigidbody2D>().AddForce(
                         (touchPos - transform.position).normalized * speed,
                         ForceMode2D.Force
