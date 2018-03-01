@@ -39,7 +39,7 @@ public class FishScript : MonoBehaviour, InterfacePooledObject {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.FindGameObjectWithTag("bait").GetComponent<Collider2D>());
         }
 
-        if (transform.position.y <= -10f || transform.position.y >= 5.6f || transform.position.x <= -8f || transform.position.x >= 9f)
+        if (transform.position.y <= -10f || transform.position.y >= 5.6f || transform.position.x <= -8f || transform.position.x >= 11f)
         {
             FishCountScript.DecreaseCount();
             objectPooler.EnqueueToPool(StringConsants.stringFishes, gameObject);

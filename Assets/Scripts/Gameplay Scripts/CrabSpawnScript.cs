@@ -71,6 +71,7 @@ public class CrabSpawnScript : MonoBehaviour {
             );
 
             crabClone.GetComponent<CrabScript>().crabNumber = baitOrder[index] - 1;
+            crabClone.GetComponent<SpriteRenderer>().sprite = crab[baitOrder[index] - 1].GetComponent<SpriteRenderer>().sprite;
 
             if (x <= 0)
             {

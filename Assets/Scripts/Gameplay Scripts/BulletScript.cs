@@ -36,6 +36,8 @@ public class BulletScript : MonoBehaviour, InterfacePooledObject {
         moveWith = false;
         moveWithCrab = false;
         objectPooler = ObjectPooler.Instance;
+        fishGameObject = null;
+        GetComponent<SpriteRenderer>().enabled = true;
 
     }
 	
@@ -77,6 +79,8 @@ public class BulletScript : MonoBehaviour, InterfacePooledObject {
         {
 
             objectPooler.EnqueueToPool(StringConsants.stringBullets, gameObject);
+            fishGameObject = null;
+            crabGameObject = null;
 
         }
     }
@@ -142,23 +146,24 @@ public class BulletScript : MonoBehaviour, InterfacePooledObject {
             if (changeSprite)
             {
                 SpriteRenderer spriteRenderer = fishGameObject.GetComponent<SpriteRenderer>();
-                if (fishGameObject.name == "Fish 1 Left(Clone)" || fishGameObject.name == "Fish 1 Right(Clone)")
+                FishScript fishScript = fishGameObject.GetComponent<FishScript>();
+                if (fishScript.fishNumber == 0)
                 {
                     spriteRenderer.sprite = fishDeadSprite[0];
                 }
-                else if (fishGameObject.name == "Fish 2 Left(Clone)" || fishGameObject.name == "Fish 2 Right(Clone)")
+                else if (fishScript.fishNumber == 1)
                 {
                     spriteRenderer.sprite = fishDeadSprite[1];
                 }
-                else if (fishGameObject.name == "Fish 3 Left(Clone)" || fishGameObject.name == "Fish 3 Right(Clone)")
+                else if (fishScript.fishNumber == 2)
                 {
                     spriteRenderer.sprite = fishDeadSprite[2];
                 }
-                else if (fishGameObject.name == "Fish 4 Left(Clone)" || fishGameObject.name == "Fish 4 Right(Clone)")
+                else if (fishScript.fishNumber == 3)
                 { 
                     spriteRenderer.sprite = fishDeadSprite[3];
                 }
-                else if (fishGameObject.name == "Fish 5 Left(Clone)" || fishGameObject.name == "Fish 5 Right(Clone)")
+                else if (fishScript.fishNumber == 4)
                 {
                     spriteRenderer.sprite = fishDeadSprite[4];
                 }

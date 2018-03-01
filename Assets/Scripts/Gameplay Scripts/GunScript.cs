@@ -27,6 +27,7 @@ public class GunScript : MonoBehaviour {
     float rotateAngle;
 
     private ObjectPooler objectPooler;
+    private HookManagerScript hookManagerScript;
 
     // Use this for initialization
     void Start () {
@@ -35,13 +36,14 @@ public class GunScript : MonoBehaviour {
         originalRotation = transform.rotation;
         reverse = 7f;
         objectPooler = ObjectPooler.Instance;
+        hookManagerScript = GameObject.Find("Hooks").GetComponent<HookManagerScript>();
 
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameoverScript.gameover && BaitSelectionScript.hasStarted)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !GameoverScript.gameover && hookManagerScript.hasSetup)
         {
             touch = Input.GetTouch(0);
             touchPos = Camera.main.ScreenToWorldPoint(touch.position);
