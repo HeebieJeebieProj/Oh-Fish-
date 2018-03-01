@@ -12,6 +12,8 @@ public class CrabScript : MonoBehaviour, InterfacePooledObject {
 	public void OnObjectSpawn () {
 
         objectPooler = ObjectPooler.Instance;
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<Collider2D>().isTrigger = false;
 
     }
 	

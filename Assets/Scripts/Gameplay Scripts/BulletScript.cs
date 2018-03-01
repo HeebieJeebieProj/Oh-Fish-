@@ -26,6 +26,8 @@ public class BulletScript : MonoBehaviour, InterfacePooledObject {
     bool changeSprite;
 
     private ObjectPooler objectPooler;
+    private GameObject[] ignoreCollision;
+    private int i;
 
     // Use this for initialization
     public void OnObjectSpawn () {
@@ -38,6 +40,9 @@ public class BulletScript : MonoBehaviour, InterfacePooledObject {
         objectPooler = ObjectPooler.Instance;
         fishGameObject = null;
         GetComponent<SpriteRenderer>().enabled = true;
+        i = 0;
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<Collider2D>().isTrigger = false;
 
     }
 	
@@ -59,17 +64,6 @@ public class BulletScript : MonoBehaviour, InterfacePooledObject {
             ComboScript.comboNumber = 0;
             comboText.GetComponent<ComboScript>().showText(ComboScript.comboNumber.ToString());
         }
-        if (collided)
-        {
-            if (fishGameObject != null)
-            {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.FindGameObjectWithTag("fish").GetComponent<Collider2D>());
-            }
-            if (crabGameObject != null)
-            {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.FindGameObjectWithTag("crab").GetComponent<Collider2D>());
-            }
-        }
         if ((transform.position.x >= 8f || transform.position.y <= -5f || transform.position.y >= 5f) && !GetComponent<Collider2D>().enabled)
         {
             GetComponent<Collider2D>().enabled = true;
@@ -79,8 +73,6 @@ public class BulletScript : MonoBehaviour, InterfacePooledObject {
         {
 
             objectPooler.EnqueueToPool(StringConsants.stringBullets, gameObject);
-            fishGameObject = null;
-            crabGameObject = null;
 
         }
     }

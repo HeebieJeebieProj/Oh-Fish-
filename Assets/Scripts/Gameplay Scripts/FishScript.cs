@@ -11,11 +11,16 @@ public class FishScript : MonoBehaviour, InterfacePooledObject {
     public int fishNumber;
 
     private ObjectPooler objectPooler;
+    private GameObject[] ignoreCollision;
+    private int i;
 
     // Use this for initialization
     public void OnObjectSpawn()
     {
         touchedBait = false;
+        collided = false;
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<Collider2D>().isTrigger = false;
         objectPooler = ObjectPooler.Instance;
     }
 
@@ -32,11 +37,6 @@ public class FishScript : MonoBehaviour, InterfacePooledObject {
         else
         {
             GetComponent<Collider2D>().enabled = true;
-        }
-
-        if (touchedBait && !GameoverScript.gameover)
-        {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.FindGameObjectWithTag("bait").GetComponent<Collider2D>());
         }
 
         if (transform.position.y <= -10f || transform.position.y >= 5.6f || transform.position.x <= -8f || transform.position.x >= 11f)

@@ -48,7 +48,7 @@ public class BaitScript : MonoBehaviour, InterfacePooledObject {
             FishScript fishScript = collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>();
             if (baitNum == 0)
             {
-                if (fishScript.fishNumber == 0 && !fishScript.touchedBait && !fishScript.collided)
+                if (fishScript != null && fishScript.fishNumber == 0 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
@@ -57,7 +57,7 @@ public class BaitScript : MonoBehaviour, InterfacePooledObject {
             }
             else if (baitNum == 1)
             {
-                if (fishScript.fishNumber == 1 && !fishScript.touchedBait && !fishScript.collided)
+                if (fishScript != null && fishScript.fishNumber == 1 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
@@ -66,7 +66,7 @@ public class BaitScript : MonoBehaviour, InterfacePooledObject {
             }
             else if (baitNum == 2)
             {
-                if (fishScript.fishNumber == 2 && !fishScript.touchedBait && !fishScript.collided)
+                if (fishScript != null && fishScript.fishNumber == 2 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
@@ -75,7 +75,7 @@ public class BaitScript : MonoBehaviour, InterfacePooledObject {
             }
             else if (baitNum == 3)
             {
-                if (fishScript.fishNumber == 3 && !fishScript.touchedBait && !fishScript.collided)
+                if (fishScript != null && fishScript.fishNumber == 3 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;
@@ -84,7 +84,7 @@ public class BaitScript : MonoBehaviour, InterfacePooledObject {
             }
             else if (baitNum == 4)
             {
-                if (fishScript.fishNumber == 4 && !fishScript.touchedBait && !fishScript.collided)
+                if (fishScript != null && fishScript.fishNumber == 4 && !fishScript.touchedBait && !fishScript.collided)
                 {
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().touchedBait = true;
                     collision.GetComponent<Collider2D>().gameObject.GetComponent<FishScript>().bait = gameObject;

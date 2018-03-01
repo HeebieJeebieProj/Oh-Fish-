@@ -15369,7 +15369,7 @@ MonoBehaviour:
   - 40
   - 60
   alpha: 0
-  radius: 8
+  radius: 20
 --- !u!1 &1105686263
 GameObject:
   m_ObjectHideFlags: 0
